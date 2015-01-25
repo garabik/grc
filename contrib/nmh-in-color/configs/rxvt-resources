@@ -1,0 +1,30 @@
+!--------------------------------------------------------------
+! These are the resource settings I use with rxvt(1),
+! they were in place when the screenshots were generated.
+!
+! If you prefer your terminal windows with dark text on
+! a light background, you'll have to tweak the colors here, as
+! well as in the grc conf-* files.
+!-----------------
+! Rxvt settings
+!-----------------
+Rxvt*background: black
+Rxvt*foreground: gray70
+Rxvt*color4:	#1e90ff
+Rxvt*color12:	#63b8ff
+Rxvt*colorBD:	#63b8ff
+Rxvt*colorUL:	#00ffff
+!
+!--------------------------------------------------------------
+! The following settings have a similar effect on
+! xterm(1).
+!-----------------
+! Xterm settings
+!-----------------
+XTerm*background:	black
+XTerm*foreground:	gray70
+XTerm*colorBDMode:	on
+XTerm*color4:	#1e90ff
+XTerm*color12:	#63b8ff
+XTerm*colorBD:	#63b8ff
+XTerm*colorUL:	#00ffff

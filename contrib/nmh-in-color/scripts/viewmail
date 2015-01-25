@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+#---------------------------------------------------------------------------
+# $Id: viewmail,v 1.4 2000/08/19 00:23:32 mig Exp mig $
+#----------------------------------------------------------------------
+# Script Name:  viewmail
+# Purpose:      Short script to page through and colorize email.
+#
+#----------------------------------------------------------------------
+
+
+#---------------------------------------------------------------------------
+# If we're sending output to a terminal, then colorize it,
+# otherwise, just cat it (...in case we're piping to lpr, etc.).
+#
+# Assume the input comes from STDIN.  If we get command-line arguments,
+# then we assume they're filenames, and cat them each in turn.
+#---------------------------------------------------------------------------
+if [ -t 1 ]; then
+	if [ $# -eq 0 ]; then
+		grcat conf.mail | less -r
+	else
+		for _arg in $*
+		do
+			grcat conf.mail < $_arg | less -r
+		done
+	fi
+else
+	if [ $# -eq 0 ]; then
+		cat
+	else
+		for _arg in $*
+		do
+			cat $_arg
+		done
+	fi
+fi

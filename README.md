@@ -1,2 +1,0 @@
-# grc
-generic colouriser

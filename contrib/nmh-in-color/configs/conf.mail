@@ -1,0 +1,132 @@
+#---------------------------------------------------------------------------
+# $Id: conf.mail,v 3.3 2001/01/19 03:10:13 mig Exp mig $
+#-------------------------------------------------------------------------
+# This configuration file is suitable for displaying mail files.
+# Such as when mail is read with mh(1) or nmh(1).
+# 
+# This version makes more use of the block count to avoid listing all of
+# the possible header lines...
+#-------------------------------------------------------------------------
+# The Date, will be green.
+#-------------------------------------------------------------------------
+regexp=^\s*(Date|Sent):.*
+colours=green
+count=stop
+-
+#-------------------------------------------------------------------------
+# The To, CC, BCC, and From, etc. lines will be green.
+#-------------------------------------------------------------------------
+regexp=^\s*((In-)?([Rr]eply-)?[Tt]o|From|Author|[BbFf]?[Cc][Cc]):
+colours=green
+count=more
+-
+#-------------------------------------------------------------------------
+# The Subject line will be red.
+#-------------------------------------------------------------------------
+regexp=^\s*Subject:.*$
+colours=bold red
+count=stop
+-
+#-------------------------------------------------------------------------
+# Long lines:
+#-------------------------------------------------------------------------
+regexp=^\s{5}\*\*\*.*$
+colours=previous
+count=previous
+-
+#-------------------------------------------------------------------------
+# Header lines added by nmh:
+#-------------------------------------------------------------------------
+regexp=^\s*Replied:.*$
+colours=cyan
+count=more
+-
+#-------------------------------------------------------------------------
+# Other mail header lines will be yellow.
+#-------------------------------------------------------------------------
+regexp=^(([Xx]-{0,1}.*\S)|((Return-)?Path)|(MIME-{0,1}.*\S)):.*$
+colours=yellow
+count=block
+-
+#-------------------------------------------------------------------------
+# Multi-line signatures:
+#-------------------------------------------------------------------------
+regexp=^-{1,3}\s{0,1}$
+colours=red
+count=block
+-
+regexp=^={1,5}\s{0,1}$
+colours=red
+count=block
+-
+regexp=^-=-\s{0,1}$
+colours=red
+count=block
+-
+#-------------------------------------------------------------------------
+# This unblock applies to all of the block lines above:
+#-------------------------------------------------------------------------
+regexp=^\s{0,5}$
+colours=default
+count=unblock
+-
+#---------------------------------------------------------------------------
+# This will make most separating lines blue:
+#---------------------------------------------------------------------------
+regexp=^.*([-=_!#$*<=>.:/|\\~`] *){7}.*$
+colours=blue
+count=more
+-
+#-------------------------------------------------------------------------
+# Any quoted messages will show up in blue if quoted an odd number of times,
+# cyan if quoted an even number of times. The main message text will remain
+# unchanged.
+#
+# (I grabbed these regexp's from the vim-5.x mail.vim file.) 
+#-------------------------------------------------------------------------
+regexp=^[ \t]*([A-Za-z]+>|[\]|}>#:]).*$
+colours=blue
+count=more
+-
+regexp=^[ \t]*(([A-Za-z]+>|[\]|}>#:])[ \t]*){2}.*$
+colours=cyan
+count=more
+-
+regexp=^[ \t]*(([A-Za-z]+>|[\]|}>#:])[ \t]*){3}.*$
+colours=blue
+count=more
+-
+regexp=^[ \t]*(([A-Za-z]+>|[\]|}>#:])[ \t]*){4}.*$
+colours=cyan
+count=more
+-
+regexp=^[ \t]*(([A-Za-z]+>|[\]|}>#:])[ \t]*){5}.*$
+colours=blue
+count=more
+-
+regexp=^[ \t]*(([A-Za-z]+>|[\]|}>#:])[ \t]*){6}.*$
+colours=cyan
+count=more
+-
+#-------------------------------------------------------------------------
+# Highlight URLs in magenta and email addresses in green:
+#-------------------------------------------------------------------------
+regexp=\b\S+@\S+\b
+colours=green
+count=more
+-
+regexp=mailto:\S+@\S+\b
+colours=green
+count=more
+-
+regexp=https?:\/\/\S+\b
+colours=magenta
+count=more
+-
+regexp=ftp:\/\/\S+\b
+colours=magenta
+count=more
+-
+regexp=file:\/\/\S+\b
+colours=magenta
+count=more

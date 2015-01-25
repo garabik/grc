@@ -1,0 +1,22 @@
+; mhl.format
+;
+; This is a slighly modified version of the default mhl.format file included
+; with nmh-1.0.x.  I've added "width=79,overflowtext='*** '" to the "body"
+; line at the bottom.  I've also made the the overflowtext string "*** "
+; instead of the default "***" to improve readability.
+;
+; Miguel Gualdron (July 2000).
+;
+:
+overflowtext="*** ",overflowoffset=5
+leftadjust,compwidth=9
+ignores=msgid,message-id,received,content-type,content-transfer-encoding,content-id
+Date:formatfield="%<(nodate{text})%{text}%|%(pretty{text})%>"
+To:
+cc:
+From:decode
+Subject:decode
+:
+extras:nocomponent
+:
+body:nocomponent,width=79,overflowtext="*** ",overflowoffset=5,noleftadjust

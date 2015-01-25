@@ -1,0 +1,15 @@
+#ip address
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=green
+=======
+# %
+regexp=[0-9]{1,2}\.\d{1}%
+colours=yellow
+=======
+# unknow host
+regexp=\?\?\?
+colours=red
+=======
+# Packets/Pings
+regexp=(Packets|Pings)
+colours=bold green

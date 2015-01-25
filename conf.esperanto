@@ -1,0 +1,54 @@
+# cxi tia dosiero estas treege nekompleta kaj nur mallonga ekzemplo
+# kial skribi regulojn por kolorigo de tekstoj
+#
+# substantivoj
+regexp=(?i)\b\w+(?=(o|oj|on|ojn)\b)
+colours=green
+
+%%%%%%%
+
+# sufiksoj de substantivoj
+regexp=(?i)o(|j|n|jn)\b
+colours=yellow
+
+%%%%%%%
+
+# verboj
+regexp=\b\w+(?=(?i)i|as|is|os|u)\b
+colours=magenta
+
+%%%%%%%
+
+# sufiksoj de verboj
+regexp=(?i)(i|as|is|os|u)\b
+colours=yellow
+
+%%%%%%%
+
+# adverboj
+regexp=(?i)\b\w+(?=e\b)
+colours=bold magenta
+
+%%%%%%%
+
+# sufiksoj de adverboj
+regexp=(?i)(e|aux)\b
+colours=yellow
+
+%%%%%%%
+
+# adjektivoj
+regexp=(?i)\b\w+(?=(a|aj|an|ajn)\b)
+colours=blue
+
+%%%%%%%
+
+# sufiksoj de adjektivoj
+regexp=(?i)a(j|n|jn)\b
+colours=yellow
+
+%%%%%%%
+
+# kelkaj kurtaj vortoj
+regexp=(?i)\b(de|en|kun|sen|la|pli|plej|plu)\b
+colours=bold yellow

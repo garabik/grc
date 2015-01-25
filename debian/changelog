@@ -1,0 +1,213 @@
+grc (1.6) unstable; urgency=low
+
+  * add several configuration files (thanks to Mrs. Smith)
+
+ -- Radovan Garabik <garabik@kassiopeia.juls.savba.sk>  Wed, 30 Oct 2013 15:15:20 +0100
+
+grc (1.5) unstable; urgency=low
+
+  * added configuration file for the 'mount' command (thanks to Emanuele Aina)
+  * catch SIGPIPE in grcat (closes: #689705),
+    thanks to Дмитрий Кацубо for pointing this out
+  * add several configuration files (thanks to Dark Wizard)
+  * preliminary python3 support (thanks to Dark Wizard and Andreas Niederl),
+    as a consequence, grc requires at least python2.6
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sat, 10 Aug 2013 14:23:01 +0200
+
+grc (1.4) unstable; urgency=low
+
+  * fix grcat argument search path, 
+    thanks to Andrzej Polis and Алексей Галахов
+  * added conf.configure, thanks to Алексей Галахов
+  * IPv6 support for ping6 and traceroute6
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sat, 14 May 2011 14:39:43 +0200
+
+grc (1.3) unstable; urgency=low
+
+  * propagate CTRL+C properly to the command being executed
+    (for i in range(100): print "I'll never use wildcard 'except:' again")
+  * if grcat argument starts with ./, search in current working directory
+  * fix unified diff configuration to include also single '-', 
+    thanks to Markus Klinik for noticing
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Wed,  8 Jul 2009 20:29:06 +0200
+
+grc (1.2) unstable; urgency=low
+
+  * properly redirect stderr, thanks to Алексей Галахов
+  * fix several minor pylint warnings
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Thu, 14 May 2009 19:21:00 +0200
+
+grc (1.1) unstable; urgency=low
+
+  * added several non-standard escape attributes (thanks to James Rowe)
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sat, 31 Mar 2007 21:25:02 +0200
+
+grc (1.0.9) unstable; urgency=low
+
+  * added configuration file for the cvs command (thanks to Andreas Niederl)
+  * modify diff configuration file to colour the filenames 
+    as well (thanks to Andreas Niederl)
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Thu,  4 Jan 2007 20:45:12 +0100
+
+grc (1.0.8) unstable; urgency=low
+
+  * add the possibility to include arbitrary string as the colourifying
+    sequence
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Mon, 11 Sep 2006 09:58:54 +0200
+
+grc (1.0.7) unstable; urgency=low
+
+  * do not use sys.maxint, it caused problems
+  * improve ping conffile, thanks to Michael Kebe (closes: #378981)
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sat, 22 Jul 2006 08:56:56 +0200
+
+grc (1.0.6) unstable; urgency=low
+
+  *  applied patch that causes grcat to complain and exits when grcat can't find the
+     config file (thanks to Tripp Lilley <tlilley @ perspex.com>)
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Tue,  4 Mar 2003 13:42:47 +0100
+
+grc (1.0.5) unstable; urgency=low
+
+  * add "unchanged" colour
+    (thanks to Jehan Bing <jehan@bravobrava.com>)
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Tue,  4 Feb 2003 14:29:55 +0100
+
+grc (1.0.4) unstable; urgency=low
+
+  * do not require $HOME to be set (closes: #158316)
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Wed,  4 Sep 2002 13:44:41 +0200
+
+grc (1.0.3) unstable; urgency=low
+
+  * added configuration file for colourising diff outputs 
+    (thanks to Dr. Rafael Sepúlveda <drs@gnulinux.org.mx>)
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Sun, 18 Aug 2002 19:35:34 +0200
+
+grc (1.0.2) unstable; urgency=low
+
+  * package updated for new python version in debian
+  * if grc is run without any arguments, display helpful
+    message (closes: #108675)
+  * do not include INSTALL in debian documentation (closes: #94053)
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Sun, 21 Oct 2001 14:43:11 +0200
+
+grc (1.0.1) unstable; urgency=low
+
+  * included rpm spec file, conf.ldap, modified grc.conf - all
+    thanks to Christian Zuckschwerdt
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Wed, 28 Feb 2001 21:56:02 +0100
+
+grc (1.0) unstable; urgency=low
+
+  * moved Build-Depends where it belongs
+  * OK, this seems pretty stable already.... first stable version :-)
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Fri, 23 Feb 2001 21:27:55 +0100
+
+grc (0.999) unstable; urgency=low
+
+  * grc terminates with the exit status of subprogram
+  * my e-mail added to README file :-)
+  * license changed
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Mon, 12 Feb 2001 18:01:24 +0100
+
+grc (0.99) unstable; urgency=low
+
+  * candidate for stable version
+  * corrected two stupid bugs when using skip option (closes: #84007)
+  * upgraded nmh-in-color, by Miguel Gualdron
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Tue, 30 Jan 2001 15:06:57 +0100
+
+grc (0.9) unstable; urgency=low
+
+  * grc catches ctrl C and propagates to subprocess (Closes: #81137)
+  * added skip keyword to skip lines in output containing certain patterns
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Thu, 18 Jan 2001 10:12:38 +0100
+
+grc (0.8.1) unstable; urgency=low
+
+  * typo in manpages fixed, closes: #70498
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Tue, 29 Aug 2000 14:20:14 +0200
+
+grc (0.8) unstable; urgency=low
+
+  * added patches from Miguel Gualdron <mig@anet.com> for 
+    colourising multiline blocks of text and making current colour
+    dependent on previous line
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Sun, 27 Aug 2000 09:47:17 +0200
+
+grc (0.7) unstable; urgency=low
+
+  * redirecting both stdout and stderr works
+    I do not know what was the error, but I made it differently and it works :-)
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Tue, 23 May 2000 21:35:46 +0200
+
+grc (0.6) unstable; urgency=low
+
+  * rewritten grc to use fork() and exec()
+  * introduce --colour= option, to colourise depending on stdout being a tty (closes #62365)
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Sun,  7 May 2000 19:42:30 +0200
+
+grc (0.5) unstable; urgency=low
+
+  * a bit of speed optimization
+  * added a few (2) more configuration files
+  * added debhelper to Build-Depends
+  * upgraded Standards-Version
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Mon, 14 Feb 2000 12:23:29 +0100
+
+grc (0.4) unstable; urgency=low
+
+  * change of configuration file format
+  * added use of different colours per different regexp groups
+  * added execution of external commands if regexp matches
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Mon, 22 Nov 1999 19:13:05 +0100
+
+grc (0.3) unstable; urgency=low
+
+  * enable nested and overlaped regular expressions - this fixes a few 
+    display glitches
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Wed, 27 Oct 1999 22:32:58 +0200
+
+grc (0.2) unstable; urgency=low
+
+  * grc can redirect stderr as well
+  * background and other attributes (blink, bold) can be changed too
+  * documentation update
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Tue, 26 Oct 1999 18:02:28 +0200
+
+grc (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>  Thu, 14 Oct 1999 19:24:25 +0200
+
+Local variables:
+mode: debian-changelog
+End:

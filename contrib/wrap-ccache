@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# by Alexey Galakhov
+
+wd="`dirname $0`"
+ccache="`which ccache`"
+grc="`which grc`"
+grconf="conf.gcc"
+if [ "`basename $1`" = "configure" ]; then
+    ccache=""
+    grconf="conf.configure"
+fi
+
+gropts=""
+if perl -e 'use POSIX "isatty"; exit !isatty(1);'; then
+    gropts="$gropts --stdout"
+fi
+if perl -e 'use POSIX "isatty"; exit !isatty(2);'; then
+    gropts="$gropts --stderr"
+fi
+
+if [ ! -z "$grc" -a ! -z "$gropts" ]; then
+    grc="$grc -s -e -c $wd/$grconf"
+else
+    grc=""
+fi
+
+exec $grc $ccache "$@"

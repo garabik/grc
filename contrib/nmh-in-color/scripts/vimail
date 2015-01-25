@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+#---------------------------------------------------------------------------
+# $Id: vimail,v 1.3 2000/08/19 00:25:17 mig Exp mig $
+#---------------------------------------------------------------------------
+# Script Name:      vimail
+# Purpose:          Short script to edit mail from nmh(1)
+#                   This script makes use if vim-5.x syntax highlighting.
+#
+#---------------------------------------------------------------------------
+if [ $# = 0 ]; then
+    vi +'so $VIM/syntax/mail.vim' -
+else
+    vi +'so $VIM/syntax/mail.vim' $*
+fi

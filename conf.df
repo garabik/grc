@@ -1,0 +1,39 @@
+# FS
+regexp=^.*?\s
+colours=green
+======
+# Size 'K'
+regexp=\s\d*[.,]?\dK\s
+colours=green
+======
+# Size 'M'
+regexp=\s\d*[.,]?\dM\s
+colours=yellow
+======
+# Size 'G'
+regexp=\s\d*[.,]?\dG\s
+colours=red
+======
+# Size 'T'
+regexp=\s\d*[.,]?\dT\s
+colours=bold red
+======
+# Mounted on
+regexp=/\w*
+colours=bold green
+======
+# Use 0-60%
+regexp=[1-6][0-9]?%|0%
+colours=green
+======
+# Use 70-90%
+regexp=[7-9][0-9]%
+colours=yellow
+======
+# Use 90-95
+regexp=[9][0-5]%
+colours=red
+======
+# Use 95-100
+regexp=[9][5-9]%|100%
+colours=bold red

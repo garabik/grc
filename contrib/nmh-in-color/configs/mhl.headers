@@ -1,0 +1,20 @@
+; mhl.headers
+;
+; Slighly modified version of the default mhl.headers file included with
+; nmh-1.0.x.  See the comments at the top of mhl.format for more details.
+;
+; Format file for displaying headers in
+; MIME messages.  mhn calls the mhlproc with this
+; filter to display message header.
+;
+overflowtext="*** ",overflowoffset=5
+leftadjust,compwidth=9
+ignores=msgid,message-id,received,content-type,content-transfer-encoding,content-id
+Date:formatfield="%<(nodate{text})%{text}%|%(pretty{text})%>"
+To:
+cc:
+From:decode
+Subject:decode
+:
+extras:nocomponent
+:

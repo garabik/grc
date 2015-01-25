@@ -1,0 +1,47 @@
+# /full/path
+regexp=(\s|^)/[-\w\d.]+/[-\w\d./]+
+colours=white
+=======
+# CAPS LINE
+regexp=^[A-Z\s%]*([A-Z]{3})[A-Z\s%]*$
+colours=underline
+=======
+# Capd Line
+regexp=^([A-Z][-a-z0-9]+(\s+|$)){3,}$
+colours=underline
+=======
+# VMSTAT
+regexp=(\s|^)\d+([.,]\d+)?(?=[\s,]|$)
+colours=bold green
+=======
+# n.n.n
+regexp=(\s|^)\d+\.\d+\.\d+(?=[\s,]|$)
+colours=bold cyan
+=======
+# text:
+regexp=^([-a-z0-9]+):\s
+colours=unchanged,yellow
+=======
+# -options
+regexp=(?<=\s)-[\w\d]+(?=\s|$)
+colours=yellow
+=======
+# --long-option=
+regexp=(?<=\s)--[-\w\d]+[\w\d](?==|\s|$)(=?)
+colours=cyan,white
+=======
+# [text]
+regexp=\[[-\w\d:/]+\]
+colours=cyan
+=======
+# root
+regexp=root|wheel(?=\s|$)
+colours=red
+=======
+# pts
+regexp=(\s|^)pts/\d+(?=[^\w\d]|$)
+colours=bold yellow
+=======
+# tty
+regexp=(\s|^)tty\d+(?=[^\w\d]|$)
+colours=bold cyan

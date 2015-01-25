@@ -1,0 +1,19 @@
+This is grc, written and maintained by Radovan Garabík <garabik@kassiopeia.juls.savba.sk>
+on Thu, 14 Oct 1999 19:24:25 +0200.
+
+The original source can be found at:
+        http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
+
+It is released under GPL: under Debian systems see /usr/share/common-licenses/GPL,
+with following additional condition:
+If you want to use, redistribute, modify, abuse and molest grc in any
+way, and you feel like it, you may add any clause to the license, as
+long as it does not put any additional responsibility for behaviour of
+this program at me and at least one of these conditions is met:
+
+ - the resulting license fulfills Debian free software guidelines
+   (http://www.debian.org/social_contract#guidelines)
+ - Richard Stallman has nothing against the new license, neither
+   against running grc with any version of python available
+   at the time of adding the clause
+ - the resulting license brings peace and happiness to the world

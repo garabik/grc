@@ -1,0 +1,31 @@
+# this configuration file is suitable for displaying proftpd log files
+# submitted by Pavol Domin
+
+# everything in brakets
+regexp=\[.+?\]
+colours=cyan
+count=more
+======
+# everything in ""
+regexp=\".+?\"
+colours=green
+count=more
+======
+# ip number
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=bold magenta
+count=more
+======
+# STOR
+regexp=STOR
+colours=bold red on_white
+count=more
+======
+# RETR
+regexp=RETR
+colours=black on_white
+count=more
+==
+# first tree fields separated by space
+regexp=^([\w\.]+?\s)([\w\.]+?\s)([\w\.]+?\s)
+colours=bold blue, bold yellow, bold magenta

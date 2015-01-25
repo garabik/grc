@@ -1,0 +1,48 @@
+# 
+regexp=\bgcc\b
+colours=yellow
+count=more
+.........
+# 
+regexp=^[^:\s]*?:\d+:
+colours=bold magenta
+.........
+regexp=^[^:\s]*?:
+colours=cyan
+count=once
+.........
+# 
+regexp=\`[A-Za-z0-9_():&*]+( const)?\'
+colours=magenta
+.........
+# -O
+regexp=\-O\d 
+colours=green
+.........
+# -o
+regexp=\-o\s.+\b
+colours=yellow
+.........
+# warning and error won't work, unless you redirect also
+# stderr to grcat 
+#
+# warning
+regexp=warning:.*
+colours=white
+.........
+regexp=warning:
+colours=bold yellow
+count=once
+.........
+# error
+regexp=error:.*
+colours=bold white
+.........
+regexp=error:
+colours=bold white on_red
+count=once
+.........
+#note
+regexp=note:
+colours=bold cyan
+count=once

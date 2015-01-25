@@ -1,0 +1,14 @@
+regexp=^checking
+colours=bold blue
+.........
+regexp=\.\.\. .*$
+colours=bold yellow
+.........
+regexp=\.\.\. yes$
+colours=bold cyan
+.........
+regexp=\.\.\. no$
+colours=bold red
+.........
+regexp=\.\.\.[ ]
+colours=default

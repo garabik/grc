@@ -1,0 +1,76 @@
+.TH GRC 1
+.SH NAME
+grc \- frontend for generic colouriser
+.BR grcat "(1)
+.SH SYNOPSIS
+.B grc
+.I [options] "command [args]"
+.SH DESCRIPTION
+.BR grc
+will execute command
+.I "command"
+with optional parameters 
+.I "[args]"
+piping its stdout or stderr into 
+.BR grcat ",
+with apropriate configuration file.
+
+Configuration file for 
+.BR grc
+is determined by /etc/grc.conf file.
+
+Format of /etc/grc.conf:
+each entry consists of 2 lines, between entries there can be any number of empty 
+lines or lines beginning with # (comments)
+
+First line is regular expression, second line the name of configuration 
+file for
+.BR grcat ".
+
+Configuration file after the first regular expression matching 
+.I "command [args]"
+will be passed to 
+.BR grcat
+as its configuration file
+
+.SH OPTIONS
+.TP
+.B  \-\-help
+Show summary of options.
+.TP
+.B  \-\-version
+Display version.
+.TP
+.B  \-e  \-\-stderr
+Redirect error output. Unless 
+.B -s 
+is selected as well, this cancels redirection of standard output via 
+.BR grcat
+.TP
+.B  \-s  \-\-stdout
+Redirect standard output. Used to redirect standard output 
+together with
+.B \-\-stderr
+option.
+.TP
+.B  \-\-colour=x
+x is one of
+.I on
+.I off
+.I auto
+
+.B \-\-colour=on
+will colourise (default)
+
+.B \-\-colour=off
+will just execute 
+.I command
+without colourising.
+
+.B \-\-colour=auto 
+will test if standard output is a tty, and colourise only when it is.
+
+.SH SEE ALSO
+.BR grcat "(1)
+.SH AUTHOR
+Written by Radovan Garab\('ik <garabik @ kassiopeia.juls.savba.sk>

@@ -1,0 +1,76 @@
+# ip number
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=magenta
+=======
+# hostname:service
+regexp=([\w\.\-]+):([\w\-]+)\b
+colours=yellow, bold green, bold yellow
+=======
+# hostname:port
+regexp=([\w\.\-]+):(\d+)\b
+colours=yellow, bold green, bold red
+=======
+# *:service
+regexp=(\*):([\w\-]+)\b
+colours=yellow, blue, bold yellow
+=======
+# ipx hostname
+regexp=^IPX.*[\dABCDEF]+:[\dABCDEF]+
+colours=green
+=======
+# protocols
+regexp=(^tcp|^udp|^unix|^IPX|STREAM|DGRAM)
+colours=bold blue
+=======
+# status
+regexp=FIN_WAIT.*
+colours=red
+=======
+# status
+regexp=SYN.*?
+colours=bold red
+=======
+# status
+regexp=LISTEN(ING)?
+colours=bold blue
+=======
+# status
+regexp=TIME_WAIT
+colours=bold red
+=======
+# status
+regexp=CLOS(E(_WAIT)?|ING)
+colours=red
+skip=yes
+=======
+# status
+regexp=LAST_ACK
+colours=red
+=======
+# status
+regexp=ESTAB.*?\b|CONNECTED
+colours=bold yellow
+=======
+# status
+regexp=FREE
+colours=bold green
+=======
+# status
+regexp=DISCONNECTING
+colours=red
+=======
+# status
+regexp=CONNECTING
+colours=green
+=======
+# status
+regexp=UNKNOWN
+colours=blink bold red
+=======
+# status
+regexp=\[.*\]
+colours=green
+=======
+# path
+regexp=(\@)[\dabcdef]+
+colours=green, bold green

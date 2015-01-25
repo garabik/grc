@@ -1,0 +1,42 @@
+# hostname
+regexp=\s\w+[\w\-\.]+\w+
+colours=bold yellow
+count=once
+-
+# ip number
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=magenta
+-
+# ipv6 number
+regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
+colours=magenta
+-
+# time
+regexp=\d+\.?\d*(?=\sms)
+colours=green
+-
+# ms
+regexp=\bms\b
+colours=yellow
+-
+# DUP
+regexp=\bDUP
+colours=red
+-
+# !S, !A, !H (host unreachable), etc.
+regexp=\b\![AFGNPSTU]
+colours=red
+# just an example:
+#command=echo 'Network is down'| mail root
+-
+# ttl=...!
+regexp=ttl=\d+\!
+colours=cyan
+-
+# *
+regexp=\*
+colours=red
+-
+# parenthesis
+regexp=\(|\)
+colours=yellow

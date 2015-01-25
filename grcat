@@ -1,0 +1,219 @@
+#! /usr/bin/python
+
+import sys, os, string, re, signal, errno
+
+#some default definitions
+colours = {
+            'none'       :    "",
+            'default'    :    "\033[0m",
+            'bold'       :    "\033[1m",
+            'underline'  :    "\033[4m",
+            'blink'      :    "\033[5m",
+            'reverse'    :    "\033[7m",
+            'concealed'  :    "\033[8m",
+
+            'black'      :    "\033[30m", 
+            'red'        :    "\033[31m",
+            'green'      :    "\033[32m",
+            'yellow'     :    "\033[33m",
+            'blue'       :    "\033[34m",
+            'magenta'    :    "\033[35m",
+            'cyan'       :    "\033[36m",
+            'white'      :    "\033[37m",
+
+            'on_black'   :    "\033[40m", 
+            'on_red'     :    "\033[41m",
+            'on_green'   :    "\033[42m",
+            'on_yellow'  :    "\033[43m",
+            'on_blue'    :    "\033[44m",
+            'on_magenta' :    "\033[45m",
+            'on_cyan'    :    "\033[46m",
+            'on_white'   :    "\033[47m",
+
+            'beep'       :    "\007",
+            'previous'   :    "prev",
+            'unchanged'  :    "unchanged",
+
+            # non-standard attributes, supported by some terminals
+            'dark'         :    "\033[2m",
+            'italic'       :    "\033[3m",
+            'rapidblink'   :    "\033[6m",
+            'strikethrough':    "\033[9m",
+            }
+
+
+# ignore ctrl C - this is not ideal for standalone grcat, but
+# enables propagating SIGINT to the other subprocess in grc
+signal.signal(signal.SIGINT, signal.SIG_IGN)
+
+def add2list(clist, m, patterncolour):
+    for group in range(0, len(m.groups()) +1):
+        if group < len(patterncolour):
+            clist.append((m.start(group), m.end(group), patterncolour[group]))
+        else:
+            clist.append((m.start(group), m.end(group), patterncolour[0]))
+
+def get_colour(x):
+    if x in colours:
+        return colours[x]
+    elif len(x)>=2 and x[0]=='"' and x[-1]=='"':
+        return eval(x)
+    else:
+        raise ValueError('Bad colour specified: '+x)
+
+
+home = []
+conffile = None
+if 'HOME' in os.environ:
+    home = [os.environ['HOME']+"/.grc/"]
+conffilepath = [""] + home + ["/usr/local/share/grc/", "/usr/share/grc/"]
+conffile_arg = sys.argv[1] # tentative conffile
+for i in conffilepath:
+    if os.path.isfile(i+conffile_arg):
+        conffile = i+conffile_arg
+        break
+
+if not conffile:
+    sys.stderr.write("config file [%s] not found\n" % sys.argv[1])
+    sys.exit(1)
+
+regexplist = []
+
+f = open(conffile, "r")
+is_last = 0
+split = str.split
+lower = str.lower
+letters = string.ascii_letters
+while not is_last:
+    ll = {'count':"more"}
+    while 1:
+        l = f.readline()
+        if l == "": 
+            is_last = 1
+            break
+        if l[0] == "#" or l[0] == '\012':
+            continue
+        if not l[0] in letters:
+            break
+        keyword, value = split(l[:-1], "=", 1)
+        keyword = lower(keyword)
+        if not keyword in ["regexp", "colours", "count", "command", "skip"]:
+            raise ValueError("Invalid keyword")
+        ll[keyword] = value
+
+    # Split string into one string per regex group
+    # e.g. split "brown bold, red" into "brown bold" and
+    # "red"
+    #colstrings = []
+    #for colgroup in split(ll['colours'], ','):
+    #    colourlist = split(colgroup)
+    #    c = ""
+    #        for i in colourlist :
+    #        c = c + colours[i]
+    #    colstrings.append(c)
+    # do not try to understand the optimized form below :-)
+    if 'colours' in ll:
+        colstrings = list(
+                        map(
+                            lambda colgroup:
+                                ''.join(map(lambda x: get_colour(x), split(colgroup))),
+                                split(ll['colours'], ',')
+                            )
+                        )
+        ll['colours'] = colstrings
+
+    cs = ll['count']
+    ll['regexp'] = re.compile(ll['regexp']).search
+    regexplist.append(ll)
+
+prevcolour = colours['default']
+prevcount = "more"
+blockflag = 0
+freadline = sys.stdin.readline
+while 1:
+    line = freadline()
+    if line == "" :
+        break
+    line = line[:-1]
+    clist = []
+    skip = 0
+    for pattern in regexplist:
+        pos = 0
+        currcount = pattern['count']
+        while 1:
+            m = pattern['regexp'](line, pos)
+            if m:
+                if 'colours' in pattern:
+                    if currcount == "block":
+                        blockflag = 1
+                        blockcolour = pattern['colours'][0]
+                        currcount = "stop"
+                        break
+                    elif currcount == "unblock":
+                        blockflag = 0
+                        blockcolour = colours['default']
+                        currcount = "stop"
+                    add2list(clist, m, pattern['colours'])
+                    if currcount == "previous":
+                        currcount = prevcount
+                    if currcount == "stop":
+                        break
+                    if currcount == "more":
+                        prevcount = "more"
+                        pos = m.end(0)
+                    else:
+                        prevcount = "once"
+                        pos = len(line)
+                if 'command' in pattern:
+                    os.system(pattern['command'])
+                    if 'colours' not in pattern:
+                        break
+                if 'skip' in pattern:
+                    skip = pattern['skip'] in ("yes", "1", "true")
+                    if 'colours' not in pattern:
+                        break
+            else: break
+        if m and currcount == "stop":
+            prevcount = "stop"
+            break
+    if len(clist) == 0:
+        prevcolour = colours['default']
+    first_char = 0
+    last_char = 0
+    length_line = len(line)
+    if blockflag == 0:
+        cline = (length_line+1)*[colours['default']]
+        for i in clist:
+            # each position in the string has its own colour
+            if i[2]  == "prev":
+                cline[i[0]:i[1]] = [colours['default']+prevcolour]*(i[1]-i[0])
+            elif i[2] != "unchanged":
+                cline[i[0]:i[1]] = [colours['default']+i[2]]*(i[1]-i[0])
+            if i[0] == 0:
+                first_char = 1
+                if i[2] != "prev":
+                    prevcolour = i[2]
+            if i[1] == length_line:
+                last_char = 1
+        if first_char == 0 or last_char == 0:
+            prevcolour = colours['default']
+    else:
+        cline = (length_line+1)*[blockcolour]
+    nline = ""
+    clineprev = ""
+    if not skip:
+        for i in range(len(line)):
+            if cline[i] == clineprev: 
+                nline = nline + line[i]
+            else:
+                nline = nline + cline[i] + line[i]
+                clineprev = cline[i]
+        nline = nline + colours['default']
+        try:
+            print(nline)
+        except IOError as e:
+            if e.errno == errno.EPIPE:
+                break
+            else:
+                raise
+

@@ -1,0 +1,9 @@
+# new words
+regexp=\{\+.+\+\}
+colours=bold green
+count=more
+=======
+# deleted words
+regexp=\[\-.+\-\]
+colours=bold green
+count=more

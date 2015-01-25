@@ -1,0 +1,15 @@
+# Intended for colouring LDIF output (from ldap tools)
+# comments 
+regexp=^#.*
+colours=green
+count=stop
+-
+# meta
+regexp=^(version|search|result):
+colours=red
+count=stop
+-
+# "attribute: value" pairs
+regexp=^.*?:
+colours=blue
+count=stop

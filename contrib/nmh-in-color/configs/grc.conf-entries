@@ -1,0 +1,15 @@
+#
+# Add these entries to the /etc/grc.conf file, so grc does the right thing
+# when the scan, flists, and inc commands are used.
+#
+# scan command
+(^|[/\w\.]+/)scan\b
+conf.scan
+
+# flists command
+(^|[/\w\.]+/)flists\b
+conf.flists
+
+# inc command
+(^|[/\w\.]+/)inc\b
+conf.inc

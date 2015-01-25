@@ -1,0 +1,13 @@
+#:
+#: The .mh_profile entries listed below may be useful when using
+#: nmh with grc/grcat.
+#:
+moreproc: viewmail
+Unseen-Sequence: unseen
+scan: -form scan.unseen
+comp: -editor vimail
+repl: -annotate -nocc all -fcc sent-mail -filter reply.filter -editor vimail
+forw: -editor forwedit -format
+forwedit: -editor vimail
+flists: -recurse
+mhshow-show-text/html: lynx -dump -force_html '%f' |viewmail

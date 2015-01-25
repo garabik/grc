@@ -1,0 +1,27 @@
+#----------------------------------------------------------------------
+# This alias shows all my mail folders, highlighting (in yellow)
+# those which have new mail in them.
+#----------------------------------------------------------------------
+alias flists="grc flists"
+
+#----------------------------------------------------------------------
+# I use Procmail to sort my incoming mail into nmh folders, this alias
+# shows me only the folders that have new mail in them:
+#----------------------------------------------------------------------
+alias fl="flists -seq unseen -noshowzero -recurse"
+
+#----------------------------------------------------------------------
+# Since I use procmail(1), I don't use inc(1) much...
+#----------------------------------------------------------------------
+alias inc="grc inc"
+
+#----------------------------------------------------------------------
+# I like to have a header on the the scan(1) output so I know where I am.
+# Feel free to change any of the colors in the conf-* files...
+#----------------------------------------------------------------------
+alias scan="grc scan -header"
+
+#----------------------------------------------------------------------
+# Just a shortcut for the inbox:
+#----------------------------------------------------------------------
+alias si="scan +inbox"

@@ -1,0 +1,24 @@
+# new lines and filenames (unified diff)
+regexp=^\+(.*$)
+colours=bold green
+count=more
+=======
+# removed lines and filenames (unified diff)
+regexp=^\-(--.+$|[^\-].*$|$)
+colours=bold red
+count=more
+========
+# new lines
+regexp=^\>([^\>].*|$)
+colours=bold green
+count=more
+=======
+# removed lines
+regexp=^\<([^\<].*|$)
+colours=bold red
+count=more
+=======
+# lines affected
+regexp=^@@ .* @@$
+colours=magenta
+count=more

@@ -1,0 +1,26 @@
+# contributed by Daniel Kollár <dkollar@fmph.uniba.sk>
+
+# @host
+regexp=@\w+[\w\-\.]+\w+
+colours=magenta
+count=once
+======
+# who fingers
+regexp=(\s\w+[\w\-\.]+)(?=@)
+colours=bold magenta
+count=once
+======
+# user null fingers
+regexp=\(null\)
+colours=green
+count=once
+======
+# who's fingered
+regexp=(\s\d\d\d\d\s)(\w+[\w\-\.]+\s(?=fingered))
+colours=bold yellow
+count=once
+======
+# date and time
+regexp=^(...)(\s...\s.\d \d\d:\d\d:\d\d)(\s...\s\d\d\d\d\s)
+colours=green, green, bold green, green
+count=once

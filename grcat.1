@@ -1,0 +1,89 @@
+.TH GRCAT 1
+.SH NAME
+grcat \- read from standard input, colourise it and write to standard 
+output
+.SH SYNOPSIS
+.B grcat
+.I "configuration"
+.SH DESCRIPTION
+.I "configuration"
+is a name of a configuration file. Directories 
+~/.grc/, /usr/local/share/grc/, /usr/share/grc/
+are searched for the file (in this order).
+
+If the file is not found, it is assumed to be an absolute path of a 
+configuration file located elsewhere.
+
+Configuration file consists of entries, one per regexp, entries are 
+separated with lines with first character non-alphanumeric (except #).
+Lines beginning with # or empty lines are ignored.
+
+Each entry consists of several lines.
+Each line has form:
+.I keyword=value
+where keyword is one of: 
+.BR regexp ",
+.BR colours ",
+.BR command ",
+.BR skip ",
+.BR count ".
+Only
+.BR regexp
+is mandatory, but it does not have much sense by itself
+unless you specify at least a
+.BR colour
+or 
+.BR command
+keyword as well.
+
+.I regexp
+is the regular expression to match
+
+.I colours
+is the list of colours, separated by commas (you can specify only 
+one colour), each colour per one regexp group specified in regexp.
+
+.I command
+is command to be executed when regexp matches. Its output will
+be mixed with normal stdout, use redirectors ( >/dev/null) if you want
+to supress it.
+
+.I skip
+can be either 
+.BR yes ",
+or
+.BR no ",
+if yes, the matched line will be skipped and not displayed in output.
+Default is no.
+
+.I count
+is one of words: 
+.BR once ",
+.BR more ",
+or 
+.BR stop ".
+
+.BR once
+means that if the regexp is matched, its first occurrence is coloured
+and the program will continue with other regexp's.
+
+.BR more
+means that if there are multiple matches of the regexp in one line,
+all of them will be coloured.
+
+.BR stop
+means that the regexp will be coloured and program will move to the
+next line (i.e. ignoring other regexp's) 
+
+Regular expressions are evaluated from top to bottom, this allows nested
+and overlapped
+expressions. (e.g. you colour everything inside parentheses with one 
+colour, and if a following expression matches the text inside parentheses,
+it will be also coloured)
+
+.SH OPTIONS
+None so far.
+.SH SEE ALSO
+.BR grc "(1)
+.SH AUTHOR
+Written by Radovan Garab\('ik <garabik @ kassiopeia.juls.savba.sk>

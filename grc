@@ -1,0 +1,170 @@
+#! /usr/bin/python
+
+import os, re, string, sys, getopt, signal
+
+def version():
+    print ("Generic Colouriser 1.5")
+    sys.exit()
+
+def help():
+    print("""Generic Colouriser 1.5
+grc [options] command [args]
+Options:")
+-e --stderr    redirect stderr. If this option is selected,
+               do not automatically redirect stdout
+-s --stdout    redirect stdout, even if -e is selected
+-c name --config=name    use name as configuration file for grcat
+--colour=word  word is one of: on, off, auto
+""")
+    sys.exit()
+
+
+def catch_signal(signum, frame):
+    "catch signal sent to grc and forward it to the original application"
+    global pidp
+    try:
+        os.kill(pidp, signum)
+    except OSError: # if the subprocess already died
+        pass
+
+
+try:
+    optlist, args = getopt.getopt(sys.argv[1:], "sec:", ["stdout", "stderr", "config=", "colour="] )
+except:
+    help()
+
+if not args:
+    help()
+
+stdoutf = 0
+stderrf = 0
+
+# configure file for grcat
+cfile = ""
+
+colour = 1
+
+for i in optlist:
+    if i[0] in ["--stderr", "-e"]:
+        stderrf = 1
+    elif i[0] in ["--stdout", "-s"]:
+        stdoutf = 1
+    elif i[0] in ["--config", "-c"]:
+        cfile = i[1]
+    elif i[0] == "--colour":
+        if i[1] == "on":
+            colour = 1
+        elif i[1] == "off":
+            colour = 0
+        elif i[1] == "auto":
+            colour = sys.stdout.isatty()
+        else:
+            help()
+
+stdoutff = 1
+stderrff = 0
+if stderrf == 1:
+    stdoutff = 0
+    stderrff = 1
+if stdoutf == 1:
+    stdoutff = 1
+
+conffile = None
+if cfile == "":
+    home = []
+    if 'HOME' in os.environ:
+        home = [os.environ['HOME']+"/.grc/grc.conf"]
+    conffilenames = home + ["/etc/grc.conf"]
+    for i in conffilenames:
+        if os.path.isfile(i):
+            conffile = i
+            break
+    regexplist = []
+
+    if conffile:
+        f = open(conffile, "r")
+        while 1:
+            l = f.readline()
+            if l == "":
+                break
+            if l[0] == "#" or l[0] == '\012':
+                continue
+            regexp = l.strip()
+            if re.search(regexp, ' '.join(args)):
+                cfile = f.readline().strip()
+                break
+
+signal.signal(signal.SIGINT, catch_signal)
+
+
+if cfile != "" and colour:
+    if stdoutff:
+        choo, chio = os.pipe()
+    if stderrff:
+        choe, chie = os.pipe()
+
+
+    pidp = os.fork()
+    if pidp == 0: # child
+        if stdoutff:
+            os.dup2(chio, 1)
+            os.close(choo)
+            os.close(chio)
+        if stderrff:
+            os.dup2(chie, 2)
+            os.close(choe)
+            os.close(chie)
+        os.execvp(args[0], args)
+
+
+    if stdoutff:
+        pido = os.fork()
+        if pido == 0: # child
+            os.dup2(choo, 0)
+            os.close(choo)
+            os.close(chio)
+            if stderrff:
+                os.close(choe)
+                os.close(chie)
+            os.execvp("grcat", ["grcat", cfile])
+
+    if stderrff:
+        pide = os.fork()
+        if pide == 0: # child
+            os.dup2(choe, 0)
+            os.dup2(2, 1)
+            os.close(choe)
+            os.close(chie)
+            if stdoutff:
+                os.close(choo)
+                os.close(chio)
+            os.execvp("grcat", ["grcat", cfile])
+
+    try:
+        status = os.waitpid(pidp, 0)[1]
+    except OSError: # interrupted system call
+        status = None
+        pass # this is probably not correct
+    if stderrff:
+        os.close(chie)
+        os.waitpid(pide, 0)
+        os.close(choe)
+    if stdoutff:
+        os.close(chio)
+        os.waitpid(pido, 0)
+        os.close(choo)
+    sys.exit(status and os.WEXITSTATUS(status))
+
+else:
+    pidp = os.fork() 
+    if pidp == 0:
+        os.execvp(args[0], args)
+    try:
+        status = os.wait()[1]
+    except OSError: # interrupted system call
+        status = None
+        pass # this is probably not correct
+
+sys.exit(status and os.WEXITSTATUS(status))
+
+

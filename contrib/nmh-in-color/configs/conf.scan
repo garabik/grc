@@ -1,0 +1,31 @@
+#---------------------------------------------------------------------------
+# $Id: conf.scan,v 1.6 2001/01/20 00:01:32 mig Exp mig $
+#---------------------------------------------------------------------------
+# GRC config file for use with nmh(1) command scan(1).
+#
+# This file works well with the scan.unseen file provided with nmh(1).
+#---------------------------------------------------------------------------
+# The header line:
+regexp=^FOLDER.*
+colours=green
+count=once
+-
+# Messages replied-to by me:
+regexp=^\s{0,3}\d{1,5}\s+-.*
+colours=cyan
+count=more
+-
+# Replies...
+regexp=\s+R[Ee]:\s+.*
+colours=blue
+count=more
+-
+# Unread messages:
+regexp=^\s{0,3}\d{1,5}\sU\s.{23}
+colours=yellow
+count=more
+-
+# Current message:
+regexp=^\s{0,3}\d{1,5}\+.*
+colours=green
+count=once

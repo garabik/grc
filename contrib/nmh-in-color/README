@@ -1,0 +1,78 @@
+--------------
+COLORIZING nmh
+--------------
+
+I've been using nmh on Linux for a few years now, it is a powerful mail
+handling system maintained by a team of volunteers.  The latest version can
+be found at:  http://www.mhost.com/nmh/
+
+A few months ago I discovered grc, a very cool "generic colouriser",
+written by Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>
+http://melkor.dnp.fmph.uniba.sk/~garabik/grc.html
+
+Since I'm hooked on nmh, I decided to use grc with it.
+Here's a list of the files needed:
+
+The latest version of these files can be found at:
+http://users.anet.com/~mig/nmh-in-color/nmh-in-color.tar.gz
+
+configs/
+   bashrc-entries          Example alias entries for a ~/.bashrc file.
+   conf.flists             grc config for flists command.
+   conf.inc                grc config for inc command.
+   conf.mail               grc config for show command.
+   conf.scan               grc config for scan command.
+   grc.conf-entries        sample entries for use in grc.conf
+   mh_profile-entries      sample entries for use in ~/.mh_profile
+   mhl.body                sample format file for MIME message body
+   mhl.format              sample format file for show command
+   mhl.headers             sample format file for MIME message headers
+   rxvt-resources          rxvt settings from ~/.Xdefaults used for the
+                           screenshots
+scripts/
+   viewmail                Script for viewing colorized e-mail.
+   vimail                  Script to call vim in mail-syntax mode.
+
+------------
+INSTALLATION
+------------
+
+Grab nmh-1.0.x.tar.gz, and grc_0.x.tar.gz from the websites above. Read the
+documentation included with the packages and install them.  Grc requires a
+Python interpreter.  I tested with grc_0.81 and Python-1.5.1.
+
+Copy the conf.* files to /usr/share/grc/ or /usr/local/share/grc/, depending
+on how grc was installed.
+
+Copy viewmail and vimail somewhere in your path, like ~/bin/.  Note vimail
+does not use grc, but makes use of vim-5.x syntax-highlighting.  You may have
+to modify the path to the syntax description files given in the script to
+match your system.  If you only want to colorize email-viewing, or you don't
+use vim to compose messages, don't install vimail.
+
+Add the contents of bashrc-entries to your ~/.bashrc, and the contents of
+mh_profile-entries to your ~/.mh_profile (look these over first, some of these
+profile entries are just my personal preference).  Also, add grc.conf-entries
+to /etc/grc.conf.
+
+I recommend the use of rxvt (http://www.rxvt.org).  I've included the settings
+from my .Xdefaults file in rxvt-resources (don't forget to do a xrdb -load
+.Xdefaults after you put these in place).
+
+--------
+COMMENTS
+--------
+
+The color-scheme I've used in the conf.* files is optimized for light text on
+a dark background.  Please feel free to make modifications.
+
+Enjoy!
+
+Miguel Gualdron (August 2000)
+mig@anet.com
+http://users.anet.com/~mig/nmh-in-color
+
+#---------------------------------------------------------------------------
+# README file for nmh-in-color.tar.gz
+# $Id: README,v 1.7 2001/01/19 03:32:30 mig Exp mig $
+#---------------------------------------------------------------------------
