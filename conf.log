@@ -7,10 +7,9 @@
 #colours=red
 #======
 # example of text substitution
-regexp=(\d\d):(\d\d):(\d\d)
-replace=\1h\2m\3s
-======
-
+#regexp=(\d\d):(\d\d):(\d\d)
+#replace=\1h\2m\3s
+#======
 
 # display this line in yellow and stop further processing
 regexp=.*last message repeated \d+ times$
