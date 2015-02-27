@@ -185,7 +185,7 @@ etc...
 Miscellaneous remarks:
 
     You should get yourself familiar with regular expressions. Good reading is 
-    at http://www.python.org/doc/howto/regex/regex.html
+    at http://docs.python.org/dev/howto/regex.html
 
     The program is not yet optimized for speed. There are places that can 
     give a big boost if optimized.

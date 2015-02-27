@@ -1,6 +1,9 @@
 grc (1.7-1) unstable; urgency=low
 
-  * added `replace' keyword to replace arbitrary text
+  * added `replace' keyword to replace arbitrary text (idea by Ben Hoskins)
+  * added config.php to display php error log (thanks to Ben Hoskins)
+  * added aixterm bright colour codes (thanks to April Arcus)
+  * minor cleanups
   * switch to non-native Debian package
 
  --  Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Fri, 27 Feb 2015 11:09:48 +0100

@@ -39,6 +39,26 @@ colours = {
             'italic'       :    "\033[3m",
             'rapidblink'   :    "\033[6m",
             'strikethrough':    "\033[9m",
+
+            # aixterm bright color codes
+            # prefixed with standard ANSI codes for graceful failure
+            'bright_black'      :    "\033[30;90m",
+            'bright_red'        :    "\033[31;91m",
+            'bright_green'      :    "\033[32;92m",
+            'bright_yellow'     :    "\033[33;93m",
+            'bright_blue'       :    "\033[34;94m",
+            'bright_magenta'    :    "\033[35;95m",
+            'bright_cyan'       :    "\033[36;96m",
+            'bright_white'      :    "\033[37;97m",
+
+            'on_bright_black'   :    "\033[40;100m", 
+            'on_bright_red'     :    "\033[41;101m",
+            'on_bright_green'   :    "\033[42;102m",
+            'on_bright_yellow'  :    "\033[43;103m",
+            'on_bright_blue'    :    "\033[44;104m",
+            'on_bright_magenta' :    "\033[45;105m",
+            'on_bright_cyan'    :    "\033[46;106m",
+            'on_bright_white'   :    "\033[47;107m",
             }
 
 
