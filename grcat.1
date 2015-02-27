@@ -48,6 +48,11 @@ is command to be executed when regexp matches. Its output will
 be mixed with normal stdout, use redirectors ( >/dev/null) if you want
 to supress it.
 
+.I replace
+means the regular expression match will be replaced by the value, all the
+preceeding regular expressions will be evaluated against the original text, all
+the following regular expressions will be evaluated against the replaced text
+
 .I skip
 can be either 
 .BR yes ",

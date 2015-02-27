@@ -1,5 +1,17 @@
 # this configuration file is suitable for displaying kernel log files
 
+
+# example of text substitution
+#regexp=\bda?emon
+#replace=angel
+#colours=red
+#======
+# example of text substitution
+regexp=(\d\d):(\d\d):(\d\d)
+replace=\1h\2m\3s
+======
+
+
 # display this line in yellow and stop further processing
 regexp=.*last message repeated \d+ times$
 colours=yellow
@@ -39,3 +51,4 @@ count=more
 regexp=connect
 colours=on_red
 count=more
+

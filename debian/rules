@@ -5,39 +5,31 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-build: build-stamp
-build-stamp:
-	dh_testdir
-
-	
-	# Add here commands to compile the package.
-	#$(MAKE)
-
-	touch build-stamp
-
 clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
-
-	# Add here commands to clean up after the build process.
-	#-$(MAKE) clean
-
 	dh_clean
 
-install: build
+install:
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs
 
 	# Add here commands to install the package into debian/tmp.
 	./install.sh `pwd`/debian/grc
 
-	touch install-stamp
+
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
+build-stamp:
+	# nothing to do
 
 # Build architecture-dependent files here.
-binary-arch: build install
+binary-arch: install
+    # nothing to do
 
 # Build architecture-independent files here.
 binary-indep: build install

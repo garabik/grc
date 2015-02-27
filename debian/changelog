@@ -1,8 +1,15 @@
+grc (1.7-1) unstable; urgency=low
+
+  * added `replace' keyword to replace arbitrary text
+  * switch to non-native Debian package
+
+ --  Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Fri, 27 Feb 2015 11:09:48 +0100
+
 grc (1.6) unstable; urgency=low
 
   * add several configuration files (thanks to Mrs. Smith)
 
- -- Radovan Garabik <garabik@kassiopeia.juls.savba.sk>  Wed, 30 Oct 2013 15:15:20 +0100
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Wed, 30 Oct 2013 15:15:20 +0100
 
 grc (1.5) unstable; urgency=low
 

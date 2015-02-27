@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 DESTDIR=$1
 BINDIR=$DESTDIR/usr/bin
 LIBDIR=$DESTDIR/usr/share/grc

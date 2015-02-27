@@ -3,11 +3,11 @@
 import os, re, string, sys, getopt, signal
 
 def version():
-    print ("Generic Colouriser 1.5")
+    print ("Generic Colouriser 1.7")
     sys.exit()
 
 def help():
-    print("""Generic Colouriser 1.5
+    print("""Generic Colouriser 1.7
 grc [options] command [args]
 Options:")
 -e --stderr    redirect stderr. If this option is selected,
@@ -76,7 +76,7 @@ if cfile == "":
         home = [os.environ['HOME']+"/.grc/grc.conf"]
     conffilenames = home + ["/etc/grc.conf"]
     for i in conffilenames:
-        if os.path.isfile(i):
+        `if os.path.isfile(i):
             conffile = i
             break
     regexplist = []

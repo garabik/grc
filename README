@@ -38,9 +38,9 @@ Configuration file consists of entries, one per regexp, entries are
     Each entry consists of several lines.
     Each line has form:
         keyword=value
-        where keyword is one of: regexp, colours, command, skip, count
+        where keyword is one of: regexp, colours, command, skip, replace, count
         Only regexp is mandatory, but it does not have much sense by itself
-        unless you specify at least a colour, skip or command keyword as well.
+        unless you specify at least a colour, skip, replace or command keyword as well.
 
         regexp is the regular expression to match
 
@@ -71,6 +71,24 @@ Configuration file consists of entries, one per regexp, entries are
         skip can be skip=yes, if that case the matched line is skipped
         (discarded from the output), or skip=no, when it is not skipped.
         Default (if you do not have skip keyword) is of course not skipped.
+
+        replace means the regular expression match will be replaced by the value
+
+            all the preceeding regular expressions will be evaluated against
+            the original text, but if they match and the replacement changes 
+            the length of the text, the colouring will *stay at the same positions*, 
+            which is probably not what you want - therefore put the `replace' rule
+            preferrably at the beginning of config file
+
+            all the following regular expressions will be evaluated against 
+            the replaced text, not the original
+
+            replacement is done by re.sub(), therefore you can use anything
+            python supports - in particular, \1, \2 etc... to include text
+            from the original matching groups, e.g:
+                regexp=(\d\d):(\d\d):(\d\d)
+                replace=\1h\2m\3s
+            will change time format from 09:43:59 into 09h43m59s
 
         count is one of words: once, more, stop, previous, block or unblock
 
@@ -207,21 +225,12 @@ Therefore it will miserably fail if fed input with invalid UTF-8
 characters.
 
 -----------
-Hint taken from logcoloriser README:
+Hint:
 
-To have your syslog show on your tty12 in colour, do:
-    mkfifo /dev/grc
-    replace (or copy and edit) the /etc/syslog.conf line
-    *.info;mail.*;authpriv.*;kern.*;local1.* |/dev/xconsole
-    with :
-    *.info;mail.*;authpriv.*;kern.*;local1.* |/dev/grc
-    and add to your syslog startup script :
-    grcat conf.log < /dev/grc >/dev/tty12 &
+Following commands will display nice coloured log in virtual console 12:
 
-Well, simpler approach seems to be to use something like this
-in your system startup script, if you have GNU tail:
+If you have GNU tail:
     tail --follow=name /var/log/syslog | grcat conf.log >/dev/tty12 
 or, if you have recent BSD tail:
-
     tail -F /var/log/syslog | grcat conf.log >/dev/tty12
 

@@ -97,7 +97,7 @@ while not is_last:
             break
         keyword, value = split(l[:-1], "=", 1)
         keyword = lower(keyword)
-        if not keyword in ["regexp", "colours", "count", "command", "skip"]:
+        if not keyword in ["regexp", "colours", "count", "command", "skip", "replace"]:
             raise ValueError("Invalid keyword")
         ll[keyword] = value
 
@@ -143,6 +143,11 @@ while 1:
         while 1:
             m = pattern['regexp'](line, pos)
             if m:
+                if 'replace' in pattern:
+                    line = re.sub(m.re, pattern['replace'], line)
+                    #m = pattern['regexp'](line, pos)
+                    #if not m:
+                    #    break
                 if 'colours' in pattern:
                     if currcount == "block":
                         blockflag = 1
@@ -185,7 +190,7 @@ while 1:
         cline = (length_line+1)*[colours['default']]
         for i in clist:
             # each position in the string has its own colour
-            if i[2]  == "prev":
+            if i[2] == "prev":
                 cline[i[0]:i[1]] = [colours['default']+prevcolour]*(i[1]-i[0])
             elif i[2] != "unchanged":
                 cline[i[0]:i[1]] = [colours['default']+i[2]]*(i[1]-i[0])

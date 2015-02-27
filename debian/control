@@ -2,12 +2,12 @@ Source: grc
 Section: text
 Priority: optional
 Maintainer: Radovan Garabík <garabik@kassiopeia.juls.savba.sk>
-Standards-Version: 3.7.2
-Build-Depends: debhelper (>=4)
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>=9)
 
 Package: grc
 Architecture: all
-Depends: python (>=2.6) | python3
+Depends: python, ${misc:Depends}
 Description: generic colouriser for everything
  generic colouriser, can be used to colourise logfiles,
  output of commands, arbitrary text....
