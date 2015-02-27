@@ -76,7 +76,7 @@ if cfile == "":
         home = [os.environ['HOME']+"/.grc/grc.conf"]
     conffilenames = home + ["/etc/grc.conf"]
     for i in conffilenames:
-        `if os.path.isfile(i):
+        if os.path.isfile(i):
             conffile = i
             break
     regexplist = []
