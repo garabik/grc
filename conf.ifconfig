@@ -24,7 +24,7 @@ regexp=(inet6?|netmask|broadcast)
 colours=cyan
 =======
 #flags
-regexp=(?<=[,<])[^,]*(?=[,>])
+regexp=(?<=[,<])[^,]+?(?=[,>])
 colours=blue
 =======
 # mtu

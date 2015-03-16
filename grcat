@@ -185,7 +185,13 @@ while 1:
                         break
                     if currcount == "more":
                         prevcount = "more"
-                        pos = m.end(0)
+                        newpos = m.end(0)
+                        # special case, if the regexp matched but did not consume anything,
+                        # advance the position by 1 to escape endless loop
+                        if newpos == pos:
+                            pos += 1
+                        else:
+                            pos = newpos
                     else:
                         prevcount = "once"
                         pos = len(line)
