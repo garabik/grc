@@ -1,3 +1,10 @@
+grc (1.8-1) unstable; urgency=low
+
+  * added support for Ki, Gi, Ti for df (thanks to Juraj Bednár)
+  * added example aliases for bash  (thanks to Juraj Bednár)
+
+ --  Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Mon, 16 Mar 2015 14:38:42 +0100
+
 grc (1.7-1) unstable; urgency=low
 
   * added `replace' keyword to replace arbitrary text (idea by Ben Hoskins)

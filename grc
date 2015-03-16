@@ -3,11 +3,11 @@
 import os, re, string, sys, getopt, signal
 
 def version():
-    print ("Generic Colouriser 1.7")
+    print ("Generic Colouriser 1.8rc")
     sys.exit()
 
 def help():
-    print("""Generic Colouriser 1.7
+    print("""Generic Colouriser 1.8rc
 grc [options] command [args]
 Options:")
 -e --stderr    redirect stderr. If this option is selected,
