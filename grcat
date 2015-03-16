@@ -154,7 +154,8 @@ while 1:
     line = freadline()
     if line == "" :
         break
-    line = line[:-1]
+    if line[-1] in '\r\n':
+        line = line[:-1]
     clist = []
     skip = 0
     for pattern in regexplist:
