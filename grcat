@@ -87,6 +87,10 @@ conffile = None
 if 'HOME' in os.environ:
     home = [os.environ['HOME']+"/.grc/"]
 conffilepath = [""] + home + ["/usr/local/share/grc/", "/usr/share/grc/"]
+if len(sys.argv) != 2:
+    sys.stderr.write("You are not supposed to call grcat directly, but the usage is: grcat conffile\n")
+    sys.exit(1)
+
 conffile_arg = sys.argv[1] # tentative conffile
 for i in conffilepath:
     if os.path.isfile(i+conffile_arg):
