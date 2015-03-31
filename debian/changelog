@@ -1,3 +1,9 @@
+grc (1.9) unstable; urgency=low
+
+  * add `colors' as a synonym of `colours' (and the singulars, too)
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Tue, 31 Mar 2015 17:44:11 +0200
+
 grc (1.8-1) unstable; urgency=low
 
   * added support for Ki, Gi, Ti for df (thanks to Juraj Bednár)

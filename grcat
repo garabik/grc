@@ -121,6 +121,8 @@ while not is_last:
             break
         keyword, value = split(l[:-1], "=", 1)
         keyword = lower(keyword)
+        if keyword in  ('colors', 'colour', 'color'):
+            keyword = 'colours'
         if not keyword in ["regexp", "colours", "count", "command", "skip", "replace"]:
             raise ValueError("Invalid keyword")
         ll[keyword] = value
