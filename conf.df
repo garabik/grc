@@ -19,7 +19,7 @@ regexp=\s\d*[.,]?\dTi?\s
 colours=bold red
 ======
 # Mounted on
-regexp=/\w*
+regexp=/[-\w\d./]*
 colours=bold green
 ======
 # Use 0-60%
