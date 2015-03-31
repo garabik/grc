@@ -234,3 +234,6 @@ If you have GNU tail:
 or, if you have recent BSD tail:
     tail -F /var/log/syslog | grcat conf.log >/dev/tty12
 
+If you want to start using grc automatically with supported commands, add
+		source /etc/grc.bashrc
+to your .bash_profile (assuming you copied grc.bashrc to /etc)
