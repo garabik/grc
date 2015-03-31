@@ -1,4 +1,4 @@
-grc (1.9) unstable; urgency=low
+grc (1.9-1) unstable; urgency=low
 
   * add `colors' as a synonym of `colours' (and the singulars, too)
 
