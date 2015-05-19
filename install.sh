@@ -17,7 +17,8 @@ mkdir -p $BINDIR || true
 cp -fv grc grcat $BINDIR
 mkdir -p $LIBDIR || true
 cp -fv conf.* $LIBDIR
-cp -fv $MANDIR/man1/grc.1 $MANDIR
-cp -fv $MANDIR/man1/grcat.1 $MANDIR
+mkdir -p $MANDIR/man1
+cp -fv grc.1 $MANDIR/man1
+cp -fv grcat.1 $MANDIR/man1
 cp -fv grc.conf $CONFDIR
 cp -fv grc.bashrc $PROFILEDIR
