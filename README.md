@@ -4,13 +4,14 @@ Generic Colouriser
 Author
 ------
 Radovan Garabík  http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
+
 garabik @ kassiopeia.juls.savba.sk
 
 Quick Usage
 -----------
 For the impatient - try following commands:
 
-````
+```shell
 grc netstat
 grc ping hostname
 grc tail /var/log/syslog
@@ -37,16 +38,12 @@ Lines beginning with # or empty lines are ignored.
 
 Each entry consists of several lines.
 
-Each line has form:
-
-````
-keyword=value
-````
-where keyword is one of: `regexp`, `colours`, `command`, `skip`, `replace`, `count`
+Each line has form `keyword=value` where keyword is one of: `regexp`, `colours`, `command`, `skip`, `replace`, `count`.
 
 Only `regexp` is mandatory, but it does not have much sense by itself unless you specify at least a `colour`, `skip`, `replace` or `command` keyword as well.
 
 * `regexp` is the regular expression to match
+
 * `colours` is the list of colours, separated by commas (you can specify only one colour), each colour per one regexp group specified in regexp. 
 
   If you use special colour name "previous", colour of the previous line of text will be used (actually, if both the first and last character of the previous line are of different colour than the default one, colour of the first one will be used). 
@@ -65,10 +62,10 @@ Only `regexp` is mandatory, but it does not have much sense by itself unless you
 
   All the following regular expressions will be evaluated against the replaced text, not the original replacement is done by re.sub(), therefore you can use anything python supports - in particular, \1, \2 etc... to include text from the original matching groups, e.g:
   
-  	````
+  	```INI
         regexp=(\d\d):(\d\d):(\d\d)
         replace=\1h\2m\3s
-	```` 
+	``` 
   
   will change time format from `09:43:59` into `09h43m59s`
 
@@ -83,16 +80,17 @@ Only `regexp` is mandatory, but it does not have much sense by itself unless you
 
 Example:
 
-````
+```INI
 # this is probably a pathname
 regexp=/[\w/\.]+
 colour=green
 count=more
-````
+```
 This will match `/usr/bin`, `/usr/local/bin/`, `/etc/init.d/syslogd` and similar strings and paint it with green.
 
 Another example:
-````
+
+```INI
 regexp=^-{1,2}\s{0,1}$
 colours=red
 count=block
@@ -100,7 +98,7 @@ count=block
 regexp=^\s{0,5}$
 colours=default
 count=unblock
-````
+```
 
 This will turn all correctly formatted mail signatures red.
 
@@ -108,22 +106,22 @@ Regular expressions are evaluated from top to bottom, this allows nested and ove
 
 Typical usage:
 
-````
+```Shell
 grcat conf.log < /var/log/syslog
 /usr/sbin/traceroute www.linux.org | grcat conf.traceroute
 grcat conf.esperanto < Fundamento.txt  | less -r
-````
+```
 
 grc
 ---
 
 To facilitate the use, command grc acts as frontend for `grcat`, automatically  choosing the configuration files, so you can write:
 
-````
+```Shell
 grc netstat
 grc ping hostname
 grc tail /var/log/syslog
-````
+```
 
 etc...
 
@@ -133,7 +131,7 @@ grc.conf
 --------
 Configuration file for grcat is determined by `/etc/grc.conf` or  `~/.grc/grc.conf` file.
 
-Format of `/etc/grc.conf` or `~/.grc/grc.conf`: each entry consists of 2 lines, between entries there can be any number of empty lines or lines beginning with `#` (comments)
+Format of `/etc/grc.conf` or `~/.grc/grc.conf`: each entry consists of 2 lines, between entries there can be any number of empty lines or lines beginning with "#" (comments)
 
 First line is regular expression, second line the name of configuration file for grcat.
 
@@ -141,7 +139,7 @@ Configuration file after the first regular expression matching the rest of line 
 
 For example, if you have 
 
-````
+```INI
 # log file
 \b\w+\b.*log\b
 conf.log
@@ -149,7 +147,7 @@ conf.log
 # traceroute command
 (^|[/\w\.]+/)traceroute\s
 conf.traceroute
-````
+```
 
 in your `/etc/grc.conf`, then typing `grc cat /var/log/syslog` will use `conf.log` to colourise the output,
 `grc /usr/sbin/traceroute www.linux.org` will use `conf.traceroute`.
@@ -194,12 +192,12 @@ Additional colours can be: `dark`, `italic`, `rapidblink`, `strikethrough`. Thes
 
 There can be more attributes per line (separated by space), e.g.
 
-````
+```INI
 # this is probably a pathname
 regexp=/[\w/\.]+
 colours=bold blink green
 count=more
-````
+```
 
 will display pathnames in bold blinking green
 
@@ -216,15 +214,16 @@ Hints
 Following commands will display nice coloured log in virtual console 12:
 
 If you have GNU tail:
-````
+
+```Shell
 tail --follow=name /var/log/syslog | grcat conf.log >/dev/tty12 
-````
+```
 
 or, if you have recent BSD tail:
 
-````
+```Shell
 tail -F /var/log/syslog | grcat conf.log >/dev/tty12
-````
+```
 
-If you want to start using grc automatically with supported commands, add source /etc/grc.bashrc
-to your .bash_profile (assuming you copied grc.bashrc to /etc)
+If you want to start using grc automatically with supported commands, add source `/etc/grc.bashrc`
+to your `.bash_profile` (assuming you copied `grc.bashrc` to `/etc`)
