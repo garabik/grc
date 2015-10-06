@@ -3,9 +3,9 @@
 set -e
 
 DESTDIR=$1
-BINDIR=$DESTDIR/usr/bin
-LIBDIR=$DESTDIR/usr/share/grc
-MANDIR=$DESTDIR/usr/share/man/man1
+BINDIR=$DESTDIR/usr/local/bin
+LIBDIR=$DESTDIR/usr/local/share/grc
+MANDIR=$DESTDIR/usr/local/share/man/man1
 CONFDIR=$DESTDIR/etc
 
 mkdir -p $BINDIR || true
