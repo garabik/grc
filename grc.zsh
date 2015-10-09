@@ -30,9 +30,9 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
 
   # Set alias for available commands.
   for cmd in $cmds ; do
-  if (( $+commands[$cmd] )) ; then
-    alias $cmd="grc --colour=auto $cmd"
-  fi
+    if (( $+commands[$cmd] )) ; then
+      alias $cmd="grc --colour=auto $cmd"
+    fi
   done
 
   # Clean up variables
