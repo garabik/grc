@@ -180,4 +180,12 @@ If you want to start using grc automatically with supported commands, add
 
     source /etc/grc.bashrc
 
-to your `.bash_profile` (assuming you copied `grc.bashrc` to `/etc`)
+To set aliases for supported commands, append to your `~/.bash_profile`:
+    [[ -s "/etc/grc.bashrc" ]] && source /etc/grc.bashrc
+
+Or for zsh users, append to `~/.zshrc`:
+    [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+
+(assuming you copied `grc.bashrc` and `grc.zsh` to `/etc`)
+
+
