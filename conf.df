@@ -1,5 +1,5 @@
 # FS
-regexp=^.*?\s
+regexp=^(?!Filesystem).*?\s
 colours=green
 ======
 # Size 'K'
@@ -19,7 +19,7 @@ regexp=\s\d*[.,]?\dTi?\s
 colours=bold red
 ======
 # Mounted on
-regexp=/[-\w\d./]*
+regexp=/[-\w\d./]*$
 colours=bold green
 ======
 # Use 0-60%
