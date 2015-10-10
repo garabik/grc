@@ -2,15 +2,23 @@
 
 set -e
 
-DESTDIR=$1
-BINDIR=$DESTDIR/usr/bin
-LIBDIR=$DESTDIR/usr/share/grc
-MANDIR=$DESTDIR/usr/share/man/man1
-CONFDIR=$DESTDIR/etc
+PREFIX=$1
+if [ -z $PREFIX ]; then
+  PREFIX=/usr/local
+fi
+
+BINDIR=$PREFIX/bin
+LIBDIR=$PREFIX/share/grc
+MANDIR=$PREFIX/share/man
+CONFDIR=/etc
+PROFILEDIR=$CONFDIR/profile.d
 
 mkdir -p $BINDIR || true
 cp -fv grc grcat $BINDIR
 mkdir -p $LIBDIR || true
 cp -fv conf.* $LIBDIR
-mkdir -p $CONFDIR || true
+mkdir -p $MANDIR/man1
+cp -fv grc.1 $MANDIR/man1
+cp -fv grcat.1 $MANDIR/man1
 cp -fv grc.conf $CONFDIR
+cp -fv grc.bashrc $PROFILEDIR
