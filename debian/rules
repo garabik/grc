@@ -18,7 +18,7 @@ install:
 	dh_installdirs
 
 	# Add here commands to install the package into debian/tmp.
-	./install.sh `pwd`/debian/grc `pwd`/debian/grc
+	./install.sh `pwd`/debian/grc/usr `pwd`/debian/grc
 
 
 build: build-arch build-indep
