@@ -22,8 +22,8 @@ cp -fv conf.* $LIBDIR
 mkdir -p $MANDIR/man1
 cp -fv grc.1 $MANDIR/man1
 cp -fv grcat.1 $MANDIR/man1
-mkdir -p $CONFDIR/man1
+mkdir -p $CONFDIR
 cp -fv grc.conf $CONFDIR
-mkdir -p $PROFILEDIR/man1
+mkdir -p $PROFILEDIR
 cp -fv grc.bashrc $PROFILEDIR
 
