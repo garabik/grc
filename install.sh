@@ -3,14 +3,16 @@
 set -e
 
 PREFIX=$1
+ETCPREFIX=$2
 if [ -z $PREFIX ]; then
   PREFIX=/usr/local
 fi
 
+
 BINDIR=$PREFIX/bin
 LIBDIR=$PREFIX/share/grc
 MANDIR=$PREFIX/share/man
-CONFDIR=/etc
+CONFDIR=$ETCPREFIX/etc
 PROFILEDIR=$CONFDIR/profile.d
 
 mkdir -p $BINDIR || true
@@ -22,3 +24,4 @@ cp -fv grc.1 $MANDIR/man1
 cp -fv grcat.1 $MANDIR/man1
 cp -fv grc.conf $CONFDIR
 cp -fv grc.bashrc $PROFILEDIR
+
