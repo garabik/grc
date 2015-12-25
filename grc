@@ -103,7 +103,6 @@ if cfile != "" and colour:
     if stderrff:
         choe, chie = os.pipe()
 
-
     pidp = os.fork()
     if pidp == 0: # child
         if stdoutff:
