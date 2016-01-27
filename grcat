@@ -156,8 +156,9 @@ while not is_last:
         ll['colours'] = colstrings
 
     cs = ll['count']
-    ll['regexp'] = re.compile(ll['regexp']).search
-    regexplist.append(ll)
+    if ll.has_key('regexp'):
+        ll['regexp'] = re.compile(ll['regexp']).search
+        regexplist.append(ll)
 
 prevcolour = colours['default']
 prevcount = "more"
