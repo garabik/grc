@@ -1,0 +1,71 @@
+# Chains
+regexp=^Chain\s(\S+)\s\(.*$
+colours=white, bold bright_blue
+======
+# Title
+regexp=target\s+prot\s+opt\s+source\s+destination
+colours=bold black
+======
+# ACCEPT
+regexp=ACCEPT
+colours=bright_green
+======
+# DROP
+regexp=DROP
+colours=red
+======
+# Reject
+regexp=REJECT
+colours=bright_red
+======
+# QUEUE
+regexp=QUEUE
+colours=bright_cyan
+======
+# RETURN
+regexp=RETURN
+colours=cyan
+======
+# MASQUERADE
+regexp=MASQUERADE
+colours=bright_magenta
+======
+# DNAT
+regexp=DNAT
+colours=magenta
+======
+# tcp
+regexp=\stcp\s
+colours=bold cyan
+======
+# udp
+regexp=\sudp\s
+colours=bold magenta
+======
+# icmp
+regexp=\sicmp\s
+colours=cyan
+======
+# all
+regexp=\sall\s
+colours=red
+======
+# dpt
+regexp=\sdpts?:([^\s]*)(\s|$)
+colours=default,bold yellow
+======
+# masq ports
+regexp=\smasq ports:\s(\d+)-?(\d+)?
+colours=default,bold yellow,bold yellow
+======
+# IP
+regexp=(!)?((?:\d{1,3}\.){3}(?:\d{1,3}))(?:\/|:)?(\d+)?
+colours=default,red,bright_white,magenta
+======
+# anywhere
+regexp=\s(anywhere|0.0.0.0/0)\s
+colours=bright_black
+======
+# (Num references)
+regexp=\((\d+) references\)
+colours=default,bright_green
