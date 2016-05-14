@@ -1,0 +1,11 @@
+# Values
+regexp=^\s([^:]+):(.+)$
+colours=default,cyan
+======
+# Client
+regexp=^(Client):
+colours=default,bold cyan
+======
+# Server
+regexp=^(Server):
+colours=default,bold green

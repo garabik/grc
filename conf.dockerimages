@@ -1,19 +1,43 @@
-# REPO, TAG
+# HEADERS
+regexp=(?:\s|^)(REPOSITORY|TAG|IMAGE ID|CREATED|SIZE)(?:\s|$)
+colours=default,underline
+=====
+# REPO, TAG, IMAGE ID
 regexp=^([a-z]+\/?[^\s]+)\s+([^\s]+)\s+(\w+)
-colours=default,bold white,cyan,bold black
+colours=default,bold white,bright_cyan,bright_black
+=====
+# latest
+regexp=\s+(latest)\s+
+colours=unchanged,cyan
+=====
+# REPOSITORY (Image name)
+regexp=^(?:([a-z\-_0-9]+)/)*([a-z\-_0-9]+)\s
+colours=default,yellow,bright_white
 =====
 # images without name
 regexp=^<none>.*$
 colours=bold red
 =====
 # Size 'K'
-regexp=\s\d*[.,]?\d\sKB?
+regexp=\s\d*[\.,]?\d*\s(KB?|B)
 colours=green
 ======
 # Size 'M'
-regexp=\s\d*[.,]?\d\sMB?
+regexp=\s\d*[\.,]?\d*\sMB?
 colours=yellow
 ======
 # Size 'G'
-regexp=\s\d*[.,]?\d\sGB?
+regexp=\s\d*[\.,]?\d*\sGB?
+colours=red
+=====
+# CREATED days
+regexp=\s+\d+\sdays\s\w+
+colours=green
+======
+# CREATED weeks
+regexp=\s+\d+\sweeks\s\w+
+colours=yellow
+======
+# CREATED months
+regexp=\s+\d+\smonths\s\w+
 colours=red
