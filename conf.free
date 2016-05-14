@@ -1,0 +1,27 @@
+# Size 'K'
+regexp=\s\d*[.,]?\dKi?
+colours=green
+======
+# Size 'M'
+regexp=\s\d*[.,]?\dMi?
+colours=yellow
+======
+# Size 'G'
+regexp=\s\d*[.,]?\dGi?
+colours=red
+======
+# Size 'T'
+regexp=\s\d*[.,]?\dTi?
+colours=bold red
+======
+# Mem
+regexp=^Mem
+colours=bold cyan
+======
+# Swap
+regexp=^Swap
+colours=bold magenta
+======
+# Zero
+regexp=\s+0\w?(\s|$)
+colours=green

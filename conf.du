@@ -1,0 +1,27 @@
+# Cannot read
+regexp=.*cannot read directory.*(Permission denied)$
+colours=red,bold red
+======
+# Path
+regexp=\.\/([-\w\d\.\+\s]+)(\/[-\w\d\.\/]+)*
+colours=default,bold blue,blue
+======
+# Size 'K'
+regexp=\d*[.,]?\dKi?\s
+colours=green
+======
+# Size 'M'
+regexp=\d*[.,]?\dMi?\s
+colours=yellow
+======
+# Size 'G'
+regexp=\d*[.,]?\dGi?\s
+colours=red
+======
+# Size 'T'
+regexp=\d*[.,]?\dTi?\s
+colours=bold red
+======
+# Total
+regexp=(.*)\s+(total)$
+colours=bold yellow on_blue
