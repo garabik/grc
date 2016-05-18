@@ -12,7 +12,7 @@ then
     alias ld='colourify ld'
     alias netstat='colourify netstat'
     alias ping='colourify ping'
-    alias traceroute='colourify /usr/sbin/traceroute'
+    alias traceroute='colourify traceroute'
     alias traceroute6='colourify traceroute6'
     alias head='colourify head'
     alias tail='colourify tail'
