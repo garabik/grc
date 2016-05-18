@@ -20,5 +20,6 @@ then
     alias mount='colourify mount'
     alias ps='colourify ps'
     alias mtr='colourify mtr'
+    alias ifconfig='colourify ifconfig'
     alias df='colourify df'
 fi
