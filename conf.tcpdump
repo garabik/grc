@@ -1,0 +1,7 @@
+# From Address
+regexp=((\d+\.)+)(\w+)\s>
+colours=green
+-
+# To Address
+regexp=>\s((\d+\.)+)(\w+)
+colours=cyan

@@ -1,0 +1,19 @@
+# Filename
+regexp=\S+\s(\S+)
+colours=bold
+-
+# Normal
+regexp=[aAcCdDeijsStTu]
+colours=cyan
+-
+# User Namespace
+regexp=[iadA]
+colours=bright_green
+-
+# Read Only
+regexp=[EhINXZ]
+colours=red
+-
+# Separators
+regexp=[\-]
+colours=dark

@@ -2,6 +2,10 @@
 regexp=inet\s([^\/]+)\/(\d+)
 colours=default,bold yellow,bold magenta
 =====
+# broadcast
+regexp=brd\s([^}s]+)
+colours=default,dark
+=====
 # IP6
 regexp=inet6\s([^\/]+)\/(\d+)
 colours=default,yellow,magenta
@@ -22,10 +26,14 @@ colours=default,bright_white,bold red,bold red
 regexp=(\d+):\s(\S+):.+state (UNKNOWN)
 colours=default,bright_white,bold cyan,cyan
 =====
+# State DORMANT
+regexp=(\d+):\s(\S+):.+state (DORMANT)
+colours=default,bright_white,bold cyan,cyan
+=====
 # < >
 regexp=\s<([^>]+)>
 colours=default,cyan
 =====
 # Master dev
 regexp=\smaster\s(\S+)\s
-colours=default,on_blue black
+colours=default,on_blue white

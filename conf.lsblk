@@ -3,12 +3,16 @@ regexp=^[a-z]+\d?\s
 colours=bold white
 ======
 # Partition
-regexp=([├└─│]+)(\S+)
+regexp=([├└─│]+|[\|\`\-]+)(\S+)
 colours=bright_green
 ======
 # Partition - LVM
-regexp=\s+([├└─│]+)(\S+)
+regexp=\s+([├└─│]+|[\|\`\-]+)(\S+)
 colours=default,default,bright_cyan
+======
+# Type crypt
+regexp=\scrypt\s
+colours=on_magenta white
 ======
 # Type disk
 regexp=\sdisk\s
@@ -45,3 +49,7 @@ colours=bold red
 # Mount
 regexp=\s\/.*$
 colours=bold yellow
+======
+# Mount [SWAP]
+regexp=\s\[(SWAP)\]
+colours=default,bright_magenta

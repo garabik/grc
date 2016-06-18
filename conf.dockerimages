@@ -30,6 +30,10 @@ colours=yellow
 regexp=\s\d*[\.,]?\d*\sGB?
 colours=red
 =====
+# CREATED hours
+regexp=\s+\d+\shours\s\w+
+colours=bright_green
+======
 # CREATED days
 regexp=\s+\d+\sdays\s\w+
 colours=green

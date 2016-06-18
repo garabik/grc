@@ -20,5 +20,5 @@ count=more
 =======
 # lines affected
 regexp=^@@ .* @@$
-colours=cyan
+colours=magenta
 count=more

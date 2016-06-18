@@ -31,4 +31,6 @@ then
     alias mount='colourify mount'
     alias ps='colourify ps'
     alias mtr='colourify mtr'
+    alias semanage='colourify semanage'
+    alias getsebool='colourify setsebool'
 fi

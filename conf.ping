@@ -1,31 +1,43 @@
 # ip number
 regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
-colours=magenta
+colours=bright_blue
 =======
 # ipv6 number
 regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
 colours=magenta
 =======
-# time
-regexp=\d+\.\d+\sms
-colours=green
+# icmp_seq=#
+regexp=icmp_seq=(\d+)
+colours=default,yellow
+=======
+# name
+regexp=(?:[fF]rom|PING)\s(\S+)\s
+colours=default,blue
 =======
 # time
-regexp=\d+\sms
-colours=green
-======
-# time
-regexp=time=
-colours=yellow
+regexp=([0-9\.]+)\s?ms
+colours=default,green
 =======
 # DUP
 regexp=DUP\!
 colours=red
 =======
-# (,)
-regexp=\(|\)
-colours=yellow
+# Destination Host Unreachable
+regexp=Destination Host Unreachable
+colours=red
 =======
 # unknown host
 regexp=.+unknown\shost\s(.+)
 colours=red,bold red
+-
+# statustics header
+regexp=--- \S+ ping statistics ---
+colours=bold
+-
+# last line min/avg/max/mdev
+regexp=rtt (min)/(avg)/(max)/(mdev)
+colours=default,bright_yellow,bright_blue,bright_red,bright_magenta
+-
+# last line values
+regexp=\=\s([0-9\.]+)\/([0-9\.]+)\/([0-9\.]+)\/([0-9\.]+)
+colours=default,bright_yellow,bright_blue,bright_red,bright_magenta

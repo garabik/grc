@@ -1,0 +1,43 @@
+# Header
+regexp=Using default tag: (\w+)
+colours=default,bold yellow
+======
+# Image
+regexp=Pulling from ([^\s]+)
+colours=default,bold green
+======
+# HASH
+regexp=^\w{12}:
+colours=default
+======
+# 1_Pulling fs layer
+regexp=Pulling fs layer
+colours=yellow
+======
+# 2_Waiting
+regexp=Waiting
+colours=bright_yellow
+======
+# 3_Verifying Checksum
+regexp=Verifying Checksum
+colours=bold yellow
+======
+# 4_Download complete
+regexp=Download complete
+colours=green
+======
+# 5_Pull Complete
+regexp=Pull complete
+colours=bold green
+======
+# Already exists
+regexp=Already exists
+colours=blue
+======
+# Status Updated
+regexp=Image is up to date
+colours=bold green
+======
+# Status Downloaded
+regexp=Downloaded newer image
+colours=bold blue

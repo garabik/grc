@@ -1,0 +1,35 @@
+# Scan Title
+regexp=Nmap scan report for (\S+)\s\(([^\)]+)\)
+colours=default,bold green, bold magenta
+-
+# up
+regexp=Host is (up)
+colours=default, bold green
+-
+# Failed to resolve
+regexp=Failed\sto\sresolve\s\"(\S+)\"
+colours=red,bold red
+-
+# Closed ports
+regexp=Not shown: (\d+)\s(closed|filtered)\sports
+colours=default,bright_red,red
+-
+# Titles
+regexp=^PORT.*$|^HOP.*
+colours=bold
+-
+# Ports
+regexp=^(\d+)\/(\w+)\s+(\w+)\s+(\S+)
+colours=default,bold green,magenta,cyan,bold yellow
+-
+# Ports Details
+regexp=^\|_?(.*)
+colours=bold green,default
+-
+# Trace
+regexp=^\d+\s+(\d+\.\d+\sms)[^0-9]*(\d+\.\d+\.\d+\.\d+)
+colours=default,green,magenta
+-
+# Network Distance:
+regexp=Network Distance:\s(\d+)
+colours=default,bold green

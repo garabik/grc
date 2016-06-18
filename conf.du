@@ -1,25 +1,25 @@
-# Cannot read
-regexp=.*cannot read directory.*(Permission denied)$
-colours=red,bold red
+# Cannot read STDERR, not working
+regexp=^du.*
+colours=red
 ======
 # Path
-regexp=\.\/([-\w\d\.\+\s]+)(\/[-\w\d\.\/]+)*
+regexp=\s+[\.\/]+([\w\s\-\_\.]+)(\/.*)?$
 colours=default,bold blue,blue
 ======
 # Size 'K'
-regexp=\d*[.,]?\dKi?\s
+regexp=^\d*[.,]?\dKi?\s
 colours=green
 ======
 # Size 'M'
-regexp=\d*[.,]?\dMi?\s
+regexp=^\d*[.,]?\dMi?\s
 colours=yellow
 ======
 # Size 'G'
-regexp=\d*[.,]?\dGi?\s
+regexp=^\d*[.,]?\dGi?\s
 colours=red
 ======
 # Size 'T'
-regexp=\d*[.,]?\dTi?\s
+regexp=^\d*[.,]?\dTi?\s
 colours=bold red
 ======
 # Total

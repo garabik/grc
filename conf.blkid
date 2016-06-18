@@ -1,10 +1,10 @@
 # Blk
-regexp=^(.+):\s
-colours=bright_green
+regexp=^(/dev/)(.+):\s
+colours=default,green,bright_green
 ======
 # Blk mapper
-regexp=^(/dev/mapper/)(.+):\s
-colours=default,green,bright_green
+regexp=^/dev/(mapper/)(.+):\s
+colours=unchanged,underline green,bright_green
 ======
 # UUID
 regexp=\sUUID="([^"]+)

@@ -10,6 +10,14 @@ colours=default,yellow,bold yellow
 regexp=^(default|[^ \/]+(\/(\d+))?)
 colours=green,bright_green,default,green
 =====
+# Network DEFAULT
+regexp=^default
+colours=on_green bold white
+=====
 # Local
 regexp=(src)\s(\S+)\s?
 colours=default,magenta,bold magenta
+=====
+# proto
+regexp=(proto)\s(\S+)\s
+colours=default,default,dark yellow
