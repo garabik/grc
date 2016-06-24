@@ -14,6 +14,14 @@ Being overflooded with different logfile colo(u)?ri(s|z)ers, colortails, gccolor
 
 Two programs are provided: `grc` and `grcat`.  The main is `grcat`, which acts as a filter, i.e. taking standard input, colourising it and writing to standard output.
 
+
+## Instalation
+
+
+    git clone https://github.com/garabik/grc
+    cd grc 
+    ./install.sh
+
 ## Configuration
 
 `grcat` takes as a parameter the name of configuration file.
