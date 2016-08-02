@@ -1,5 +1,5 @@
 # hostname
-regexp=\s\w+[\w\-\.]+\w+
+regexp=\w+[\w\-\.]+\.[a-z]+
 colours=bold yellow
 count=once
 -
