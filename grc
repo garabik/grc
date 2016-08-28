@@ -2,10 +2,6 @@
 
 import os, re, string, sys, getopt, signal
 
-use_pty = 1
-
-if use_pty:
-    import pty
 
 def version():
     print ("Generic Colouriser 1.9.1test")
@@ -20,6 +16,7 @@ Options:")
 -s --stdout    redirect stdout, even if -e is selected
 -c name --config=name    use name as configuration file for grcat
 --colour=word  word is one of: on, off, auto
+--pty          run command in pseudoterminal (experimental)
 """)
     sys.exit()
 
@@ -34,7 +31,7 @@ def catch_signal(signum, frame):
 
 
 try:
-    optlist, args = getopt.getopt(sys.argv[1:], "sec:", ["stdout", "stderr", "config=", "colour="] )
+    optlist, args = getopt.getopt(sys.argv[1:], "sec:", ["stdout", "stderr", "config=", "colour=", "pty"] )
 except:
     help()
 
@@ -48,6 +45,7 @@ stderrf = 0
 cfile = ""
 
 colour = 1
+use_pty = 0
 
 for i in optlist:
     if i[0] in ["--stderr", "-e"]:
@@ -67,6 +65,8 @@ for i in optlist:
             colour = sys.stdout.isatty()
         else:
             help()
+    elif i[0] == '--pty':
+        use_pty = 1
 
 stdoutff = 1
 stderrff = 0
@@ -75,6 +75,9 @@ if stderrf == 1:
     stderrff = 1
 if stdoutf == 1:
     stdoutff = 1
+
+if use_pty:
+    import pty
 
 conffile = None
 if cfile == "":
