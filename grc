@@ -29,7 +29,6 @@ def catch_signal(signum, frame):
     except OSError: # if the subprocess already died
         pass
 
-
 try:
     optlist, args = getopt.getopt(sys.argv[1:], "sec:", ["stdout", "stderr", "config=", "colour=", "pty"] )
 except:
@@ -116,7 +115,7 @@ if cfile != "" and colour:
         pidp, pty_fd = pty.fork()
     else:
         pidp = os.fork()
-    if pidp == 0: # child
+    if pidp == 0: # child, command to run
         if stdoutff:
             # connect child (this) stdout to pipe write end
             if not use_pty:
@@ -132,8 +131,8 @@ if cfile != "" and colour:
 
     if stdoutff:
         pido = os.fork()
-        if pido == 0: # child
-            # connect grcat's stdin to pipe read end
+        if pido == 0: # child, grcat
+            # connect grcat's stdin to pipe read end, or pty master
             if use_pty:
                 os.dup2(pty_fd, 0)
             else:
