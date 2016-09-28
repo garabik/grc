@@ -26,7 +26,7 @@ Each entry consists of several lines.
 
 Each line has form: `keyword=value`
 
-where keyword is one of: regexp, colours, command, skip, replace, count
+where keyword is one of: regexp, colours, command, concat, skip, replace, count
 
 Only regexp is mandatory, but it does not have much sense by itself unless you specify at least a colour, skip, replace or command keyword as well.
 
@@ -43,6 +43,8 @@ Yet another special name is an arbitrary string enclosed in straight quotes. Thi
 This is useful on a 256-colour enabled xterm, where e.g.  `colours="\033[38;5;22m"` will give you a dark green (inspired by Rutger Ovidius). Caveat: the string cannot contain a comma. This is due to my laziness :-)
 
 **command** is command to be executed when regexp matches. Its output will be mixed with normal stdout, use redirectors (`>/dev/null`) if you want to suppress it.
+
+**concat** is the name of a file which the current line will be appended to when the regexp matches.
 
 **skip** can be `skip=yes`, if that case the matched line is skipped (discarded from the output), or `skip=no`, when it is not skipped. Default (if you do not have skip keyword) is of course not skipped.
 

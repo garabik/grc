@@ -130,7 +130,7 @@ while not is_last:
         keyword = lower(keyword)
         if keyword in  ('colors', 'colour', 'color'):
             keyword = 'colours'
-        if not keyword in ["regexp", "colours", "count", "command", "skip", "replace"]:
+        if not keyword in ["regexp", "colours", "count", "command", "skip", "replace", "concat"]:
             raise ValueError("Invalid keyword")
         ll[keyword] = value
 
@@ -210,6 +210,11 @@ while 1:
                     else:
                         prevcount = "once"
                         pos = len(line)
+                if 'concat' in pattern:
+                    with open(pattern['concat'], 'a') as f :
+                        f.write(line + '\n')
+                    if 'colours' not in pattern:
+                        break
                 if 'command' in pattern:
                     os.system(pattern['command'])
                     if 'colours' not in pattern:
