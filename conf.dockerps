@@ -1,5 +1,5 @@
 # HEADERS
-regexp=(?:\s|^)(CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES)(?:\s|$)
+regexp=(?:\s|^)(CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES|Name|Command|State|Ports)(?:\s|$)
 colours=default,underline
 ======
 # Commands
