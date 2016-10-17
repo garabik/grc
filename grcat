@@ -84,9 +84,22 @@ def get_colour(x):
 
 home = []
 conffile = None
-if 'HOME' in os.environ:
-    home = [os.environ['HOME']+"/.grc/"]
-conffilepath = [""] + home + ["/usr/local/share/grc/", "/usr/share/grc/"]
+xdg_config = os.environ.get('XDG_CONFIG_HOME')
+xdg_data = os.environ.get('XDG_DATA_HOME')
+home = os.environ.get('HOME')
+if home and not xdg_config:
+    xdg_config = home + '/.config'
+if home and not xdg_data:
+    xdg_data = home + '/.local/share'
+
+conffilepath = [""]
+if xdg_data:
+    conffilepath += [xdg_data + '/grc/']
+if xdg_config:
+    conffilepath += [xdg_config + '/grc/']
+if home:
+    conffilepath += [home + '/.grc/']
+conffilepath += ['/usr/local/share/grc/', '/usr/share/grc/']
 if len(sys.argv) != 2:
     sys.stderr.write("You are not supposed to call grcat directly, but the usage is: grcat conffile\n")
     sys.exit(1)

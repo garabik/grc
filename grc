@@ -81,10 +81,17 @@ if use_pty:
 
 conffile = None
 if cfile == "":
-    home = []
-    if 'HOME' in os.environ:
-        home = [os.environ['HOME']+"/.grc/grc.conf"]
-    conffilenames = home + ["/etc/grc.conf"]
+    home = os.environ.get('HOME')
+    xdg  = os.environ.get('XDG_CONFIG_HOME')
+    if not xdg and home:
+        xdg = home + '/.config'
+
+    conffilenames = []
+    if xdg:
+        conffilenames += [xdg + '/grc/grc.conf']
+    if home:
+        conffilenames += [home + '/.grc/grc.conf']
+    conffilenames += ['/usr/local/etc/grc.conf', '/etc/grc.conf']
     for i in conffilenames:
         if os.path.isfile(i):
             conffile = i
