@@ -1,0 +1,16 @@
+# Time
+regexp=\sup(?:\s(\d+ days?),)?\s+(\d+ min|\d+:\d+),
+colours=default,yellow,green
+-
+# users
+regexp=\s+(\d+)\susers
+colours=yellow,bold yellow
+-
+# load average
+regexp=load average: (\d+\.\d+),\s(\d+\.\d+),\s(\d+\.\d+)
+colours=default,bright_cyan,cyan,dark cyan
+-
+# W Command section
+# Title
+regexp=^USER.*$
+colours=bold

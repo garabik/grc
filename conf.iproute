@@ -1,0 +1,23 @@
+# DEV
+regexp=dev\s(\S+)
+colours=default,cyan
+=====
+# Gateway
+regexp=(via)\s(\S+)\s
+colours=default,yellow,bold yellow
+=====
+# Network
+regexp=^(default|[^ \/]+(\/(\d+))?)
+colours=green,bright_green,default,green
+=====
+# Network DEFAULT
+regexp=^default
+colours=on_green bold white
+=====
+# Local
+regexp=(src)\s(\S+)\s?
+colours=default,magenta,bold magenta
+=====
+# proto
+regexp=(proto)\s(\S+)\s
+colours=default,default,dark yellow

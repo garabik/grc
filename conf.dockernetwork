@@ -1,0 +1,23 @@
+# HEADERS
+regexp=(?:\s|^)(NETWORK ID|NAME|DRIVER)(?:\s|$)
+colours=default,underline
+-
+# Line
+regexp=^(?!NETWORK)(\S+)\s+(\S+)
+colours=default,green,bright_blue
+-
+# Bridge
+regexp=bridge\s+$
+colours=cyan
+-
+# host
+regexp=host\s+$
+colours=bright_cyan
+-
+# overlay
+regexp=overlay\s+$
+colours=magenta
+-
+# null
+regexp=null\s+$
+colours=red

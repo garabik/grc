@@ -25,5 +25,7 @@ colours=green
 #comments
 regexp=^;;\s\w*\s*\w*
 colours=yellow
-#=======
-
+=======
+#Title
+regexp=; <<>> DiG (\d+\.\d+\.\d+).*<<>>\s(\S+)$
+colours=default,green,bold magenta

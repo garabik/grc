@@ -1,0 +1,39 @@
+# IP4
+regexp=inet\s([^\/]+)\/(\d+)
+colours=default,bold yellow,bold magenta
+=====
+# broadcast
+regexp=brd\s([^}s]+)
+colours=default,dark
+=====
+# IP6
+regexp=inet6\s([^\/]+)\/(\d+)
+colours=default,yellow,magenta
+=====
+# MAC
+regexp=link\/ether\s(\S+)\s
+colours=default,magenta
+=====
+# State UP
+regexp=(\d+):\s(\S+):.+state (UP)
+colours=default,bright_white,bold green,bold green
+=====
+# State DOWN
+regexp=(\d+):\s(\S+):.+state (DOWN)
+colours=default,bright_white,bold red,bold red
+=====
+# State UNKNOWN
+regexp=(\d+):\s(\S+):.+state (UNKNOWN)
+colours=default,bright_white,bold cyan,cyan
+=====
+# State DORMANT
+regexp=(\d+):\s(\S+):.+state (DORMANT)
+colours=default,bright_white,bold cyan,cyan
+=====
+# < >
+regexp=\s<([^>]+)>
+colours=default,cyan
+=====
+# Master dev
+regexp=\smaster\s(\S+)\s
+colours=default,on_blue white

@@ -1,0 +1,41 @@
+# Name
+regexp=\.service\s
+colours=bright_white
+-
+regexp=\.mount\s
+colours=magenta
+-
+regexp=\.device\s
+colours=blue
+-
+regexp=\.socket\s
+colours=cyan
+-
+regexp=\.slice\s
+colours=dark red
+-
+regexp=\.path\s
+colours=green
+-
+regexp=\.target\s
+colours=dark magenta
+-
+regexp=\.timer\s
+colours=dark cyan
+-
+regexp=\.swap\s
+colours=bright_magenta
+-
+regexp=\sloaded\s
+colours=cyan
+-
+regexp=\sactive\s
+colours=green
+-
+# exited
+regexp=exited
+colours=red
+-
+# running
+regexp=running
+colours=green

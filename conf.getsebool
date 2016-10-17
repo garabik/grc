@@ -1,0 +1,15 @@
+# Name
+regexp=^\S+
+colours=default
+-
+# State
+regexp=-->
+colours=yellow
+-
+# State
+regexp=\s(off)
+colours=default,bright_red
+-
+# State
+regexp=\s(on)
+colours=default,bright_green

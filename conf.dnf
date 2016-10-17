@@ -1,0 +1,11 @@
+# Install
+regexp=^Installing:
+colour=bold green
+-
+# Main
+regexp=^Upgrading:
+colour=bold yellow
+-
+# Main
+regexp=^Removing:
+colour=bold red

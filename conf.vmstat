@@ -1,0 +1,20 @@
+# Title
+regexp=(procs)\s(-+memory-+)\s(-+swap-+)\s(-+io-+)\s(-+system-+)\s(-+cpu-+)
+colours=default,bold,bold cyan,bold magenta,bold blue, bold green, bold red
+-
+# rows
+regexp=^(\s*\w+\s+\w+)\s+(\w+\s+\w+\s+\w+\s+\w+)\s+(\w+\s+\w+)\s+(\w+\s+\w+)\s+(\w+\s+\w+)\s+(\w+\s+\w+\s+\w+\s+\w+\s+\w+)
+colours=default,default,bright_cyan,bright_magenta,bright_blue,bright_green,bright_red
+-
+# ============================ DISK MODE =================================
+# Title disk mode
+regexp=^(disk-)\s(-+reads-+)\s(-+writes-+)\s(-+IO-+)
+colours=default,bold,bold green,bold magenta,bold blue
+-
+# Title disk mode
+regexp=(\s+)(total\s+merged\s+sectors\s+ms)\s+(total\s+merged\s+sectors\s+ms)\s+(cur\s+sec)
+colours=default,bold,bold green,bold magenta,bold blue
+-
+# rows disk mode
+regexp=^(\S+)\s+(\d+\s+\d+\s+\d+\s+\d+)\s+(\d+\s+\d+\s+\d+\s+\d+)\s+(\d+\s+\d+)
+colours=default,bright_white,bright_green,bright_magenta,bright_blue

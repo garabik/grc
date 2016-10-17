@@ -1,0 +1,55 @@
+# Main HD
+regexp=^[a-z]+\d?\s
+colours=bold white
+======
+# Partition
+regexp=([├└─│]+|[\|\`\-]+)(\S+)
+colours=bright_green
+======
+# Partition - LVM
+regexp=\s+([├└─│]+|[\|\`\-]+)(\S+)
+colours=default,default,bright_cyan
+======
+# Type crypt
+regexp=\scrypt\s
+colours=on_magenta white
+======
+# Type disk
+regexp=\sdisk\s
+colours=magenta
+======
+# Type lvm
+regexp=\slvm\s
+colours=bold cyan
+======
+# Type part
+regexp=\spart\s
+colours=cyan
+======
+# Type loop
+regexp=\sloop\s
+colours=bright_red
+======
+# Size 'K'
+regexp=\s\d*[.,]?\dKi?\s
+colours=green
+======
+# Size 'M'
+regexp=\s\d*[.,]?\dMi?\s
+colours=yellow
+======
+# Size 'G'
+regexp=\s\d*[.,]?\dGi?\s
+colours=red
+======
+# Size 'T'
+regexp=\s\d*[.,]?\dTi?\s
+colours=bold red
+======
+# Mount
+regexp=\s\/.*$
+colours=bold yellow
+======
+# Mount [SWAP]
+regexp=\s\[(SWAP)\]
+colours=default,bright_magenta

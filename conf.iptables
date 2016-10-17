@@ -1,0 +1,88 @@
+# Chains Custom name
+regexp=^Chain\s(\S+)\s\(.*$
+colours=white, bold bright_blue
+-
+# Chains FILTER table
+regexp=^Chain\s(INPUT|OUTPUT|FORWARD)\s
+colours=unchanged, bold yellow
+-
+# Chains NAT|MANGLE table
+regexp=^Chain\s(PREROUTING|POSTROUTING|INPUT|OUTPUT)\s
+colours=unchanged, bold yellow
+-
+# 2row Title
+regexp=(pkts|target).*
+colours=bold black
+-
+# JUMP Destiny ----------------------------------------------------------------
+regexp=ACCEPT
+colours=bright_green
+-
+regexp=DROP
+colours=bright_red
+-
+regexp=REJECT
+colours=red
+-
+regexp=QUEUE
+colours=on_red white
+-
+regexp=RETURN
+colours=on_green white
+-
+regexp=MASQUERADE
+colours=bright_magenta
+-
+regexp=(LOG|ULOG)
+colours=bright_cyan
+-
+regexp=DNAT
+colours=magenta
+-
+regexp=SNAT
+colours=dark magenta
+# ------------------------------------------------------------------------------
+-
+# tcp
+regexp=\stcp\s
+colours=bold cyan
+-
+# udp
+regexp=\sudp\s
+colours=bold magenta
+-
+# icmp
+regexp=\sicmp\s
+colours=cyan
+-
+# all
+regexp=\sall\s
+colours=red
+-
+# dpt
+regexp=\sdpts?:([^\s]*)(\s|$)
+colours=default,bold yellow
+-
+# Goto
+regexp=\s(\[goto\])
+colours=default,on_blue bold white
+-
+# masq ports
+regexp=\smasq ports:\s(\d+)-?(\d+)?
+colours=default,bold yellow,bold yellow
+-
+# ctstate
+regexp=ctstate\s(\S+)
+colours=default,blue
+-
+# IP
+regexp=(!)?((?:\d{1,3}\.){3}(?:\d{1,3}))(?:\/|:)?(\d+)?
+colours=default,red,bright_white,magenta
+-
+# anywhere
+regexp=\s(anywhere|0.0.0.0/0)\s
+colours=bright_black
+-
+# (Num references)
+regexp=\((\d+) references\)
+colours=default,bright_green

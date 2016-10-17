@@ -18,6 +18,33 @@ colours=concealed red
 # Ip Addresses / Ports
 regexp=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\:)?(?:\d{1,5}))?(?:->)?(\d{1,5}(\/)\w+)
 colours=default,bold blue,default,bold blue,default
+=======
+regexp=(?:\s|^)(CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES)(?:\s|$)
+colours=default,underline
+======
+# IMAGE
+regexp=^(?!CONTAINER)(\w+)\s+([^\s]+)\s+(".*")\s+(.*(?=(?:Up|Exited|Created|Restarting)))
+colours=default,bright_black,bold white,bright_black,cyan
+======
+# Statuses - Created
+regexp=\sCreated\s
+colours=blue
+======
+# Statuses - Up / Restarting
+regexp=\sUp\s(\d+|\w+)\s\w+(?:\s\w+)?
+colours=bold green
+======
+# Statuses - Exited
+regexp=\sExited\s.(\d+).\s.+ago
+colours=bold red,red
+======
+# Statuses - Restarting
+regexp=\sRestarting\s.(\d+).\s.+ago
+colours=bold blue
+======
+# Ip Addresses / Ports
+regexp=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\:)?(\d{1,5}))?(?:->)?(\d{1,5}(\/)\w+)
+colours=default,blue,default,bright_green,bright_blue,default
 ======
 # NAMES
 regexp=\s([a-z-_0-9]+)$
@@ -26,3 +53,4 @@ colours=default,bold yellow
 # CONTAINER ID
 regexp=^([a-z-_0-9]+)\s
 colours=default,cyan
+

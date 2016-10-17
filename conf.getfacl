@@ -1,0 +1,31 @@
+# Header file
+regexp=^\#\sfile:\s(\S+)
+colours=cyan,bold
+-
+# Header owner
+regexp=^\#\sowner:\s(\S+)
+colours=cyan,bold green
+-
+# Header group
+regexp=^\#\sgroup:\s(\S+)
+colours=cyan,bold yellow
+-
+# user
+regexp=(?:^|:)user:([^:]+)?:(\S+)
+colours=green,on_green black,bright_green
+-
+# group
+regexp=(?:^|:)group:([^:]+)?:(\S+)
+colours=yellow,on_yellow black,bright_yellow
+-
+# other
+regexp=(?:^|:)other:([^:]+)?:(\S+)
+colours=red,on_red black,bright_red
+-
+# mask
+regexp=(?:^|:)mask:([^:]+)?:(\S+)
+colours=blue,on_blue black,bright_blue
+-
+# default:
+regexp=^default
+colours=on_blue bold white

@@ -1,0 +1,47 @@
+# DateTime
+regexp=\s(\w{3})\s(\w{3})\s+(\d{1,2})\s(\d+:\d+)\s
+colours=default,default,default,default,cyan
+=====
+# DateTime end
+regexp=\s-\s(\d+:\d+)
+colours=default,magenta
+=====
+# DateTime - down
+regexp=\s-\s(down)
+colours=default, red
+=====
+# DateTime - crash
+regexp=\s-\s(crash)
+colours=default, on_red white
+=====
+# still logged in
+regexp=still logged in
+colours=on_cyan bold white
+=====
+# still running
+regexp=still running
+colours=bright_green
+=====
+# Time
+regexp=\((\d+\+)?(\d+):(\d+)\)
+colours=default,bright_red,yellow,green
+=====
+# pts
+regexp=\s(pts[\S]+)
+colours=default,green
+=====
+# tty
+regexp=\s(tty\d)
+colours=default,blue
+=====
+# reboot
+regexp=^reboot\s+system boot
+colours=red
+=====
+# Third column IP
+regexp=(?:\s|\()(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?:\s|\))
+colours=default,bold red
+=====
+# Third column local
+regexp=(?:\s|\()(\:0)(?:\s|\))
+colours=default,dark cyan
