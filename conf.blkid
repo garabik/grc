@@ -1,0 +1,23 @@
+# Blk
+regexp=^(/dev/)(.+):\s
+colours=default,green,bright_green
+======
+# Blk mapper
+regexp=^/dev/(mapper/)(.+):\s
+colours=unchanged,underline green,bright_green
+======
+# UUID
+regexp=\sUUID="([^"]+)
+colours=default,blue
+======
+# TYPE
+regexp=TYPE="([^"]+)
+colours=default,cyan
+======
+# LABEL
+regexp=LABEL="([^"]+)
+colours=default,bright_cyan
+======
+# PARTUUID
+regexp=PARTUUID="([^"]+)
+colours=default,magenta

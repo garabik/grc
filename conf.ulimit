@@ -1,0 +1,11 @@
+# (  )
+regexp=\((?:([^,)]+),\s)?(-\w)\)
+colours=default,magenta,cyan
+-
+# unlimited
+regexp=\sunlimited
+colours=bold red
+-
+# number
+regexp=\s\d+
+colours=yellow

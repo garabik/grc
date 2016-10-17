@@ -1,0 +1,23 @@
+# Devices
+regexp=^[\w\d-]+\s{2,}(?!%)
+colours=bright_green
+-
+# Averages Title
+regexp=\s+(%user)\s+(%nice)\s+(%system)\s+(%iowait)\s+(%steal)\s+(%idle)
+colours=default,blue,cyan,magenta,bright_magenta,red,green
+-
+# Averages Numbers
+regexp=\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)
+colours=default,blue,cyan,magenta,bright_magenta,red,green
+-
+# Averages last line
+regexp=^Average:.*$
+colours=reverse
+-
+# High rates (4 digits)
+regexp=\s\d{4}\.\d+
+colours=red
+-
+# High rates (5+ digits)
+regexp=\s\d{5,}\.\d+
+colours=bold red

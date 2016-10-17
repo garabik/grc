@@ -1,0 +1,23 @@
+# Path
+regexp=^(\/\S+)
+colours=green
+-
+# Path Last part
+regexp=\/(\w+)\s
+colours=unchanged,bright_green
+-
+# IP
+regexp=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\/\d+)?)
+colours=default,yellow,magenta
+-
+# ALL
+regexp=\*
+colours=bold red
+-
+# Options
+regexp=\(([\w,]+)\)
+colours=default,cyan
+-
+# Server
+regexp=for\s([^:]+):$
+colours=default,bold yellow

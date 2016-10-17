@@ -1,0 +1,3 @@
+# Main
+regexp=(\S+)\s+(\d+)\s+(\d+)
+colours=default,bright_green,cyan,yellow

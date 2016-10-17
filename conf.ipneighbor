@@ -1,0 +1,19 @@
+# STATUS - STALE
+regexp=^(\S+)\s.*(STALE)$
+colours=default,bright_red,bold red
+-
+# STATUS - FAILED
+regexp=^(\S+)\s.*(FAILED)$
+colours=default,bright_magenta,bold magenta
+-
+# Status - REACHABLE
+regexp=^(\S+)\s.*(REACHABLE)$
+colours=default,bright_green,green
+-
+# Status - DELAY
+regexp=^(\S+)\s.*(DELAY)$
+colours=default,bright_yellow,yellow
+-
+# DEV
+regexp=dev\s(\S+)
+colours=default,cyan

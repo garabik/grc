@@ -1,0 +1,19 @@
+# Address
+regexp=^(..):(..).(.)
+colours=default,bright_green,bright_yellow,red
+-
+# Ethernet
+regexp=(Ethernet controller|Network controller)
+colours=cyan
+-
+# Wireless
+regexp=Wireless
+colours=bright_cyan
+-
+# SATA
+regexp=SATA controller
+colours=green
+-
+# Audio
+regexp=Audio device
+colours=blue

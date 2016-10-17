@@ -1,6 +1,6 @@
 # hostname
 regexp=\s\w+[\w\-\.]+\w+
-colours=bold yellow
+colours=bright_yellow
 count=once
 -
 # ip number
