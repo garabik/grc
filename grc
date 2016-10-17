@@ -24,6 +24,7 @@ Options:")
 def catch_signal(signum, frame):
     "catch signal sent to grc and forward it to the original application"
     global pidp
+#    print('signal')
     try:
         os.kill(pidp, signum)
     except OSError: # if the subprocess already died
@@ -155,12 +156,15 @@ if cfile != "" and colour:
                 os.close(choo)
                 os.close(chio)
             os.execvp("grcat", ["grcat", cfile])
-
     try:
         status = os.waitpid(pidp, 0)[1]
     except OSError: # interrupted system call
         status = None
         pass # this is probably not correct
+#    except KeyboardInterrupt: # catching SIGINT does not work when using pty...
+#        status = None
+#        os.kill(pidp, signal.SIGINT)
+#        pass
     if stderrff:
         os.close(chie)
         os.waitpid(pide, 0)
