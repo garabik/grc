@@ -1,5 +1,9 @@
+# HEADERS
+regexp=(?:\s|^)(REPOSITORY|TAG|IMAGE ID|CREATED|SIZE)(?:\s|$)
+colours=default,underline
+=====
 # REPO, TAG
-regexp=^([a-z]+\/?[^\s]+)\s+([^\s]+)\s+(\w+)
+regexp=^([a-z]+\/?[^\s]+)\s+([^\s]+)
 colours=default,bold white,cyan,bold black
 =====
 # images without name
@@ -7,13 +11,17 @@ regexp=^<none>.*$
 colours=bold red
 =====
 # Size 'K'
-regexp=\s\d*[.,]?\d\sKB?
+regexp=\s\d*[\.,]?\d*\sKB?
 colours=green
 ======
-# Size 'M'
-regexp=\s\d*[.,]?\d\sMB?
+# Size 'M', 2 digits
+regexp=\s\d{1,2}[\.,]?\d*\sMB?
+colours=green
+======
+# Size 'M' 3+ digits
+regexp=\s\d{3,4}[\.,]?\d*\sMB?
 colours=yellow
 ======
 # Size 'G'
-regexp=\s\d*[.,]?\d\sGB?
+regexp=\s\d*[\.,]?\d*\sGB?
 colours=red
