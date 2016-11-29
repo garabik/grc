@@ -24,42 +24,42 @@ regexp=^\[debug\]
 colours=magenta
 count=more
 ==============
-# linijki [INFO] ----
+# lines [INFO] ----
 regexp=\s[-]{6,}
 colours=red
 count=more
 ==============
-# linijki ^----
+# lines ^----
 regexp=^[-]{6,}
 colours=yellow
 count=more
 ==============
-# linijki  T E S T S
+# lines  T E S T S
 regexp=^ T E S T S
 colours=yellow
 count=more
 ==============
-# linijki ^Tests run:
+# lines ^Tests run:
 regexp=^Tests run: ([\d]+)
 colours=yellow,green
 count=more
 ==============
-# linijki ^Tests run: Failures/Errors/Skipped
+# lines ^Tests run: Failures/Errors/Skipped
 regexp=(Failures|Errors|Skipped):\s([\d]+)
 colours=none,yellow,bold red
 count=more
 ==============
-# linijki ^Tests run: Failures/Errors/Skipped
+# lines ^Tests run: Failures/Errors/Skipped
 regexp=(Failures|Errors|Skipped):\s(0)\D?
 colours=none,yellow,green
 count=more
 ==============
-# podsumowanie
+# summary
 regexp=\s(Total time: )(.*)$
 colours=none,none,bold yellow
 count=more
 ==============
-# podsumowanie
+# summary
 regexp=\s(Finished at: )(.*)$
 colours=none,none,bold yellow
 count=more
