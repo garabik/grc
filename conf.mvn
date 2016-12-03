@@ -1,0 +1,92 @@
+# mvn grc colorizer configuration
+# [INFO]
+regexp=^\[INFO\]
+colours=bold
+count=more
+==============
+# [WARNING]
+regexp=^\[WARNING\]
+colours=bold yellow
+count=more
+==============
+# [ERROR]
+regexp=^\[ERROR\]
+colours=bold red
+count=more
+==============
+# BUILD FAILURE
+regexp=BUILD FAILURE
+colours=bold red
+count=more
+==============
+# [debug]
+regexp=^\[debug\]
+colours=magenta
+count=more
+==============
+# lines [INFO] ----
+regexp=\s[-]{6,}
+colours=red
+count=more
+==============
+# lines ^----
+regexp=^[-]{6,}
+colours=yellow
+count=more
+==============
+# lines  T E S T S
+regexp=^ T E S T S
+colours=yellow
+count=more
+==============
+# lines ^Tests run:
+regexp=^Tests run: ([\d]+)
+colours=yellow,green
+count=more
+==============
+# lines ^Tests run: Failures/Errors/Skipped
+regexp=(Failures|Errors|Skipped):\s([\d]+)
+colours=none,yellow,bold red
+count=more
+==============
+# lines ^Tests run: Failures/Errors/Skipped
+regexp=(Failures|Errors|Skipped):\s(0)\D?
+colours=none,yellow,green
+count=more
+==============
+# summary
+regexp=\s(Total time: )(.*)$
+colours=none,none,bold yellow
+count=more
+==============
+# summary
+regexp=\s(Finished at: )(.*)$
+colours=none,none,bold yellow
+count=more
+==============
+# BUILD SUCCESSFUL
+regexp=\s(BUILD SUCCESSFUL)
+colours=none,green bold
+count=more
+==============
+# Building projectName
+regexp=^(\[INFO\])( Building )(.*)$
+colours=none,bold,none,white bold
+count=more
+==============
+# reactor summary
+regexp=([.]{3,} )(SUCCESS)( \[)([^\]]*)(])
+colours=none,none,green,none,yellow,none
+count=more
+==============
+# reactor summary
+regexp=([.]{3,} )(FAILURE)( \[)([^\]]*)(])
+colours=none,none,red,none,red,none
+count=more
+==============
+# reactor summary
+regexp=([.]{3,} )(SKIPPED)
+colours=none,none,yellow bold,none
+count=more
+
+
