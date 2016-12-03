@@ -23,30 +23,21 @@ regexp=^<none>.*$
 colours=bold red
 =====
 # Size 'K'
-regexp=\s\d*[\.,]?\d*\s(KB?|B)
+regexp=\s\d*[\.,]?\d*\sKB?
 colours=green
 ======
-# Size 'M'
-regexp=\s\d*[\.,]?\d*\sMB?
+# Size 'M', 2 digits
+regexp=\s\d{1,2}[\.,]?\d*\sMB?
+colours=green
+======
+# Size 'M' 3+ digits
+regexp=\s\d{3,4}[\.,]?\d*\sMB?
 colours=yellow
 ======
 # Size 'G'
 regexp=\s\d*[\.,]?\d*\sGB?
 colours=red
-=====
-# CREATED hours
-regexp=\s+\d+\shours\s\w+
-colours=bright_green
 ======
-# CREATED days
-regexp=\s+\d+\sdays\s\w+
-colours=green
-======
-# CREATED weeks
-regexp=\s+\d+\sweeks\s\w+
-colours=yellow
-======
-# CREATED months
-regexp=\s+\d+\smonths\s\w+
-colours=red
-
+# Date Ago
+regexp=(?:\s{2}|^)(?:\w+\s)+ago
+colours=cyan
