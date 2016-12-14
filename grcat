@@ -106,7 +106,8 @@ if len(sys.argv) != 2:
 
 conffile_arg = sys.argv[1] # tentative conffile
 for i in conffilepath:
-    if os.path.isfile(i+conffile_arg):
+    # test if conffile exists, it can be also a pipe
+    if os.path.exists(i+conffile_arg) and not os.path.isdir(i+conffile_arg):
         conffile = i+conffile_arg
         break
 

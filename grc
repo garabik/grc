@@ -93,7 +93,8 @@ if cfile == "":
         conffilenames += [home + '/.grc/grc.conf']
     conffilenames += ['/usr/local/etc/grc.conf', '/etc/grc.conf']
     for i in conffilenames:
-        if os.path.isfile(i):
+        # test if conffile exists, it can be also a pipe
+        if os.path.exists(i) and not os.path.isdir(i):
             conffile = i
             break
     regexplist = []
