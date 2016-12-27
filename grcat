@@ -1,5 +1,7 @@
 #! /usr/bin/env python
 
+from __future__ import print_function
+
 import sys, os, string, re, signal, errno
 
 #some default definitions
@@ -147,16 +149,12 @@ while not is_last:
     # do not try to understand the optimized form below :-)
     if 'colours' in ll:
         colstrings = list(
-                        map(
-                            lambda colgroup:
-                                ''.join(map(lambda x: get_colour(x), split(colgroup))),
-                                split(ll['colours'], ',')
-                            )
+                        [''.join([get_colour(x) for x in split(colgroup)]) for colgroup in split(ll['colours'], ',')]
                         )
         ll['colours'] = colstrings
 
     cs = ll['count']
-    if ll.has_key('regexp'):
+    if 'regexp' in ll:
         ll['regexp'] = re.compile(ll['regexp']).search
         regexplist.append(ll)
 
