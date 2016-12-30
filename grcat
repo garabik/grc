@@ -115,6 +115,8 @@ while not is_last:
         if l == "": 
             is_last = 1
             break
+        if l[-1] in '\r\n':
+            l = l[:-1]
         if l[0] == "#" or l[0] == '\012':
             continue
         if not l[0] in letters:
