@@ -7,7 +7,7 @@ Build-Depends: debhelper (>=9)
 
 Package: grc
 Architecture: all
-Depends: python, ${misc:Depends}
+Depends: ${python:Depends}, ${misc:Depends}
 Description: generic colouriser for everything
  generic colouriser, can be used to colourise logfiles,
  output of commands, arbitrary text....
