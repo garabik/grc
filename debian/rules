@@ -57,7 +57,7 @@ binary-indep: build install
 #	dh_makeshlibs
 	dh_installdeb
 #	dh_perl
-	dh_python2
+	dh_python3
 	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
