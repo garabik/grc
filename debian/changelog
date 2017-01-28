@@ -3,7 +3,7 @@ grc (1.10-1) unstable; urgency=low
   * many configuration files added
   * python3 compatible
 
- -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Thu, 05 Jan 2017 16:48:58 +0100
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sat, 28 Jan 2017 15:48:58 +0100
 
 grc (1.9-1) unstable; urgency=low
 
