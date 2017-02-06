@@ -41,3 +41,8 @@ colours=default,bright_yellow,bright_blue,bright_red,bright_magenta
 # last line values
 regexp=\=\s([0-9\.]+)\/([0-9\.]+)\/([0-9\.]+)\/([0-9\.]+)
 colours=default,bright_yellow,bright_blue,bright_red,bright_magenta
+-
+# these are good for nping
+regexp=SENT|RCVD
+colours=red
+
