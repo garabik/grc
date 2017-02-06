@@ -188,7 +188,11 @@ if cfile != "" and colour:
 else:
     pidp = os.fork()
     if pidp == 0:
-        os.execvp(args[0], args)
+        try:
+            os.execvp(args[0], args)
+        except FileNotFoundError:
+            sys.stderr.write('grc: %s: command not found\n' % args[0])
+            sys.exit(1)
     try:
         status = os.wait()[1]
     except OSError: # interrupted system call
