@@ -12,7 +12,7 @@ def version():
 def help():
     print("""Generic Colouriser 1.10
 grc [options] command [args]
-Options:")
+Options:
 -e --stderr    redirect stderr. If this option is selected,
                do not automatically redirect stdout
 -s --stdout    redirect stdout, even if -e is selected
