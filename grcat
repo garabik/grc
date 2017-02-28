@@ -1,4 +1,6 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
+
+from __future__ import print_function
 
 import sys, os, string, re, signal, errno
 
@@ -84,16 +86,30 @@ def get_colour(x):
 
 home = []
 conffile = None
-if 'HOME' in os.environ:
-    home = [os.environ['HOME']+"/.grc/"]
-conffilepath = [""] + home + ["/usr/local/share/grc/", "/usr/share/grc/"]
+xdg_config = os.environ.get('XDG_CONFIG_HOME')
+xdg_data = os.environ.get('XDG_DATA_HOME')
+home = os.environ.get('HOME')
+if home and not xdg_config:
+    xdg_config = home + '/.config'
+if home and not xdg_data:
+    xdg_data = home + '/.local/share'
+
+conffilepath = [""]
+if xdg_data:
+    conffilepath += [xdg_data + '/grc/']
+if xdg_config:
+    conffilepath += [xdg_config + '/grc/']
+if home:
+    conffilepath += [home + '/.grc/']
+conffilepath += ['/usr/local/share/grc/', '/usr/share/grc/']
 if len(sys.argv) != 2:
     sys.stderr.write("You are not supposed to call grcat directly, but the usage is: grcat conffile\n")
     sys.exit(1)
 
 conffile_arg = sys.argv[1] # tentative conffile
 for i in conffilepath:
-    if os.path.isfile(i+conffile_arg):
+    # test if conffile exists, it can be also a pipe
+    if os.path.exists(i+conffile_arg) and not os.path.isdir(i+conffile_arg):
         conffile = i+conffile_arg
         break
 
@@ -130,7 +146,7 @@ while not is_last:
         keyword = lower(keyword)
         if keyword in  ('colors', 'colour', 'color'):
             keyword = 'colours'
-        if not keyword in ["regexp", "colours", "count", "command", "skip", "replace"]:
+        if not keyword in ["regexp", "colours", "count", "command", "skip", "replace", "concat"]:
             raise ValueError("Invalid keyword")
         ll[keyword] = value
 
@@ -147,16 +163,12 @@ while not is_last:
     # do not try to understand the optimized form below :-)
     if 'colours' in ll:
         colstrings = list(
-                        map(
-                            lambda colgroup:
-                                ''.join(map(lambda x: get_colour(x), split(colgroup))),
-                                split(ll['colours'], ',')
-                            )
+                        [''.join([get_colour(x) for x in split(colgroup)]) for colgroup in split(ll['colours'], ',')]
                         )
         ll['colours'] = colstrings
 
     cs = ll['count']
-    if ll.has_key('regexp'):
+    if 'regexp' in ll:
         ll['regexp'] = re.compile(ll['regexp']).search
         regexplist.append(ll)
 
@@ -210,6 +222,11 @@ while 1:
                     else:
                         prevcount = "once"
                         pos = len(line)
+                if 'concat' in pattern:
+                    with open(pattern['concat'], 'a') as f :
+                        f.write(line + '\n')
+                    if 'colours' not in pattern:
+                        break
                 if 'command' in pattern:
                     os.system(pattern['command'])
                     if 'colours' not in pattern:

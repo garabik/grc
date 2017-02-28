@@ -19,7 +19,8 @@ install:
 
 	# Add here commands to install the package into debian/tmp.
 	./install.sh `pwd`/debian/grc/usr `pwd`/debian/grc
-
+	# this is too invasive, would be incluided in a next major version
+	rm `pwd`/debian/grc/etc/profile.d/grc.bashrc
 
 build: build-arch build-indep
 build-arch: build-stamp
@@ -47,7 +48,7 @@ binary-indep: build install
 	dh_installman grc.1 grcat.1
 	dh_installinfo
 #	dh_undocumented
-	dh_installchangelogs 
+	dh_installchangelogs
 	dh_link
 	dh_strip
 	dh_compress
@@ -57,6 +58,7 @@ binary-indep: build install
 #	dh_makeshlibs
 	dh_installdeb
 #	dh_perl
+	dh_python3
 	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums

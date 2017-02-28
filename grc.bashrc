@@ -1,6 +1,5 @@
-GRC=`which grc`
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]
-then
+GRC="$(type -p grc)"
+if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias colourify="$GRC -es --colour=auto"
     alias blkid='colourify blkid'
     alias configure='colourify ./configure'
@@ -24,7 +23,8 @@ then
     alias lspci='colourify lspci'
     alias netstat='colourify netstat'
     alias ping='colourify ping'
-    alias traceroute='colourify /usr/sbin/traceroute'
+    alias traceroute='colourify traceroute'
+    alias traceroute6='colourify traceroute6'
     alias head='colourify head'
     alias tail='colourify tail'
     alias dig='colourify dig'
@@ -33,4 +33,5 @@ then
     alias mtr='colourify mtr'
     alias semanage='colourify semanage'
     alias getsebool='colourify setsebool'
+    alias ifconfig='colourify ifconfig'
 fi
