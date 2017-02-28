@@ -1,0 +1,27 @@
+# Devices
+regexp=\s\/dev(?:\/([^\/ ]+))+
+colours=green, bold green
+-
+# Mount Path
+regexp=(?<=─|-)(?:\/([^\/ ]+))+
+colours=unchanged,bold yellow
+-
+# RW
+regexp=(?:\s)rw
+colours=bold red
+-
+# RO
+regexp=(?:\s)ro
+colours=bold green
+-
+# Like comment, leave at end always
+regexp=^.*(?=cgroup|tmpfs).*$
+colours=bright_black
+-
+# Common Types
+regexp=\b(ext\d|xfs|btrfs|nfs)\b
+colours=cyan
+-
+# MS Types
+regexp=\b(fat|vfat|ntfs|msdos)\b
+colours=on_cyan white

@@ -5,8 +5,5 @@ colours=default,bright_green,cyan,yellow
 # subcategory
 regexp=\w+\.(\S+(?=\.))\.
 colours=unchanged,bright_cyan
-#-
-## subcategory
-#regexp=\.
-#colours=unchanged
-#replace=/
+
+

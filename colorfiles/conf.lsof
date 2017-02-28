@@ -1,0 +1,15 @@
+# device major minor numbers
+regexp=\s(\d+),(\d+)\s
+colours=unchanged,bright_yellow ,yellow
+-
+# root
+regexp=\broot\b
+colours=bold white on_red
+-
+# PID
+regexp=^(\S+)\s+(\d+)\s
+colours=unchanged,bold cyan,cyan
+-
+# PATH
+regexp=\s\/.*\/(\S+)($| \(.*\))
+colours=green,bright_green,red

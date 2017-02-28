@@ -1,0 +1,23 @@
+# r
+regexp=\S+_r
+colours=yellow
+-
+# u
+regexp=\S+_u
+colours=green
+-
+# t
+regexp=\S+_t
+colours=cyan
+-
+# s
+regexp=s\d+
+colours=magenta
+-
+# tcp for ports
+regexp=tcp
+colours=blue
+-
+# udp for ports
+regexp=udp
+colours=yellow

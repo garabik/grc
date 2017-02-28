@@ -11,7 +11,7 @@ regexp=^Chain\s(PREROUTING|POSTROUTING|INPUT|OUTPUT)\s
 colours=unchanged, bold yellow
 -
 # 2row Title
-regexp=(pkts|target).*
+regexp=(pkts|target|num).*
 colours=bold black
 -
 # JUMP Destiny ----------------------------------------------------------------
