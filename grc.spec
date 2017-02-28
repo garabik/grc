@@ -34,7 +34,7 @@ install -d -m 755 $RPM_BUILD_ROOT%{prefix}/bin
 install -m 755 grc $RPM_BUILD_ROOT%{prefix}/bin
 install -m 755 grcat $RPM_BUILD_ROOT%{prefix}/bin
 install -d -m 755 $RPM_BUILD_ROOT%{prefix}/share/grc
-install -m 644 conf.* $RPM_BUILD_ROOT%{prefix}/share/grc
+install -m 644 colorfiles/conf.* $RPM_BUILD_ROOT%{prefix}/share/grc
 install -d -m 755 $RPM_BUILD_ROOT%{confdir}
 install -m 644 grc.conf $RPM_BUILD_ROOT%{confdir}
 install -d -m 755 $RPM_BUILD_ROOT%{_mandir}/man1

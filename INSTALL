@@ -16,7 +16,7 @@ If you have a debian system with all necessary packages installed, type
 
 else:
 
-	1) copy conf.* files into /usr/share/grc/ or /usr/local/share/grc/,
+	1) copy colorfiles/conf.* files into /usr/share/grc/ or /usr/local/share/grc/,
 	   creating directories when needed
 
 	2) copy grc.conf into /etc/
