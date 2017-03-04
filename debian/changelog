@@ -1,3 +1,9 @@
+grc (1.10.1-1) unstable; urgency=low
+
+  * make aliases more compatible with zsh anc MacOSX
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sat, 04 Mar 2017 10:04:12 +0100
+
 grc (1.10-1) unstable; urgency=low
 
   * many configuration files added
