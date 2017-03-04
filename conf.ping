@@ -10,8 +10,8 @@ colours=magenta
 regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\:[0-9]{1,5})?
 colours=bright_blue
 =======
-# icmp_seq=#
-regexp=icmp_seq=(\d+)
+# icmp_[sr]eq=#
+regexp=icmp_[sr]eq=(\d+)
 colours=default,yellow
 =======
 # time
