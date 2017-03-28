@@ -1,17 +1,39 @@
-# size
-regexp=(\s|^)\d+([.,]\d+)?\s?([kKMG][bB]|[bB]|[kKMG])(?=[\s,]|$)
+# The following matches file sizes as produced by ls -l or ls -lh
+# The output produced by ls -s is probably not specific
+# enough to be reliably matched, especially considering ls -s(k|m|g|G).
+#
+# Example lines:
+# -rw-r--r--   1 user staff 344M Mar 22 22:51 MVI_8735.m4v
+# -rw-r--r--   1 user staff 360050327 Mar 22 22:51 MVI_8735.m4v
+#
+# The regexp uses lookahead to match a date following the size
+
+# size: 1M <= size < 10M
+regexp=\s+(\d{7}|\d([,\.]\d+)?M)(?=\s[A-Z][a-z]{2}\s)
+colours=green
+=======
+# size: 10M <= size < 100M
+regexp=\s+(\d{8}|\d\d([,\.]\d+)?M)(?=\s[A-Z][a-z]{2}\s)
 colours=yellow
+=======
+# size: 100M <= size < 1G
+regexp=\s+(\d{9}|\d{3}M)(?=\s[A-Z][a-z]{2}\s)
+colours=red
+=======
+# size: 1G <= size
+regexp=\s+(\d{10,}|[\d\.,]+G)(?=\s[A-Z][a-z]{2}\s)
+colours=bold red
 =======
 # device major minor numbers
 regexp=\s(\d+),\s+(\d+)\s
 colours=default,bright_yellow ,yellow
 =======
 # time
-regexp=(\s|^)\d+(:\d+)+(?=[\s,]|$)
+regexp=(\s|^)[0-2]?\d(:[0-5]\d)(?=[\s,]|$)
 colours=white
 =======
 # month
-#regexp=\s[a-z]{3}\s
+#regexp=\s[A-Z][a-z]{2}\s
 #colours=yellow
 #=======
 #regexp=(?<=\d):(?=\d)
