@@ -1,7 +1,8 @@
 #!/usr/bin/env fish
 if type -q grc
   # Default commands which will be colorized
-  set -l execs cat cvs df diff dig gcc g++ ls ifconfig \
+  # Ignore ls by default
+  set -l execs cat cvs df diff dig gcc g++ ifconfig \
                make mount mtr netstat ping ps tail traceroute \
                wdiff \
                blkid du docker docker-machine env ip iostat \
