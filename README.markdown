@@ -188,6 +188,7 @@ To set aliases for supported commands, append to your `~/.bashrc`:
 Or for zsh users, append to `~/.zshrc`:
     [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
-(assuming you copied `grc.bashrc` and `grc.zsh` to `/etc`)
+Or for fish users, append to `~/.config/fish/config.fish`:
+    test -e /etc/grc.fish; and source /etc/grc.fish
 
-
+(assuming you copied `grc.bashrc`, `grc.zsh` and `grc.fish` to `/etc`)
