@@ -1,7 +1,6 @@
 # Generic Colouriser
 
-Radovan Garabík  http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
-garabik @ kassiopeia.juls.savba.sk
+Radovan Garabík  <http://kassiopeia.juls.savba.sk/~garabik/software/grc.html> (garabik @ kassiopeia.juls.savba.sk)
 
 For the impatient - try following commands:
 
@@ -130,7 +129,7 @@ in your `/etc/grc.conf`, then typing `grc cat /var/log/syslog` will use `conf.lo
 ## Miscellaneous remarks:
 
 You should get yourself familiar with regular expressions. Good reading is
-at http://docs.python.org/dev/howto/regex.html
+at <http://docs.python.org/dev/howto/regex.html>
 
 The program is not yet optimized for speed. There are places that can
 give a big boost if optimized.
@@ -178,16 +177,24 @@ or, if you have recent BSD tail:
 
     tail -F /var/log/syslog | grcat conf.log >/dev/tty12
 
-If you want to start using grc automatically with supported commands, add
+## Automatic aliases
 
-    source /etc/grc.bashrc
+You can start using grc automatically with supported commands. The following assumes that `grc.<bashrc|zsh|fish>` is in `/etc`. The location may differ (i. e. `/usr/local/etc` when installed with homebrew).
+
+### Bash
 
 To set aliases for supported commands, append to your `~/.bashrc`:
+
     [[ -s "/etc/grc.bashrc" ]] && source /etc/grc.bashrc
 
+### ZSH
+
 Or for zsh users, append to `~/.zshrc`:
+
     [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
-(assuming you copied `grc.bashrc` and `grc.zsh` to `/etc`)
+### Fish
 
+Add to `~/.config/fish/config.fish` or in a new file in `~/.config/fish/conf.d/`:
 
+    source /usr/local/etc/grc.fish
