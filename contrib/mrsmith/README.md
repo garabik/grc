@@ -1,2 +1,2 @@
-alternative configuration files for some commands
+alternative configuration files for some commands, contributed by mrsmith
 
