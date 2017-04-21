@@ -1,3 +1,10 @@
+grc (1.11-1) unstable; urgency=low
+
+  * clean up directories
+  * improve some configuration files
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Fri, 21 Apr 2017 11:06:13 +0200
+
 grc (1.10.1-1) unstable; urgency=low
 
   * make aliases more compatible with zsh anc MacOSX
