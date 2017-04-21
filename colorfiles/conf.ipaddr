@@ -37,3 +37,15 @@ colours=default,cyan
 # Master dev
 regexp=\smaster\s(\S+)\s
 colours=default,on_blue white
+=====
+# on
+regexp=\son\s
+colours=green
+=====
+# off
+regexp=\soff\s
+colours=dark red
+=====
+# link/none
+regexp=link\/(none)
+colours=unchanged,red

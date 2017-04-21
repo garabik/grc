@@ -1,0 +1,11 @@
+# SELinux
+regexp=(\w+_u):(\w+_r):(\w+_t):(\w\d)
+colours=default,green,yellow,cyan,magenta
+-
+# Path
+regexp=\/\S+(\/\S+)\(
+colours=green,bright_green
+-
+# Almost universal regex
+regexp=\.\*|\[\^\/\]\*|\(\/\.\*\)\?|\?|\\\.
+colours=blue
