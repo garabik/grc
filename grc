@@ -4,18 +4,6 @@ from __future__ import print_function
 
 import os, re, string, sys, getopt, signal
 
-# python 2/3 compatibility
-
-try:
-    FileNotFoundError
-except NameError:
-    FileNotFoundError = OSError
-
-try:
-    PermissionError
-except NameError:
-    PermissionError = OSError
-
 
 def version():
     print ("Generic Colouriser 1.11.1rc")
@@ -202,11 +190,8 @@ else:
     if pidp == 0:
         try:
             os.execvp(args[0], args)
-        except FileNotFoundError:
-            sys.stderr.write('grc: %s: command not found\n' % args[0])
-            sys.exit(1)
-        except PermissionError:
-            sys.stderr.write('grc: %s: Permission error\n' % args[0])
+        except OSError as e:
+            sys.stderr.write('grc: %s: %s\n' % (args[0], e.strerror))
             sys.exit(1)
     try:
         status = os.wait()[1]
