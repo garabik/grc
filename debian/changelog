@@ -1,3 +1,9 @@
+grc (1.11.1-1) unstable; urgency=low
+
+  * fixed python2 compatibility errors
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Thu, 04 May 2017 11:11:11 +0200
+
 grc (1.11-1) unstable; urgency=low
 
   * clean up directories
