@@ -198,3 +198,4 @@ Or for zsh users, append to `~/.zshrc`:
 Add to `~/.config/fish/config.fish` or in a new file in `~/.config/fish/conf.d/`:
 
     source /usr/local/etc/grc.fish
+
