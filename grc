@@ -6,11 +6,11 @@ import os, re, string, sys, getopt, signal
 
 
 def version():
-    print ("Generic Colouriser 1.11")
+    print ("Generic Colouriser 1.11.1")
     sys.exit()
 
 def help():
-    print("""Generic Colouriser 1.11
+    print("""Generic Colouriser 1.11.1
 grc [options] command [args]
 Options:
 -e --stderr    redirect stderr. If this option is selected,
@@ -137,7 +137,11 @@ if cfile != "" and colour:
                 os.dup2(chie, 2)
                 os.close(choe)
                 os.close(chie)
-        os.execvp(args[0], args)
+        try:
+            os.execvp(args[0], args)
+        except OSError as e:
+            sys.stderr.write('grc: %s: %s\n' % (args[0], e.strerror))
+            sys.exit(1)
 
 
     if stdoutff:
@@ -190,11 +194,8 @@ else:
     if pidp == 0:
         try:
             os.execvp(args[0], args)
-        except FileNotFoundError:
-            sys.stderr.write('grc: %s: command not found\n' % args[0])
-            sys.exit(1)
-        except PermissionError:
-            sys.stderr.write('grc: %s: Permission error\n' % args[0])
+        except OSError as e:
+            sys.stderr.write('grc: %s: %s\n' % (args[0], e.strerror))
             sys.exit(1)
     try:
         status = os.wait()[1]

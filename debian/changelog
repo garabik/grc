@@ -1,3 +1,9 @@
+grc (1.11.1-1) unstable; urgency=low
+
+  * better error handling if command is not found
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sun, 21 May 2017 16:01:51 +0200
+
 grc (1.11-1) unstable; urgency=low
 
   * clean up directories
