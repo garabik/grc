@@ -273,7 +273,7 @@ while 1:
                 clineprev = cline[i]
         nline = nline + colours['default']
         try:
-            print(nline)
+            print(nline, flush=True)
         except IOError as e:
             if e.errno == errno.EPIPE:
                 break
