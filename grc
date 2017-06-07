@@ -137,7 +137,11 @@ if cfile != "" and colour:
                 os.dup2(chie, 2)
                 os.close(choe)
                 os.close(chie)
-        os.execvp(args[0], args)
+        try:
+            os.execvp(args[0], args)
+        except OSError as e:
+            sys.stderr.write('grc: %s: %s\n' % (args[0], e.strerror))
+            sys.exit(1)
 
 
     if stdoutff:

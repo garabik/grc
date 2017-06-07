@@ -1,8 +1,13 @@
+grc (1.11.1-2) unstable; urgency=low
+
+  * fixed python2 compatibility errors (forgotten old changelog commit)
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Wed, 07 Jun 2017 15:01:11 +0200
+
 grc (1.11.1-1) unstable; urgency=low
 
   * fixed python2 compatibility errors
 
- -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Thu, 04 May 2017 11:11:11 +0200
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sun, 21 May 2017 16:01:51 +0200
 
 grc (1.11-1) unstable; urgency=low
 
