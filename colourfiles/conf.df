@@ -24,7 +24,7 @@ regexp=/[-\w\d./]*$
 colours=bold green
 ======
 # Use 0-60%
-regexp=[1-6][0-9]?%|0%
+regexp=[ 1-6][0-9]?%|0%
 colours=green
 ======
 # Use 70-90%
