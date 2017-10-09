@@ -1,3 +1,9 @@
+grc (1.11.2-1) unstable; urgency=low
+
+  * add ntpdate configuration command
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sat, 23 Sep 2017 20:35:33 +0200
+
 grc (1.11.1-1) unstable; urgency=low
 
   * better error handling if command is not found
