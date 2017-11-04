@@ -36,7 +36,7 @@ colours=red
 # "linkdown"
 regexp=linkdown
 colours=bold red
-- 
+-
 
 # "src"
 regexp=src \S+

@@ -24,7 +24,7 @@ colours=bold green
 =======
 # everything in parentheses
 regexp=\(.+?\)
-colours=green 
+colours=green
 count=more
 =======
 # channel name
