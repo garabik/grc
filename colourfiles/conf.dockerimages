@@ -1,43 +1,63 @@
-# HEADERS
-regexp=(?:\s|^)(REPOSITORY|TAG|IMAGE ID|CREATED|SIZE)(?:\s|$)
-colours=default,underline
-=====
-# REPO, TAG
-regexp=^([a-z]+\/?[^\s]+)\s+([^\s]+)
-colours=default,bold white,cyan,bold black
-=======
 # REPO, TAG, IMAGE ID
 regexp=^([a-z]+\/?[^\s]+)\s+([^\s]+)\s+(\w+)
 colours=default,bold white,bright_cyan,bright_black
 =====
 # latest
-regexp=\s+(latest)\s+
-colours=unchanged,cyan
+regexp=(?<=\s)latest(?=\s+)
+colours=dark cyan
 =====
 # REPOSITORY (Image name)
-regexp=^(?:([a-z\-_0-9]+)/)*([a-z\-_0-9]+)\s
+regexp=^(?:(\S+)\/)*(\S+)\s
 colours=default,yellow,bright_white
 =====
 # images without name
 regexp=^<none>.*$
 colours=bold red
 =====
+# images without tag
+regexp=\s+(<none>)\s+
+colours=unchanged,bold red
+=====
 # Size 'K'
-regexp=\s\d*[\.,]?\d*\sKB?
+regexp=(?<=\s)\d+[.,]?\d*\s?(KB?|B)
 colours=green
 ======
 # Size 'M', 2 digits
-regexp=\s\d{1,2}[\.,]?\d*\sMB?
+regexp=(?<=\s)\d{1,2}[.,]?\d*\s?MB?
 colours=green
 ======
 # Size 'M' 3+ digits
-regexp=\s\d{3,4}[\.,]?\d*\sMB?
+regexp=(?<=\s)\d{3,4}[.,]?\d*\s?MB?
 colours=yellow
 ======
 # Size 'G'
-regexp=\s\d*[\.,]?\d*\sGB?
+regexp=(?<=\s)\d+[.,]?\d*\s?GB?
 colours=red
+=====
+# CREATED seconds/minutes
+regexp=[\da-f]{12}\s+((?:About a|\d+) (?:seconds?|minutes?) ago)
+colours=unchanged,on_green bold white
 ======
-# Date Ago
-regexp=(?:\s{2}|^)(?:\w+\s)+ago
-colours=cyan
+# CREATED About a minute ago
+regexp=\s+(About a minute ago)\s\w+
+colours=unchanged,on_green bold white
+======
+# CREATED hours
+regexp=\s+(\d+\shours\s\w+)
+colours=unchanged,bright_green
+======
+# CREATED days
+regexp=\s+(\d+\sdays\s\w+)
+colours=unchanged,green
+======
+# CREATED weeks
+regexp=\s+(\d+\sweeks\s\w+)
+colours=unchanged,yellow
+======
+# CREATED months
+regexp=\s+(\d+\smonths\s\w+)
+colours=unchanged,red
+=====
+# HEADERS
+regexp=(?:\s|^)(REPOSITORY|TAG|IMAGE ID|CREATED|SIZE)(?:\s|$)
+colours=default,underline

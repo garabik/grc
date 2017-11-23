@@ -11,23 +11,23 @@ regexp=\s+([├└─│]+|[\|\`\-]+)(\S+)
 colours=default,default,bright_cyan
 ======
 # Type crypt
-regexp=\scrypt\s
+regexp=(?<=\s)crypt\b
 colours=on_magenta white
 ======
 # Type disk
-regexp=\sdisk\s
+regexp=(?<=\s)disk\b
 colours=magenta
 ======
 # Type lvm
-regexp=\slvm\s
+regexp=(?<=\s)lvm\b
 colours=bold cyan
 ======
 # Type part
-regexp=\spart\s
+regexp=(?<=\s)part\b
 colours=cyan
 ======
 # Type loop
-regexp=\sloop\s
+regexp=(?<=\s)loop\b
 colours=bright_red
 ======
 # Size 'K'
@@ -46,10 +46,14 @@ colours=red
 regexp=\s\d*[.,]?\dTi?\s
 colours=bold red
 ======
-# Mount
-regexp=\s\/.*$
-colours=bold yellow
+# Mount Path
+regexp=(?<=\s)(\/[^\/ ]*)+$
+colours=yellow,bold yellow
 ======
 # Mount [SWAP]
 regexp=\s\[(SWAP)\]
 colours=default,bright_magenta
+======
+# UUID
+regexp=(?<=\s)\b([0-9a-fA-F-]{4,}|[\w-]{38})\b
+colours=default,dark cyan

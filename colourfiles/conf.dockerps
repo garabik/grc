@@ -1,15 +1,18 @@
-# This is for docker ps and docker-compose ps
-# Headers
-regexp=(?:\s{2}|^)(CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES|Name|Command|State|Ports)(?:\s|$)
+# HEADERS
+regexp=(?:\s|^)(CONTAINER ID|IMAGE|COMMAND|CREATED|STATUS|PORTS|NAMES)(?:\s|$)
 colours=default,underline
 ======
-# Commands (docker ps)
-regexp=(?:\s{2}|^)(?:\s\")(.*)(?:\")(?:\s{2}|$)
-colours=magenta
-=======
-# Date Ago (docker ps)
-regexp=(?:\s{2}|^)(?:\w+\s)+ago
-colours=cyan
+# IMAGE NAME (as docker image)
+regexp=\s{2,}(?:([a-z\-_0-9]+)\/)*([a-z\-_0-9]+)(:\S+)?\s{2,}\"
+colours=unchanged,yellow,bright_white,cyan
+======
+# IMAGE
+regexp=^(?!CONTAINER)(\w+)\s+([^\s]+)\s+(".*")\s+(.*(?=(?:Up|Exited|Created|Restarting)))
+colours=unchanged,bright_black,unchanged,bright_black,cyan
+======
+# Statuses - Created
+regexp=\sCreated\s
+colours=blue
 ======
 # Statuses
 # https://github.com/docker/docker/blob/e5a3f86e447dd659da3c2e759f3c088a0bfcfe3d/container/state.go#L40
@@ -17,18 +20,18 @@ colours=cyan
 regexp=(?:\s{2}|^)(?:Up|Restarting)(?:(?:\s[\w,\d,(,)]+)+)?
 colours=bold green
 ======
-# Exited
-regexp=(?:\s{2}|^)(?:Exited|Exit|Dead|Removal In Progress)(?:(?:\s[\w,\d,(,)]+)+)?
-colours=bold red
-=======
+# Statuses - Exited
+regexp=Exited\s.(\d+).+?(?=\s{2,})
+colours=bold red,red
+======
+# Statuses - Restarting
+regexp=Restarting\s.(\d+).+?(?=\s{2,})
+colours=bold blue
+======
 # Ip Addresses / Ports
-regexp=(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\:)?(\d{1,5}))?(->)?(\d{1,5})(\/)(\w+)
-colours=blue,default,bright_green,default,bright_green,default,bright_blue
-=======
-# Name and command in docker-compose ps.
-regexp=(?:\s{2}|^)(?:[a-z\-_0-9]+)(?:\s{2}|$)(?:\s+(.+?)\s{2,})?
-colours=bold yellow,magenta
-=======
-# Container ID / Image ID and Image. Need to be together to override the "name" regex.
-regexp=(?:\s{2}|^)([a-z0-9]+)\s{2,}((?:(?:[a-z\-_0-9\.]+)+(\/|:)?)+)
-colours=default,cyan,default
+regexp=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\:)?(\d{1,5}))?(?:->)?(\d{1,5}(\/)\w+)
+colours=default,blue,default,bright_green,bright_blue,default
+======
+# NAMES
+regexp=(?:([a-z\-_0-9]+)\/)*([a-z\-_0-9]+)$
+colours=default,yellow,on_blue white

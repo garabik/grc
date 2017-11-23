@@ -1,9 +1,9 @@
 # Main Nodes
-regexp=^(\S[^:]+):\s(.*)$
+regexp=^(\S[^:]+):\s?(.*)?$
 colours=default,cyan
 ======
 # Sub Nodes
-regexp=^\s([^:]+):\s(.*)$
+regexp=^\s([^:]+):\s?(.*)?$
 colours=default,magenta
 ======
 # Warning
