@@ -1,9 +1,11 @@
-# Main
-regexp=(\w+)\.(\S+) = (.+)$
-colours=default,bright_green,cyan,yellow
+# Main & Last key
+regexp=(\w+)\.(\S+) = ?(.+)?$
+colours=default,green,cyan,yellow
 -
-# subcategory
+# subcategories
 regexp=\w+\.(\S+(?=\.))\.
-colours=unchanged,bright_cyan
-
-
+colours=unchanged,magenta
+-
+# error
+regexp=sysctl: permission denied on key '([^']+)'
+colours=red,bold red
