@@ -8,16 +8,24 @@ colours=unchanged,underline green,bright_green
 ======
 # UUID
 regexp=\sUUID="([^"]+)
-colours=default,blue
+colours=bold yellow,blue
+======
+#UUID_SUB
+regexp=\sUUID_SUB="([^"]+)
+colours=green,bright_green
 ======
 # TYPE
 regexp=TYPE="([^"]+)
-colours=default,cyan
+colours=bold cyan,cyan
 ======
 # LABEL
-regexp=LABEL="([^"]+)
-colours=default,bright_cyan
+regexp=\sLABEL="([^"]+)
+colours=bold bright_cyan,bright_cyan
 ======
+# PARTLABEL
+regexp=\sPARTLABEL="([^"]+)
+colours=bold green,red
 # PARTUUID
 regexp=PARTUUID="([^"]+)
-colours=default,magenta
+colours=green,magenta
+
