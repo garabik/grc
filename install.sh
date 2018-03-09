@@ -25,4 +25,5 @@ cp -fv grc.zsh $CONFDIR
 cp -fv grc.fish $CONFDIR
 mkdir -p $PROFILEDIR
 cp -fv grc.bashrc $PROFILEDIR
-
+mkdir -p $PREFIX/zsh/site-functions
+cp -fv _grc $PREFIX/zsh/site-functions
