@@ -1,6 +1,4 @@
 if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
-  # Prevent grc aliases from overriding zsh completions.
-  setopt COMPLETE_ALIASES
 
   # Supported commands
   cmds=(
