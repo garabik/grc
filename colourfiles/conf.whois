@@ -1,0 +1,76 @@
+# field
+regexp=^([\w\s])*:
+colours=bold white
+=======
+# data
+regexp=:\s[\w\s\W\S]*$
+colour=blue
+=======
+# comments
+regexp=^([;%])([\s\w\S\W])*$
+colours=yellow
+=======
+# comments
+regexp=(^(---)|(>>>))[\s\w\S\W]*$
+colours=yellow
+=======
+# domain
+regexp=(([\w\d]([\w\d-])+\.){1,})([\w\d-]{2,})
+colours=green
+=======
+# url
+regexp=http[s]?://(([\w\d]([\w\d-])+\.){1,})([\w\d-]{2,})(/[\w\d\S\s]*)*
+colours=bold green
+=======
+# phone
+regexp=\+([\d\.]*)
+colours=bold yellow
+=======
+# email
+regexp=([\d\w\S])+@(([\w\d]([\w\d-])+\.){1,})([\w\d-]{2,})
+colours=bold blue
+=======
+# date
+regexp=([\d]{4}[- ](([\d]{2})|([a-zA-Z]{3,}))[ -][\d]{2})|([\d]{2}[ -](([a-zA-Z]{3,})|([\d]{2}))[ -][\d]{4})
+colours=bold red
+=======
+# time
+regexp=[\d]{2}:[\d]{2}:[\d]{2}((\.[\d]*[Z]?)|(\+[\d]*))?
+colours=red
+=======
+# NOTICE
+regexp=NOTICE
+colours=bold blue
+=======
+# TERM OF USE
+regexp=TERMS OF USE
+colours=bold blue
+=======
+# registrar
+regexp=(Sponsoring )?[Rr]egistrar([\w\s\S])*:
+colours=bold cyan
+=======
+# registrant
+regexp=(Registry )?[Rr]egistrant([\w\s\S])*:
+colours=bold blue
+=======
+# admin
+regexp=(Registry )?[Aa]dmin([\w\s\S])*:
+colours=bold magenta
+=======
+# tech
+regexp=(Registry )?[Tt]ech([\w\s\S])*:
+colours=bold yellow
+=======
+# billing
+regexp=(Registry )?[Bb]illing([\w\s\S])*:
+colours=bold green
+=======
+# NS
+regexp=((nserver)|(Name Server)):
+colours=bold green
+=======
+# domain status
+regexp=(Domain Status)|(status)
+colours=bold red
+
