@@ -15,6 +15,12 @@ set -U grc_plugin_execs cat cvs df diff dig gcc g++ ls ifconfig \
 
 for executable in $grc_plugin_execs
     if type -q $executable
-        alias $executable "grc $executable"
+        function $executable --inherit-variable executable --wraps=$executable
+            if isatty 1
+                grc $executable $argv
+            else
+                eval command $executable $argv
+            end
+        end
     end
 end
