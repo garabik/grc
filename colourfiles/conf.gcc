@@ -1,9 +1,9 @@
-# 
+#
 regexp=\b(g?cc|[gc]\+\+|g?as|ld)\b
 colours=white bold
 count=once
 .........
-# 
+#
 regexp=^[^:\s]*?:\d+:
 colours=bold magenta
 .........
@@ -11,7 +11,7 @@ regexp=^[^:\s]*?:
 colours=cyan
 count=once
 .........
-# 
+#
 regexp=\`[A-Za-z0-9_():&*]+( const)?\'
 colours=magenta
 .........
@@ -28,7 +28,7 @@ regexp=\-o\s[^\s]+
 colours=yellow
 .........
 # warning and error won't work, unless you redirect also
-# stderr to grcat 
+# stderr to grcat
 #
 # warning
 regexp=[Ww]arning[:\b]

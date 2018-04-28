@@ -135,7 +135,7 @@ while not is_last:
             continue
         if not l[0] in letters:
             break
-        fields = split(l[:-1], "=", 1)
+        fields = split(l.rstrip('\r\n'), "=", 1)
         if len(fields) != 2:
             sys.stderr.write('Error in configuration, I expect keyword=value line\n')
             sys.stderr.write('But I got instead:\n')

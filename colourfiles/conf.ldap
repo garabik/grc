@@ -1,5 +1,5 @@
 # Intended for colouring LDIF output (from ldap tools)
-# comments 
+# comments
 regexp=^#.*
 colours=green
 count=stop

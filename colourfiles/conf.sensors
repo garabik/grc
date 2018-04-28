@@ -1,0 +1,12 @@
+# Adapetr
+regexp=Adapter:\s(.*)
+colours=default, green
+======
+# High temperature
+regexp=.+:\s+(\+[67][0-9][^0-9])
+colours=default, red
+======
+# Very high temperature
+regexp=.+:\s+(\+[89][0-9][0-9]?)
+colours=default, blink red
+======

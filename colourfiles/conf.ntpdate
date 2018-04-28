@@ -1,0 +1,8 @@
+# time offset
+regexp=offset\s([0-9\.,\-]+\ssec)
+colours=unchanged,bold green
+======
+# server ip
+regexp=server\s([0-9a-fA-F\.:]+)
+colours=unchanged,yellow
+
