@@ -5,15 +5,21 @@
 # Example lines:
 # -rw-r--r--   1 user staff 344M Mar 22 22:51 MVI_8735.m4v
 # -rw-r--r--   1 user staff 360050327 Mar 22 22:51 MVI_8735.m4v
+# -rw-r--r--.  1 user staff 1.0G Nov 23 16:13 testg
+# -rw-r--r--.  1 user staff 1.0K Nov 23 16:13 testk
+# -rw-r--r--.  1 user staff 1.0M Nov 23 16:13 testm
+# -rw-r--r--.  1 user staff 1073741824 Nov 23 16:13 testg
+# -rw-r--r--.  1 user staff       1024 Nov 23 16:13 testk
+# -rw-r--r--.  1 user staff    1048576 Nov 23 16:13 testm
 #
 # The regexp uses lookahead to match a date following the size
 
 # size: 1M <= size < 10M
-regexp=\s+(\d{7}|\d([,\.]\d+)?M)(?=\s[A-Z][a-z]{2}\s)
+regexp=\s+(\d{7}|\d(?:[,.]?\d+)?[KM])(?=\s[A-Z][a-z]{2}\s)
 colours=green
 =======
 # size: 10M <= size < 100M
-regexp=\s+(\d{8}|\d\d([,\.]\d+)?M)(?=\s[A-Z][a-z]{2}\s)
+regexp=\s+(\d{8}|\d\d(?:[,.]?\d+)?M)(?=\s[A-Z][a-z]{2}\s)
 colours=yellow
 =======
 # size: 100M <= size < 1G
@@ -21,24 +27,17 @@ regexp=\s+(\d{9}|\d{3}M)(?=\s[A-Z][a-z]{2}\s)
 colours=red
 =======
 # size: 1G <= size
-regexp=\s+(\d{10,}|[\d\.,]+G)(?=\s[A-Z][a-z]{2}\s)
+regexp=\s+(\d{10,}|[\d.,]+G)(?=\s[A-Z][a-z]{2}\s)
 colours=bold red
 =======
 # device major minor numbers
 regexp=\s(\d+),\s+(\d+)\s
 colours=default,bright_yellow ,yellow
 =======
-# time
-regexp=(\s|^)[0-2]?\d(:[0-5]\d)(?=[\s,]|$)
-colours=white
+# Date-Time => G1=Month G2=Day G3=Hour G4=Minutes G5=Year
+regexp=([A-Z][a-z]{2})\s([ 1-3]\d)\s(?:([0-2]?\d):([0-5]\d)(?=[\s,]|$)|\s*(\d{4}))
+colours=unchanged,cyan,cyan,cyan,cyan,bold magenta
 =======
-# month
-#regexp=\s[A-Z][a-z]{2}\s
-#colours=yellow
-#=======
-#regexp=(?<=\d):(?=\d)
-#colours=bold yellow
-#=======
 # root
 regexp=\s(root|wheel)(?=\s|$)
 colours=unchanged,bold white on_red

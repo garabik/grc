@@ -47,7 +47,7 @@ regexp=\s\d*[.,]?\dTi?\s
 colours=bold red
 ======
 # Mount Path
-regexp=(?<=\s)(\/[^\/ ]+)+$
+regexp=(?<=\s)(\/[^\/ ]*)+$
 colours=yellow,bold yellow
 ======
 # Mount [SWAP]
@@ -55,5 +55,5 @@ regexp=\s\[(SWAP)\]
 colours=default,bright_magenta
 ======
 # UUID
-regexp=(?<=\s)\b([0-9a-fA-F-]+|[\w-]{38})\b
+regexp=(?<=\s)\b([0-9a-fA-F-]{4,}|[\w-]{38})\b
 colours=default,dark cyan

@@ -1,7 +1,7 @@
 # FS
 #regexp=^.*?\s
-regexp=^(?!Filesystem).*?\s
-colours=green
+regexp=^(?!Filesystem)(\/[-\w\d.]+)+\s
+colours=blue,bold blue
 ======
 # Size 'K'
 regexp=\s\d*[.,]?\dKi?\s
@@ -20,8 +20,8 @@ regexp=\s\d*[.,]?\dTi?\s
 colours=bold red
 ======
 # Mounted on
-regexp=/[-\w\d./]*$
-colours=bold green
+regexp=\/$|(\/[-\w\d. ]+)+$
+colours=green,bold green
 ======
 # Use 0-60%
 regexp=[\b1-6][0-9]?%|0%
@@ -31,12 +31,12 @@ colours=green
 regexp=[7-9][0-9]%
 colours=yellow
 ======
-# Use 90-95
-regexp=[9][0-5]%
+# Use 90-97
+regexp=9[0-7]%
 colours=red
 ======
-# Use 95-100
-regexp=[9][5-9]%|100%
+# Use 98-100
+regexp=9[8-9]%|100%
 colours=bold red
 ======
 # tmpfs lines

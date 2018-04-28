@@ -3,9 +3,23 @@
 
 regexp=^(.*) on (.*) type (.*) \((.*)\)
 colours=default,green,yellow,blue,magenta
-=====
-regexp=^cgroup.*
-colours=bright_black
-=====
-regexp=^tmpfs.*
+-
+# Devices
+regexp=^(\/[^\/ ]+)+
+colours=bold green, on_green black
+-
+# Mount Path
+regexp=(?<=on )(\/[^\/ ]+)+
+colours=unchanged,underline yellow
+-
+# RW
+regexp=(?<=\()rw
+colours=bold red
+-
+# RO
+regexp=(?<=\()ro
+colours=bold green
+-
+# Like comment, leave at end always
+regexp=^(cgroup|tmpfs).*
 colours=bright_black

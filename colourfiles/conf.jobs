@@ -1,0 +1,9 @@
+# BASH
+regexp=\[(\d+)\](.) +(\d+)?\s?
+colour=unchanged, cyan, yellow, magenta
+-
+regexp=Running.*
+colour=bold green
+-
+regexp=Stopped.*
+colour=red

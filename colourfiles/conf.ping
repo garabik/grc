@@ -1,52 +1,51 @@
-# name
-regexp=(?:[fF]rom|PING)\s(\S+)\s
-colours=default,blue
+# IP
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=bright_blue
 =======
 # ipv6 number
 regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
 colours=magenta
 =======
-# ip number, optional port
-regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\:[0-9]{1,5})?
-colours=bright_blue
-=======
-# icmp_[sr]eq=#
-regexp=icmp_[sr]eq=(\d+)
+# icmp_seq=##
+regexp=icmp_seq=(\d+)
 colours=default,yellow
+=======
+# ttl=#
+regexp=ttl=(\d+)
+colours=default,magenta
+=======
+# name
+regexp=(?:[fF]rom|PING)\s(\S+)\s
+colours=default,blue
 =======
 # time
 regexp=([0-9\.]+)\s?ms
-colours=default,green
+colours=green,bold green
 =======
 # DUP
 regexp=DUP\!
 colours=red
 =======
-# Destination Host Unreachable
-regexp=Destination Host Unreachable
+# OK
+regexp=0% packet loss
+colours=green
+=======
+# Errors
+regexp=(Destination Host Unreachable|100% packet loss)
 colours=red
 =======
 # unknown host
 regexp=.+unknown\shost\s(.+)
 colours=red,bold red
 -
-# statustics header
-regexp=--- \S+ ping statistics ---
-colours=bold
+# statistics header
+regexp=--- (\S+) ping statistics ---
+colours=bold, bold blue
 -
 # last line min/avg/max/mdev
-regexp=(min)/(avg)/(max)/(mdev)
+regexp=rtt (min)/(avg)/(max)/(mdev)
 colours=default,bright_yellow,bright_blue,bright_red,bright_magenta
 -
 # last line values
-regexp=\=\s([0-9\.\ mus]+)\/([0-9\. mus]+)\/([0-9\. mus]+)\/([0-9\. mus]+)
+regexp=\=\s([0-9\.]+)\/([0-9\.]+)\/([0-9\.]+)\/([0-9\.]+)
 colours=default,bright_yellow,bright_blue,bright_red,bright_magenta
--
-# these are good for nping
-regexp=SENT|RCVD
-colours=red
--
-# nping
-regexp=unreachable
-colours=red
-

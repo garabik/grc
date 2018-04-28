@@ -1,7 +1,3 @@
-# Filename
-regexp=\S+\s(\S+)
-colours=bold
--
 # Normal
 regexp=[aAcCdDeijsStTu]
 colours=cyan
@@ -12,8 +8,16 @@ colours=bright_green
 -
 # Read Only
 regexp=[EhINXZ]
-colours=red
+colours=bold red
 -
 # Separators
 regexp=[\-]
 colours=dark
+-
+# Error
+regexp=(lsattr:) \w.*
+colours=default, bold red
+-
+# Filename
+regexp=(\/[-\w\d. ]+)+$
+colours=yellow,bold
