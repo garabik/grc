@@ -46,7 +46,7 @@ stderrf = 0
 # configure file for grcat
 cfile = ""
 
-colour = 1
+colour = sys.stdout.isatty()
 use_pty = 0
 
 for i in optlist:
