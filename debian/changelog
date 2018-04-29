@@ -1,3 +1,10 @@
+grc (1.11.3-1) unstable; urgency=medium
+
+  * add new configuration
+  * --colour=auto is now the default
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sun, 29 Apr 2018 10:30:10 +0200
+
 grc (1.11.2-1) unstable; urgency=low
 
   * add ntpdate configuration command
