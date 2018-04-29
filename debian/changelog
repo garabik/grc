@@ -2,6 +2,7 @@ grc (1.11.3-1) unstable; urgency=medium
 
   * add new configuration
   * --colour=auto is now the default
+  * add dh-python build dependency (closes: #896743)
 
  -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Sun, 29 Apr 2018 10:30:10 +0200
 
