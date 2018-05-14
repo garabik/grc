@@ -1,9 +1,9 @@
-# Time
-regexp=\sup(?:\s(\d+ days?),)?\s+(\d+ min|\d+:\d+),
-colours=default,yellow,green
+# Regular Up
+regexp=\sup(?: (\d+) days?,)? +(\d+ min|\d+:\d+)(?=,)
+colours=green,bold green, bold green
 -
 # users
-regexp=\s+(\d+)\susers
+regexp=\b(\d+) users?
 colours=yellow,bold yellow
 -
 # load average

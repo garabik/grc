@@ -4,7 +4,11 @@ colours=default,bold yellow,bold magenta
 =====
 # broadcast
 regexp=brd\s([^}s]+)
-colours=default,dark
+colours=default,dark cyan
+=====
+# dynamic
+regexp=\bdynamic\b
+colours=dark green
 =====
 # IP6
 regexp=inet6\s([^\/]+)\/(\d+)
@@ -33,6 +37,10 @@ colours=default,bright_white,bold cyan,cyan
 # < >
 regexp=\s<([^>]+)>
 colours=default,cyan
+=====
+# NO-CARRIER
+regexp=NO-CARRIER
+colours=bold red
 =====
 # Master dev
 regexp=\smaster\s(\S+)\s

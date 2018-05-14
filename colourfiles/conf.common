@@ -1,0 +1,11 @@
+# Green Words
+regexp=[Ee]nabled?|[Oo]k|[Rr]unning|[Tt]rue
+colour=green
+-
+# Red Words
+regexp=[Dd]isabled?|[Ee]rrors?|[Ss]topped|[Ff]alse
+colour=red
+-
+# Yellow Words
+regexp=[Ww]arning
+colour=yellow
