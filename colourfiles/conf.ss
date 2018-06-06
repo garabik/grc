@@ -3,7 +3,7 @@ regexp=\[.*\]
 colours=green
 =======
 # Local Address:Port   Peer Address:Port
-regexp=\s((?:\d+\.){3}\d+|\*|\[?::1?\]?|[\w\d\-\_\.]+)(%[\w\d]+)?:(\S+)\s+\s((?:\d+\.){3}\d+|\*|\[?::1?\]?|[\w\d\-\_\.]+):(\S+)
+regexp=\s((?:\d+\.){3}\d+|\*|\[?[\da-fA-F\.:]+\]?|[\w\d\-\_\.]+)(%[\w\d]+)?:(\S+)\s+\s((?:\d+\.){3}\d+|\*|\[?[\da-fA-F\.:]+\]?|[\w\d\-\_\.]+):(\S+)
 colours=default,bright_green,blue,bright_red,cyan,magenta
 =======
 # process name
