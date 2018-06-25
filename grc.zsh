@@ -8,6 +8,9 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     df \
     diff \
     dig \
+    docker \
+    docker-compose \
+    docker-machine \
     gcc \
     gmake \
     ifconfig \

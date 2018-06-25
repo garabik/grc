@@ -6,6 +6,7 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias df='colourify df'
     alias diff='colourify diff'
     alias docker='colourify docker'
+    alias docker-compose='colourify docker-compose'
     alias docker-machine='colourify docker-machine'
     alias du='colourify du'
     alias env='colourify env'
