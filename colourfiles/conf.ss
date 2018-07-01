@@ -1,6 +1,14 @@
-# Local Address:Port
-regexp=\s((?:\d+\.){3}\d+|\*|::1?|[\w\d\-\_\.]+):(\S+)\s+\s((?:\d+\.){3}\d+|\*|::1?|[\w\d\-\_\.]+):(\S+)
-colours=default,bright_green,bright_red,cyan,magenta
+# status
+regexp=\[.*\]
+colours=green
+=======
+# Local Address:Port   Peer Address:Port
+regexp=\s((?:\d+\.){3}\d+|\*|\[?[\da-fA-F\.:]+\]?|[\w\d\-\_\.]+)(%[\w\d]+)?:(\S+)\s+\s((?:\d+\.){3}\d+|\*|\[?[\da-fA-F\.:]+\]?|[\w\d\-\_\.]+):(\S+)
+colours=default,bright_green,blue,bright_red,cyan,magenta
+=======
+# process name
+regexp=\("([^"]+)",
+colours=blue
 =======
 # ipx hostname
 regexp=^IPX.*[\dABCDEF]+:[\dABCDEF]+
@@ -66,10 +74,6 @@ colours=green
 # status
 regexp=UNKNOWN
 colours=blink bold red
-=======
-# status
-regexp=\[.*\]
-colours=green
 =======
 # path
 regexp=(\@)[\dabcdef]+
