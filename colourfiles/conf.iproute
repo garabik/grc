@@ -22,6 +22,10 @@ colours=default,magenta,bold magenta
 regexp=(proto)\s(\S+)\s
 colours=default,default,dark yellow
 =====
+# metric
+regexp=(metric)\s(\d+)\b
+colours=default,default,bold white
+=====
 # linkdown
 regexp=linkdown
 colours=bold red
