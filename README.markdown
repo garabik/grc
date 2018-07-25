@@ -179,7 +179,7 @@ or, if you have recent BSD tail:
 
 ## Automatic aliases
 
-You can start using grc automatically with supported commands. The following assumes that `grc.<bashrc|zsh|fish>` is in `/etc`. The location may differ (i. e. `/usr/local/etc` when installed with homebrew).
+You can start using grc automatically with supported commands. The following assumes that `grc.<bashrc|zsh|fish>` is in `/etc`. The location may differ (i. e. `/usr/local/etc` when installed with [homebrew](https://formulae.brew.sh/formula/grc)).
 
 ### Bash
 
@@ -199,3 +199,11 @@ Add to `~/.config/fish/config.fish` or in a new file in `~/.config/fish/conf.d/`
 
     source /usr/local/etc/grc.fish
 
+## Dynamic aliases
+
+By running the follow code, it will check to see what programs are already installed on your OS (based on your `$PATH`), and echo out the result.  This could then be added to your shell resource file as a one off.  Alternatively, by removing the `echo` in the code, it could be placed into your shell resource file directly, and it will create the necessarily aliases each time:
+
+    for cmd in g++ gas head make ld ping6 tail traceroute6 $( ls /usr/share/grc/ ); do
+      cmd="${cmd##*conf.}"
+      type "${cmd}" >/dev/null 2>&1 && echo alias "${cmd}"="$( which grc ) --colour=auto ${cmd}"
+    done
