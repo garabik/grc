@@ -27,11 +27,11 @@ regexp=DUP\!
 colours=red
 =======
 # OK
-regexp=0% packet loss
+regexp= 0(\.0)?% packet loss
 colours=green
 =======
 # Errors
-regexp=(Destination Host Unreachable|100% packet loss)
+regexp=(Destination Host Unreachable|100(\.0)?% packet loss)
 colours=red
 =======
 # unknown host
