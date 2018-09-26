@@ -24,7 +24,11 @@ colours=magenta
 -
 # Bridges
 regexp=(PCI|ISA|Host) bridge:
-colours=black
+colours=red
+-
+# any unspecified controller
+regexp=([A-Z].+?) controller:
+colours=blue
 -
 # For lspci -k
 regexp=Kernel (?:modules|driver in use): (.+)
