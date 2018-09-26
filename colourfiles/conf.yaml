@@ -1,0 +1,35 @@
+# Document
+regexp=---
+colours=bold yellow
+-
+# First level
+regexp=^(\S+):
+colours=unchanged,blue
+-
+# Nested
+regexp=^ +(\S+):
+colours=unchanged,blue
+-
+# Set Var
+regexp=&\S+
+colours=bold green
+-
+# Use Var
+regexp=\*\S+
+colours=on_green black
+-
+# Array
+regexp=-\s
+colours=bold magenta
+-
+# << Inheritance
+regexp=<<
+colours=bold red
+-
+# Explicit String
+regexp="(\S*)(?=")
+colours=default,cyan
+-
+# Explicit Number
+regexp= (\d*)$
+colours=unchanged,yellow
