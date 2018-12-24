@@ -1,12 +1,28 @@
-# Adapetr
-regexp=Adapter:\s(.*)
-colours=default, green
+# Sensor name
+regexp=([a-z\-0-9]+)
+colours=underline yellow
 ======
-# High temperature
-regexp=.+:\s+(\+[67][0-9][^0-9])
-colours=default, red
+# Data names
+regexp=(.+:)\s+(.+)
+colours=unchanged, bright_cyan, default
 ======
-# Very high temperature
-regexp=.+:\s+(\+[89][0-9][0-9]?)
-colours=default, blink red
+# Extra info
+regexp=.+\s+(\(.+\))
+colours=unchanged, bright_black
+======
+# Adapter name
+regexp=Adapter:(\s.*)
+colours=unchanged, yellow
+======
+# Low temperature (below 60)
+regexp=.+:\s+(\+[2345][0-9]\.[0-9]°C)
+colours=unchanged, green
+======
+# High temperature (above 60)
+regexp=.+:\s+(\+[67][0-9]\.[0-9]°C)
+colours=unchanged, bright_yellow
+======
+# Very high temperature (above 80)
+regexp=.+:\s+(\+[89][0-9]\.[0-9]°C)
+colours=unchanged, bright_red
 ======
