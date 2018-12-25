@@ -1,6 +1,6 @@
 GRC="$(which grc)"
 if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
-    alias colourify="$GRC -es --colour=auto"
+    alias colourify="$GRC -es"
     alias blkid='colourify blkid'
     alias configure='colourify ./configure'
     alias df='colourify df'
