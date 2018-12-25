@@ -187,14 +187,15 @@ while 1:
     for pattern in regexplist:
         pos = 0
         currcount = pattern['count']
+        was_replace = 0 # watch replacements, replace regexp only one per line, to avoid infinte loops if the replacement matches the regexp again
         while 1:
             m = pattern['regexp'](line, pos)
             if m:
                 if 'replace' in pattern:
+                    if was_replace:
+                        break
                     line = re.sub(m.re, pattern['replace'], line)
-                    #m = pattern['regexp'](line, pos)
-                    #if not m:
-                    #    break
+                    was_replace = 1
                 if 'colours' in pattern:
                     if currcount == "block":
                         blockflag = 1
@@ -235,7 +236,8 @@ while 1:
                     skip = pattern['skip'] in ("yes", "1", "true")
                     if 'colours' not in pattern:
                         break
-            else: break
+            else: 
+                break
         if m and currcount == "stop":
             prevcount = "stop"
             break
