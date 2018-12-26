@@ -50,6 +50,10 @@ colours=blue
 regexp=(?i)mtu(\s|\:)\d+
 colours=green
 =======
+# quality/level/sensitivity
+regexp=(\d+/\d+)
+colours=bold yellow
+=======
 #errors
 regexp=errors(\s|\:)\d+
 colours=red
