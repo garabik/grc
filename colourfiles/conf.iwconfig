@@ -11,7 +11,7 @@ regexp=802\.11([a-z]+)
 colours=bold yellow
 =======
 # Speed
-regexp=[0-9]+ Mb/s
+regexp=[0-9\.]+ Mb/s
 colours=bold yellow
 =======
 # Tx-Power
