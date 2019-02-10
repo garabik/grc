@@ -21,6 +21,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     ping \
     ping6 \
     ps \
+    ss \
     traceroute \
     traceroute6 \
     wdiff \

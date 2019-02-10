@@ -27,6 +27,7 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias lspci='colourify lspci'
     alias netstat='colourify netstat'
     alias ping='colourify ping'
+    alias ss='colourify ss'
     alias traceroute='colourify traceroute'
     alias traceroute6='colourify traceroute6'
     alias head='colourify head'
