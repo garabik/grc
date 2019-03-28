@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 
-import os, re, string, sys, getopt, signal
+import os, regex as re, string, sys, getopt, signal
 
 
 def version():
