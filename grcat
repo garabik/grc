@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 
-import sys, os, string, re, signal, errno
+import sys, os, string, regex as re, signal, errno
 
 #some default definitions
 colours = {
