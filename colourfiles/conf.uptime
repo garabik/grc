@@ -7,7 +7,7 @@ regexp=\s+(\d+)\susers
 colours=yellow,bold yellow
 -
 # load average
-regexp=load average: (\d+\.\d+),\s(\d+\.\d+),\s(\d+\.\d+)
+regexp=load average: (\d+[\.,]\d+),\s(\d+[\.,]\d+),\s(\d+[\.,]\d+)
 colours=default,bright_cyan,cyan,dark cyan
 -
 # W Command section
