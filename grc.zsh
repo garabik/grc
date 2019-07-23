@@ -11,6 +11,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     gcc \
     gmake \
     ifconfig \
+    kubectl \
     last \
     ldap \
     ls \

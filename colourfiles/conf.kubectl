@@ -1,0 +1,75 @@
+# Green Words
+regexp=\b(Ready|Running|[Tt]rue|Active|Available|Approved|created)\b
+colour=unchanged,green
+=======
+# Master
+regexp=\smaster\s
+colour=bold magenta
+=======
+# Red Words
+regexp=\b([Dd]isabled?|[Ee]rrors?|[Ss]topped|[Ff]alse|none|CrashLoopBackOff|ErrImagePull|ImagePullBackOff|OOMKilled|[Tt]erminated|[Ff]aile?d?)\b
+colour=unchanged,red
+=======
+# Yellow Words
+regexp=\b([Ww]arning|[Pp]ending|[Ww]aiting|ContainerCreating|Released|Bound|already exists)\b
+colour=unchanged,yellow
+=======
+# Completed Jobs
+regexp=\b(Completed)\b
+colour=unchanged,dark green
+=======
+# Misc IP
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(/\d{1,2})?
+colour=cyan,magenta
+=======
+# Ports
+regexp=(\d+)(:\d+)?/(TCP|UDP)
+colour=unchanged,yellow,bold green,magenta
+=======
+# Type/Name
+regexp=^([^/ ]+)/(\S+)
+colour=unchanged,yellow,bright_white
+=======
+# No running Instances
+regexp=\s(0/[1-9]+)\b
+colour=unchanged,bold red
+=======
+# Labels
+regexp=([\w\d\-_\/.]+)=([\w\d\-_./]+)(,| |$)
+colour=unchanged,blue,bright_yellow
+=======
+# YAML First level (PSEUDO)
+regexp=^([\w\d \-]+):
+colours=unchanged,bright_blue
+=======
+# YAML Nested
+regexp=^[ \-]+(\S+):
+colours=unchanged, blue
+=======
+# YAML number
+regexp=: (\d+)$
+colours=unchanged, yellow
+=======
+# Explicit String
+regexp="(\S*)(?=")
+colours=default,cyan
+=======
+# HELP Highlight
+regexp=( --[^= ]+| -[a-zA-Z]( |,))
+colour=bright_green
+=======
+# Higlight (Tested in kubectl config get-contexts)
+regexp=^\*.+$
+colour=bold white
+=======
+# Empy
+regexp=(\<none\>|null)
+colours=magenta
+=======
+# Events title
+regexp=\s+(Type)\s+(Reason)\s+(Age)\s+(From)\s+(Message)
+colours=yellow, yellow, yellow, yellow, yellow, red
+=======
+# Title separator
+regexp=\s+\-{3,}
+colours=dark white
