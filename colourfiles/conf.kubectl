@@ -55,7 +55,7 @@ regexp="(\S*)(?=")
 colours=default,cyan
 -
 # Empy
-regexp=(\<none\>|null)
+regexp=(\<?[Nn]one\>?|null)
 colours=magenta
 -
 # Events title
