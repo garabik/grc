@@ -7,7 +7,7 @@ regexp=\smaster\s
 colour=on_green bold white
 -
 # Red Words
-regexp=\b([Dd]isabled?|[Ee]rrors?|[Ss]topped|[Ff]alse|none|CrashLoopBackOff|ErrImagePull|ImagePullBackOff)\b
+regexp=\b([Dd]isabled?|[Ee]rrors?|[Ss]topped|[Ff]alse|none|ErrImagePull|[a-zA-Z]+BackOff|OOMKilled|[Tt]erminated|[Ff]aile?d?)\b
 colour=unchanged,red
 -
 # Yellow Words
@@ -39,7 +39,7 @@ regexp=([\w\d\-_\/.]+)=([\w\d\-_./]+)(,| |$)
 colour=unchanged,blue,bright_yellow
 -
 # YAML First level (PSEUDO)
-regexp=^([^\s][\w\d \-]+):
+regexp=^([\w\d \-]+):
 colours=unchanged,bright_blue
 -
 # YAML Nested
@@ -53,6 +53,18 @@ colours=unchanged, yellow
 # Explicit String
 regexp="(\S*)(?=")
 colours=default,cyan
+-
+# Empy
+regexp=(\<?[Nn]one\>?|null)
+colours=magenta
+-
+# Events title
+regexp=\s+(Type)\s+(Reason)\s+(Age)\s+(From)\s+(Message)
+colours=cyan, cyan, cyan, cyan, cyan, magenta
+-
+# Title separator
+regexp=\s+\-{3,}
+colours=dark white
 -
 # HELP Highlight
 regexp=( --[^= ]+| -[a-zA-Z]( |,))
