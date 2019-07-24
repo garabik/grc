@@ -35,7 +35,7 @@ regexp=\s(0/[1-9]+)\b
 colour=unchanged,bold red
 -
 # Labels
-regexp=([\w\d\-_.]+)=([\w\d\-_./]+)(,| |$)
+regexp=([\w\d\-_\/.]+)=([\w\d\-_./]+)(,| |$)
 colour=unchanged,blue,bright_yellow
 -
 # YAML First level (PSEUDO)

@@ -21,6 +21,7 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias iptables='colourify iptables'
     alias as='colourify as'
     alias gas='colourify gas'
+    alias kubectl='colourify kubectl'
     alias ld='colourify ld'
     #alias ls='colourify ls'
     alias lsof='colourify lsof'
@@ -40,6 +41,5 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias semanage='colourify semanage'
     alias getsebool='colourify getsebool'
     alias ifconfig='colourify ifconfig'
-    alias kubectl='colourify kubectl'
 fi
 
