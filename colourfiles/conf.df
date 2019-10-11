@@ -23,12 +23,12 @@ colours=bold red
 regexp=\/$|(\/[-\w\d. ]+)+$
 colours=green,bold green
 ======
-# Use 0-60%
-regexp=[\b1-6][0-9]?%|0%
+# Use 0-69%
+regexp=\b[1-6]?[0-9]%
 colours=green
 ======
-# Use 70-90%
-regexp=[7-9][0-9]%
+# Use 70-89%
+regexp=[78][0-9]%
 colours=yellow
 ======
 # Use 90-97
@@ -36,7 +36,7 @@ regexp=9[0-7]%
 colours=red
 ======
 # Use 98-100
-regexp=9[8-9]%|100%
+regexp=9[89]%|100%
 colours=bold red
 ======
 # tmpfs lines
