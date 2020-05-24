@@ -7,19 +7,31 @@ regexp=\s+[\.\/]+([\w\s\-\_\.]+)(\/.*)?$
 colours=default,bold blue,blue
 ======
 # Size 'K'
-regexp=^\d*[.,]?\dKi?\s
+regexp=^\d{1,3}\s
+colours=green
+======
+regexp=^ ?\d*[.,]?\dKi?\s
 colours=green
 ======
 # Size 'M'
-regexp=^\d*[.,]?\dMi?\s
+regexp=^\d{4,6}\s
+colours=yellow
+======
+regexp=^ ?\d*[.,]?\dMi?\s
 colours=yellow
 ======
 # Size 'G'
-regexp=^\d*[.,]?\dGi?\s
+regexp=^\d{7,9}\s
+colours=red
+======
+regexp=^ ?\d*[.,]?\dGi?\s
 colours=red
 ======
 # Size 'T'
-regexp=^\d*[.,]?\dTi?\s
+regexp=^\d{10,12}\s
+colours=bold red
+======
+regexp=^ ?\d*[.,]?\dTi?\s
 colours=bold red
 ======
 # Total
