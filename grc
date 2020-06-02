@@ -81,38 +81,33 @@ if stdoutf == 1:
 if use_pty:
     import pty
 
-conffile = None
 if cfile == "":
     home = os.environ.get('HOME')
     xdg  = os.environ.get('XDG_CONFIG_HOME')
     if not xdg and home:
         xdg = home + '/.config'
 
-    conffilenames = []
+    conffilenames = ['/etc/grc.conf', '/usr/local/etc/grc.conf']
     if xdg:
         conffilenames += [xdg + '/grc/grc.conf']
     if home:
         conffilenames += [home + '/.grc/grc.conf']
-    conffilenames += ['/usr/local/etc/grc.conf', '/etc/grc.conf']
-    for i in conffilenames:
-        # test if conffile exists, it can be also a pipe
-        if os.path.exists(i) and not os.path.isdir(i):
-            conffile = i
-            break
-    regexplist = []
 
-    if conffile:
-        f = open(conffile, "r")
-        while 1:
-            l = f.readline()
-            if l == "":
-                break
-            if l[0] == "#" or l[0] == '\012':
-                continue
-            regexp = l.strip()
-            if re.search(regexp, ' '.join(args)):
-                cfile = f.readline().strip()
-                break
+    for conffile in conffilenames:
+        # test if conffile exists, it can be also a pipe
+        if os.path.exists(conffile) and not os.path.isdir(conffile):
+            f = open(conffile, "r")
+            while 1:
+                l = f.readline()
+                if l == "":
+                    break
+                if l[0] == "#" or l[0] == '\012':
+                    continue
+                regexp = l.strip()
+                if re.search(regexp, ' '.join(args)):
+                    cfile = f.readline().strip()
+                    break
+
 
 signal.signal(signal.SIGINT, catch_signal)
 
