@@ -27,8 +27,8 @@ colours=green,bold green
 regexp=\s[1-6]?[0-9]%\s
 colours=green
 ======
-# Use 70-90%
-regexp=\s[7-9][0-9]%\s
+# Use 70-89%
+regexp=\s[78][0-9]%\s
 colours=yellow
 ======
 # Use 90-97%
@@ -36,7 +36,7 @@ regexp=\s9[0-7]%\s
 colours=red
 ======
 # Use 98-100%
-regexp=\s9[8-9]%|100%\s
+regexp=\s9[89]%|100%\s
 colours=bold red
 ======
 # tmpfs lines
