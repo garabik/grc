@@ -17,8 +17,20 @@ colours=blue
 # Statuses
 # https://github.com/docker/docker/blob/e5a3f86e447dd659da3c2e759f3c088a0bfcfe3d/container/state.go#L40
 # Up
-regexp=(?:\s{2}|^)(?:Up|Restarting)(?:(?:\s[\w,\d,(,)]+)+)?
+regexp=(?:\s{2}|^)(?:Up|Restarting)(?:(?:\s[\w,\d]+)+)?
 colours=bold green
+======
+# Health - healthy
+regexp=\s\(healthy\)
+colours=bold green
+======
+# Health -  starting
+regexp=\s\(health: starting\)
+colours=bold yellow
+======
+# Health - unhealthy
+regexp=\s\(unhealthy\)
+colours=bold red
 ======
 # Statuses - Exited
 regexp=Exited\s.(\d+).+?(?=\s{2,})
