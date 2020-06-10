@@ -2,30 +2,45 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
 
   # Supported commands
   cmds=(
+    as \
+    blkid \
     cc \
     configure \
-    cvs \
     df \
-    diff \
     dig \
+    diff \
+    docker \
+    docker-machine \
+    du \
+    env \
+    free \
+    fdisk \
+    findmnt \
+    g++ \
     gcc \
-    gmake \
+    getsebool \
+    head \
+    id \
     ifconfig \
-    last \
-    ldap \
+    ip \
+    iptables \
+    gas \
+    ld \
     ls \
+    lsof \
+    lsblk \
+    lspci \
     make \
     mount \
     mtr \
     netstat \
     ping \
-    ping6 \
     ps \
+    semanage \
     traceroute \
     traceroute6 \
-    wdiff \
+    tail \
     whois \
-    iwconfig \
   );
 
   # Set alias for available commands.
