@@ -2,6 +2,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
 
   # Supported commands
   cmds=(
+    as
     ant
     blkid
     cc
@@ -19,6 +20,8 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     fdisk
     findmnt
     free
+    g++
+    gas
     gcc
     getfacl
     getsebool
@@ -34,6 +37,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     last
     ldap
     lolcat
+    ld
     ls
     lsattr
     lsblk
@@ -52,7 +56,6 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     ping6
     proftpd
     ps
-    pv
     sar
     semanage
     sensors
