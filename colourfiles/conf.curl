@@ -1,0 +1,72 @@
+# curl grc colorizer configuration
+===
+# Outgoing Headers
+regexp=^(>) ([\w\-]+): (.*)
+colours=default, bright_green, bright_blue, bright_cyan
+===
+# Incoming Headers
+regexp=^(<) ([\w\-]+): (.*)
+colours=default, bright_yellow, bright_blue, bright_cyan
+===
+# Incoming 200
+regexp=(HTTP/[\d\.]+) 2\d{2} [\w\s]+
+colours=bright_green on_blue, bright_white on_blue
+===
+# Incoming 300
+regexp=(HTTP/[\d\.]+) 3\d{2}[\w\s]*
+colours=bright_green on_blue, bright_white on_blue
+===
+# Incoming 400
+regexp=(HTTP/[\d\.]+) 4\d{2} [\w\s]+
+colours=bright_red on_blue, bright_white on_blue
+===
+# Incoming 500
+regexp=(HTTP/[\d\.]+) 5\d{2} [\w\s]+
+colours=bright_red on_blue, bright_white on_blue
+===
+# Server certificate
+regexp=\* (Server certificate):
+colours=magenta, bright_magenta
+===
+# Certificate Headers
+regexp=\*  ([a-z][\w\s\d]+): (.*)
+colours=magenta, bright_blue, bright_cyan
+===
+# SSL certificate problem
+regexp=SSL certificate problem:( .*)
+colours=bright_red, bright_red
+===
+# SSL certificate verify result: self signed certificate (18), continuing anyway.
+regexp=SSL certificate verify result:(.*)
+colours=bright_magenta, bright_yellow
+===
+# SSL certificate verify ok.
+regexp=SSL certificate verify (ok)
+colours=bright_magenta, bright_green
+===
+# Verbose Logging
+regexp=^([{}\*])\s
+colours=default, bright_magenta
+count=more
+===
+# Outgoing
+regexp=^>\s
+colours=bright_green
+count=more
+===
+# Incoming
+regexp=^<\s
+colours=bright_yellow
+count=more
+===
+# SSL connection
+regexp= (SSL connection) using (.*) / (.*)
+colours=magenta, bright_magenta, bright_magenta, bright_magenta
+===
+# Connected to...
+regexp=(Connected) to (.*) \(([\d\.]+)\) port (\d+)
+colours=magenta, bright_magenta, bright_magenta, bright_magenta, bright_magenta
+===
+# Outgoing METHOD
+regexp=(GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH) (/.*) HTTP/[\d\.]+
+colours=bright_white on_blue, bright_white on_blue, bright_yellow on_blue
