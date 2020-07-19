@@ -24,10 +24,8 @@ regexp=\bDUP
 colours=red
 -
 # !S, !A, !H (host unreachable), etc.
-regexp=\b\![AFGNPSTU]
+regexp=\s\!([HNPSFXVC]|\d+)
 colours=red
-# just an example:
-#command=echo 'Network is down'| mail root
 -
 # ttl=...!
 regexp=ttl=\d+\!
