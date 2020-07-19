@@ -21,6 +21,7 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias iptables='colourify iptables'
     alias as='colourify as'
     alias gas='colourify gas'
+    alias journalctl='colourify journalctl'
     alias kubectl='colourify kubectl'
     alias ld='colourify ld'
     #alias ls='colourify ls'

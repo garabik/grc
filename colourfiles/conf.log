@@ -16,8 +16,10 @@ regexp=.*last message repeated \d+ times$
 colours=yellow
 count=stop
 ======
-# this is a date
-regexp=^... (\d| )\d \d\d:\d\d:\d\d(\s[\w\d]+?\s)
+# this is date and hostname
+#   'Jun  3 22:44:55 neutronium '
+#   'Jun  3 22:44:55 neutronium-02.my-domain.io '
+regexp=^... (\d| )\d \d\d:\d\d:\d\d(\s[-.\w\d]+?\s)
 colours=green, green, red
 count=once
 ======
