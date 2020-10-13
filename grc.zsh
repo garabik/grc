@@ -72,6 +72,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     vmstat
     wdiff
     whois
+    sockstat
   )
 
   # Set alias for available commands.
