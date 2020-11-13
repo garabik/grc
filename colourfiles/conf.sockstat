@@ -1,0 +1,93 @@
+=======
+# CAPS LINE
+regexp=^[A-Z\s%]*([A-Z]{3})[A-Z\s%]*$
+colours=underline
+=======
+# root
+regexp=^root(?=\s|$)
+colours=bold red
+=======
+# non-root users
+regexp=^(?:(?!root|USER))([^\s]+)
+colours=bold yellow,unchanged
+=======
+# CMD
+regexp=^[a-zA-Z]+\w+\s+(\w+)\s+\d+
+colours=unchanged,bold cyan
+=======
+# FD
+regexp=^[a-zA-Z]+\w+\s+\w+\s+\d+\s+(\d+)
+colours=unchanged,yellow
+=======
+# PID
+regexp=^[a-zA-Z]+\w+\s+[a-zA-Z]+\w+\s+(\d+)
+colours=unchanged,bold magenta
+=======
+# PROTOCOLS
+regexp=(tcp4|udp4|tcp6|udp6|stream|dgram)
+colours=bold blue
+=======
+# hostname:service
+regexp=([\w\.\-]+):([\w\-]+)\b
+colours=yellow, bold green, bold yellow
+=======
+# hostname:port
+regexp=([\w\.\-]+):(\d+)\b
+colours=yellow, bold green, bold red
+=======
+# *:service
+regexp=(\*):([\w\-]+)\b
+colours=yellow, yellow, bold red
+=======
+# PATH
+regexp=\s\/.*\/(\S+)($| \(.*\))
+colours=green,bright_green,red
+=======
+# status
+regexp=FIN_WAIT.*
+colours=red
+=======
+# status
+regexp=SYN.*?
+colours=bold red
+=======
+# status
+regexp=LISTEN(ING)?
+colours=bold blue
+=======
+# status
+regexp=TIME_WAIT
+colours=bold red
+=======
+# status
+regexp=CLOS(E(_WAIT)?|ING)
+colours=red
+skip=yes
+=======
+# status
+regexp=LAST_ACK
+colours=red
+=======
+# status
+regexp=ESTAB.*?\b|CONNECTED
+colours=bold yellow
+=======
+# status
+regexp=FREE
+colours=bold green
+=======
+# status
+regexp=DISCONNECTING
+colours=red
+=======
+# status
+regexp=CONNECTING
+colours=green
+=======
+# status
+regexp=CONNECTING
+colours=green
+=======
+# status
+regexp=UNKNOWN
+colours=blink bold red
