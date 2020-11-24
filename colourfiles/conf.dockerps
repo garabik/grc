@@ -28,9 +28,13 @@ colours=bold red,red
 regexp=Restarting\s.(\d+).+?(?=\s{2,})
 colours=bold blue
 ======
-# Ip Addresses / Ports
-regexp=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(\:)?(\d{1,5}))?(?:->)?(\d{1,5}(\/)\w+)
-colours=default,blue,default,bright_green,bright_blue,default
+# Ip Addresses 
+regexp=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(\:)?
+colours=default,blue,default
+======
+# Ports
+regexp=(\d{1,5})?(-)?(\d{1,5})?(->)?(\d{1,5})(-)?(\d{1,5})?(\/)(tcp|udp)
+colours=default,bright_green,default,bright_green, default, bright_green, default, bright_green, default, cyan
 ======
 # NAMES
 regexp=(?:([a-z\-_0-9]+)\/)*([a-z\-_0-9]+)$
