@@ -16,7 +16,10 @@ The original source can be found at:
 
 It is released under GPL v2 or any later version, under Debian 
 systems see /usr/share/common-licenses/GPL-2,
-with following additional condition:
+and I have nothing against adding following additional condition (this is
+however not the part of the license, which remains GPL v2 or any later
+version):
+
 If you want to use, redistribute, modify, abuse and molest grc in any
 way, and you feel like it, you may add any clause to the license, as
 long as it does not put any additional responsibility for behaviour of
