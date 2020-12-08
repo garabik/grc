@@ -26,6 +26,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     wdiff \
     whois \
     iwconfig \
+    tail \
   );
 
   # Set alias for available commands.
