@@ -185,7 +185,7 @@ You can start using grc automatically with supported commands. The following ass
 
 To set aliases for supported commands, append to your `~/.bashrc`:
 
-    [[ -s "/etc/grc.bashrc" ]] && source /etc/grc.bashrc
+    [[ -s "/etc/grc.sh" ]] && source /etc/grc.sh
 
 ### ZSH
 
