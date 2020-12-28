@@ -24,7 +24,7 @@ colours=green, green, red
 count=once
 ======
 # everything in parentheses
-regexp=\(.+?\)
+regexp=\(.*?\)
 colours=blue
 count=more
 ======
@@ -34,7 +34,7 @@ colours=bold yellow
 count=more
 ======
 # everything in "
-regexp=\".+?\"
+regexp=\".*?\"
 colours=blue
 ======
 # this is probably a pathname
