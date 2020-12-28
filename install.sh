@@ -24,7 +24,7 @@ cp -fv grc.conf $CONFDIR
 cp -fv grc.zsh $CONFDIR
 cp -fv grc.fish $CONFDIR
 mkdir -p $PROFILEDIR
-cp -fv grc.bashrc $PROFILEDIR
+cp -fv grc.sh $PROFILEDIR
 
 # probably we should not install it into site-functions in a debian package...
 if [ "$PREFIX" = "/usr/local" ]; then

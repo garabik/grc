@@ -179,13 +179,13 @@ or, if you have recent BSD tail:
 
 ## Automatic aliases
 
-You can start using grc automatically with supported commands. The following assumes that `grc.<bashrc|zsh|fish>` is in `/etc`. The location may differ (i. e. `/usr/local/etc` when installed with [homebrew](https://formulae.brew.sh/formula/grc)).
+You can start using grc automatically with supported commands. The following assumes that `grc.<sh|zsh|fish>` is in `/etc`. The location may differ (i. e. `/usr/local/etc` when installed with [homebrew](https://formulae.brew.sh/formula/grc)).
 
 ### Bash
 
 To set aliases for supported commands, append to your `~/.bashrc`:
 
-    [[ -s "/etc/grc.bashrc" ]] && source /etc/grc.bashrc
+    [[ -s "/etc/grc.sh" ]] && source /etc/grc.sh
 
 ### ZSH
 
