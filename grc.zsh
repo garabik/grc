@@ -12,6 +12,7 @@ cmds=(
   blkid
   cc
   configure
+  curl
   cvs
   df
   diff
@@ -74,6 +75,7 @@ cmds=(
   traceroute
   traceroute6
   tune2fs
+  ulimit
   uptime
   vmstat
   wdiff
