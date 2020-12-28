@@ -1,4 +1,7 @@
-if [[ "$TERM" = dumb ]] || (( ! $+commands[grc] )); then
+#!/usr/bin/env zsh
+
+if [ "$TERM" = dumb ] || (( ! $+commands[grc] ))
+then
     return
 fi
 
@@ -9,6 +12,7 @@ cmds=(
   blkid
   cc
   configure
+  curl
   cvs
   df
   diff
@@ -71,19 +75,28 @@ cmds=(
   traceroute
   traceroute6
   tune2fs
+  ulimit
   uptime
   vmstat
   wdiff
   whois
 )
 
+function setup_alias() {
+  local name="$1"
+  local path="$(which "$name")"
+  $name() {
+    grc --colour=auto $commands[$0] "$@"
+  }
+  compdef "_${name}" "$name"
+}
+
 # Set alias for available commands.
 for cmd in $cmds ; do
   if (( $+commands[$cmd] )) ; then
-    alias $cmd="grc --colour=auto $commands[$cmd]"
+    setup_alias $cmd
   fi
 done
 
 # Clean up variables
-unset cmds cmd
-
+unset cmds cmd setup_alias
