@@ -2,7 +2,7 @@
 
 if [ "$TERM" = dumb ] || (( ! $+commands[grc] ))
 then
-    return
+  return
 fi
 
 # Supported commands
@@ -82,21 +82,14 @@ cmds=(
   whois
 )
 
-function setup_alias() {
-  local name="$1"
-  local path="$(which "$name")"
-  $name() {
-    grc --colour=auto $commands[$0] "$@"
-  }
-  compdef "_${name}" "$name"
-}
-
 # Set alias for available commands.
 for cmd in $cmds ; do
   if (( $+commands[$cmd] )) ; then
-    setup_alias $cmd
+    $cmd() {
+      grc --colour=auto ${commands[$0]} "$@"
+    }
   fi
 done
 
 # Clean up variables
-unset cmds cmd setup_alias
+unset cmds cmd
