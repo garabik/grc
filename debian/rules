@@ -19,8 +19,6 @@ install:
 
 	# Add here commands to install the package into debian/tmp.
 	./install.sh `pwd`/debian/grc/usr `pwd`/debian/grc
-	# this is too invasive, would be incluided in a next major version
-	rm `pwd`/debian/grc/etc/profile.d/grc.sh
 
 build: build-arch build-indep
 build-arch: build-stamp
