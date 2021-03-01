@@ -1,3 +1,11 @@
+grc (1.12-1) unstable; urgency=low
+
+  * add new configurations
+  * improved zsh alias support
+  * various small bugfixes and improvements
+
+ -- Radovan Garabik <garabik@kassiopeia.juls.savba.sk>  Mon, 01 Mar 2021 09:41:35 +0100
+
 grc (1.11.3-1) unstable; urgency=medium
 
   * add new configurations
