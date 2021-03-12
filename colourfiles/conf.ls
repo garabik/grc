@@ -35,7 +35,7 @@ regexp=\s(\d+),\s+(\d+)\s
 colours=default,bright_yellow ,yellow
 =======
 # Date-Time => G1=Month G2=Day G3=Hour G4=Minutes G5=Year
-regexp=([A-Z][a-z]{2})\s([ 1-3]\d)\s(?:([0-2]?\d):([0-5]\d)(?=[\s,]|$)|\s*(\d{4}))
+regexp=([A-Z][a-zä]{2})\s([ 1-3]\d)\s(?:([0-2]?\d):([0-5]\d)(?=[\s,]|$)|\s*(\d{4}))
 colours=unchanged,cyan,cyan,cyan,cyan,bold magenta
 =======
 # root
