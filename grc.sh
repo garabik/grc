@@ -1,5 +1,5 @@
 GRC="$(which grc)"
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
+if tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias colourify="$GRC -es"
     alias blkid='colourify blkid'
     alias configure='colourify ./configure'

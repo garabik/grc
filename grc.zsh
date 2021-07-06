@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [ "$TERM" = dumb ] || (( ! $+commands[grc] ))
+if ! tty -s || [ ! -n "$TERM" ] || [ "$TERM" = dumb ] || (( ! $+commands[grc] ))
 then
   return
 fi
