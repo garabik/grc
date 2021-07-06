@@ -37,18 +37,18 @@ binary-indep: build install
 	dh_testroot
 #	dh_installdebconf	
 	dh_installdocs
-	dh_installexamples
-	dh_installmenu
+#	dh_installexamples
+#	dh_installmenu
 #	dh_installemacsen
 #	dh_installpam
-#	dh_installinit
-	dh_installcron
+	dh_installinit
+#	dh_installcron
 	dh_installman grc.1 grcat.1
-	dh_installinfo
+#	dh_installinfo
 #	dh_undocumented
 	dh_installchangelogs
 	dh_link
-	dh_strip
+#	dh_strip
 	dh_compress
 	dh_fixperms
 	# You may want to make some executables suid here.
