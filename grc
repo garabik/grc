@@ -26,7 +26,6 @@ Options:
 def catch_signal(signum, frame):
     "catch signal sent to grc and forward it to the original application"
     global pidp
-#    print('signal')
     try:
         os.kill(pidp, signum)
     except OSError: # if the subprocess already died
