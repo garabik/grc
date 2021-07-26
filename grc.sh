@@ -2,7 +2,7 @@
 
 [ -f /etc/default/grc ] && . /etc/default/grc
 
-[ x$GRC_ALIASES = xtrue ] || exit 0
+[ x$GRC_ALIASES = xtrue ] || return 0
 
 GRC="$(which grc)"
 if tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
