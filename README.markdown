@@ -161,9 +161,9 @@ there can be more attributes per line (separated by space), e.g.
 
 will display pathnames in bold blinking green
 
-## Python 3 compatibility
+## Python 2 & 3 compatibility
 
-There is some preliminary python3 support, meaning that both grc and grcat will run under both python2 and python3. However, all the regular expressions are strings, and grcat works on string input (not bytes).  Therefore it will miserably fail if fed input with invalid UTF-8 characters.
+both grc and grcat are targetted towards python3 now; there is an attempt at python2 compatibility, meaning that both grc and grcat will run under both python2 and python3. However, all the regular expressions are strings, and grcat works on string input (not bytes).
 
 ## Hints
 
