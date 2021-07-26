@@ -1,3 +1,10 @@
+grc (1.13-1) unstable; urgency=low
+
+  * do not add sh aliases unless explicitely allowed in /etc/default/grc (closes: #984629)
+  * several minor improvements
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Mon, 26 Jul 2021 18:08:34 +0200
+
 grc (1.12-1) unstable; urgency=low
 
   * add new configurations

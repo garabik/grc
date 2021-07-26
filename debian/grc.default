@@ -2,6 +2,7 @@
 # true or false
 #
 # since this is rather invasive, it defaults to false
+#
 # changing it makes your shell source /etc/profile.d/grc
 
 GRC_ALIASES=false

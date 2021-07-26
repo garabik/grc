@@ -1,5 +1,9 @@
 # aliases for grc(1)
 
+# this will execute only if there is a line with
+# GRC_ALIASES=true
+# in /etc/default/grc
+
 [ -f /etc/default/grc ] && . /etc/default/grc
 
 [ x$GRC_ALIASES = xtrue ] || return 0
