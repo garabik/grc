@@ -104,7 +104,7 @@ To facilitate the use, command `grc` acts as frontend for `grcat`, automatically
 
 etc...
 
-`grc` will execute command command with optional parameters piping its stdout into `grcat`.
+`grc` will execute command with optional parameters piping its stdout into `grcat`.
 
 Configuration file for `grcat` is determined by `/etc/grc.conf` or `~/.grc/grc.conf` file.
 
