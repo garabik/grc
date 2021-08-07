@@ -2,7 +2,7 @@
 
 # this will execute only if there is a line with
 # GRC_ALIASES=true
-# in /etc/default/grc
+# in /etc/default/grc or you export GRC_ALIASES=true prior to sourcing this
 
 [ -f /etc/default/grc ] && . /etc/default/grc
 
