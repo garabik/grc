@@ -33,3 +33,4 @@ else:
 
 If you're on OS X and using Homebrew,
 	brew install grc
+
