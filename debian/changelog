@@ -1,3 +1,9 @@
+grc (1.13-2) unstable; urgency=medium
+
+  * Source only upload (closes: #983793)
+
+ -- Radovan Garabík <garabik@kassiopeia.juls.savba.sk>  Fri, 20 Aug 2021 16:38:48 +0200
+
 grc (1.13-1) unstable; urgency=low
 
   * do not add sh aliases unless explicitly allowed in /etc/default/grc
