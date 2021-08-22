@@ -3,7 +3,7 @@ regexp=inet\s([^\/]+)\/(\d+)
 colours=default,bold yellow,bold magenta
 =====
 # broadcast
-regexp=brd\s([^}s]+)
+regexp=brd\s([^}\s]+)
 colours=default,dark cyan
 =====
 # dynamic
