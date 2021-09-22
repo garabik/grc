@@ -1,5 +1,5 @@
 # Scan Title
-regexp=Nmap scan report for (\S+)\s\(([^\)]+)\)
+regexp=Nmap scan report for (\S+)(?:\s\(([^\)]+)\))?
 colours=default,bold green, bold magenta
 -
 # up
@@ -19,7 +19,7 @@ regexp=^PORT.*$|^HOP.*
 colours=bold
 -
 # Ports
-regexp=^(\d+)\/(\w+)\s+(\w+)\s+(\S+)
+regexp=^(\d+)\/(\w+)\s+([\w|]+)\s+(\S+)
 colours=default,bold green,magenta,cyan,bold yellow
 -
 # Ports Details
