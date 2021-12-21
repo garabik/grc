@@ -1,16 +1,36 @@
 # Regular Up
-regexp=\sup(?: (\d+) days?,)? +(\d+ min|\d+:\d+)(?=,)
+regexp=\sup(?: (\d+) days?,?)? +(\d+ min|\d+:\d+)(?=,)
 colours=green,bold green, bold green
 -
 # users
 regexp=\b(\d+) users?
 colours=yellow,bold yellow
 -
-# load average
-regexp=load average: (\d+[\.,]\d+),\s(\d+[\.,]\d+),\s(\d+[\.,]\d+)
+# load average (Works with OSX)
+regexp=load averages?: (\d+\.\d+),?\s(\d+\.\d+),?\s(\d+\.\d+)
 colours=default,bright_cyan,cyan,dark cyan
 -
 # W Command section
+# ----------------------------------------------
 # Title
 regexp=^USER.*$
 colours=bold
+-
+# TTY col
+# PTS - are SSH connections or telnet connections
+regexp=\bpts\/\d+
+colours=bright_yellow
+-
+# TTY ports are direct connections such as a keyboard/mouse/serial
+regexp=\btty\d+
+colours=bright_cyan
+-
+regexp=\bconsole\b
+colours=cyan
+-
+# IDLE
+regexp=\b(\d+)(days)\b
+colours=default,bold blue,yellow
+-
+regexp=\b(\d+\.?\d*)(s)\b
+colours=default,bold blue,green

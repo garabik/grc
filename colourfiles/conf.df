@@ -2,43 +2,43 @@
 #regexp=^.*?\s
 regexp=^(?!Filesystem)(\/[-\w\d.]+)+\s
 colours=blue,bold blue
-======
+-
 # Size 'K'
 regexp=\s\d*[.,]?\d(K|B)i?\s|\b\d{1,3}\b
 colours=green
-======
+-
 # Size 'M'
 regexp=\s\d*[.,]?\dMi?\s|\b\d{4,6}\b
 colours=yellow
-======
+-
 # Size 'G'
 regexp=\s\d*[.,]?\dGi?\s|\b\d{7,9}\b
 colours=red
-======
+-
 # Size 'T'
 regexp=\s\d*[.,]?\dTi?\s|\b\d{10,12}\b
 colours=bold red
-======
+-
 # Mounted on
 regexp=\/$|(\/[-\w\d. ]+)+$
 colours=green,bold green
-======
+-
 # Use 0-60%
 regexp=\s[1-6]?[0-9]%\s
 colours=green
-======
+-
 # Use 70-89%
 regexp=\s[78][0-9]%\s
 colours=yellow
-======
+-
 # Use 90-97%
 regexp=\s9[0-7]%\s
 colours=red
-======
+-
 # Use 98-100%
 regexp=\s9[89]%|100%\s
 colours=bold red
-======
-# tmpfs lines
-regexp=^tmpfs.*
+-
+# Special devices lines
+regexp=^(tmpfs|devtmpfs|efivarfs).*
 colours=bright_black

@@ -11,7 +11,7 @@ set -U grc_plugin_execs cat cvs df diff dig gcc g++ ls ifconfig \
        wdiff blkid du dnf docker docker-compose docker-machine env id ip iostat journalctl kubectl \
        last lsattr lsblk lspci lsmod lsof getfacl getsebool ulimit uptime nmap \
        fdisk findmnt free semanage sar ss sysctl systemctl stat showmount \
-       tcpdump tune2fs vmstat w who sockstat
+       tcpdump tune2fs vmstat w who sockstat gpg
 
 for executable in $grc_plugin_execs
     if type -q $executable
