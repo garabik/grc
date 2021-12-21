@@ -10,12 +10,12 @@ colours=underline
 regexp=^([A-Z][-a-z0-9]+(\s+|$)){3,}$
 colours=underline
 =======
-# VMSTAT
-regexp=(\s|^)\d+([.,]\d+)?(?=[\s,]|$)
-colours=bright_green
-=======
 # PID
-regexp=^[a-zA-Z]+\w+\s+(\d+)|^\d\s+\w\s+(?:\w+\s+)?(\d+)|^\s*(\d+)
+# ps     => 61857 ttys000    0:05.76 -zsh
+# ps -ef =>   502  1395  1372   0  9:38AM ??        53:25.05 /Applications
+#        => root      6099     2  0 11:42 ?        00:00:00 [kworker/2:2H]
+#          1           |      2             |   3
+regexp=^[a-z+]+\s+(\d+)|\s*\d+\s+(\d+)\s+\d+|^\s*(\d+)\s[^\d]
 colours=unchanged,bold magenta,bold magenta,bold magenta
 =======
 # n.n.n
@@ -44,12 +44,12 @@ regexp=root|wheel(?=\s|$)
 colours=bold red
 =======
 # pts
-regexp=(\s|^)pts/\d+(?=[^\w\d]|$)
-colours=bright_yellow
+regexp=(\b|^)pts([/\d]+)(?=[^\w\d]|$)
+colours=green,bold green
 =======
 # tty
-regexp=(\s|^)tty\d+(?=[^\w\d]|$)
-colours=bright_cyan
+regexp=(\b|^)tty(\w+)(?=[^\w\d]|$)
+colours=blue,bold blue
 =======
 # Negative NICE (works only in -l)
 regexp=^\d\s+\w\s+\w+\s+\d+\s+\d+\s+\d\s+\d+\s+(-\d+)

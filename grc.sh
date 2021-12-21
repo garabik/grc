@@ -26,6 +26,7 @@ if tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias make='colourify make'
     alias gcc='colourify gcc'
     alias g++='colourify g++'
+    alias gpg='colourify gpg'
     alias id='colourify id'
     alias ip='colourify ip'
     alias iptables='colourify iptables'

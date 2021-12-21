@@ -1,10 +1,18 @@
+# groups
+regexp=groups
+colours=on_cyan bold white
+-
 # Groups
-regexp=(\d+)\((\w+)\)
-colours=unchanged,yellow,bold yellow
+regexp=(\d+)\(([\w.]+)\)
+colours=unchanged,cyan,bold cyan
 -
 # User
-regexp=uid.(\d+)\((\w+)\)
-colours=unchanged,green,bold green
+regexp=(uid).(\d+)\(([\w.]+)\)
+colours=unchanged,on_green bold white,green,bold green
+-
+# gid
+regexp=(gid).(\d+)\(([\w.]+)\)
+colours=unchanged,on_yellow black,yellow,bold yellow
 -
 # SELinux
 regexp=(\w+_u):(\w+_r):(\w+_t):([\w\-.:]+)

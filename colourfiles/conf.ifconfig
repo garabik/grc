@@ -49,3 +49,9 @@ colours=cyan
 =======
 regexp=collisions(\s|\:)\d+
 colours=red
+=======
+regexp=status: (inactive)
+colours=unchanged,bold yellow on_red
+=======
+regexp=status: (active)
+colours=unchanged,bold yellow on_green
