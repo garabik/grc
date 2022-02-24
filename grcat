@@ -147,36 +147,37 @@ if not conffile:
 
 regexplist = []
 
-f = open(conffile, "r")
 is_last = 0
 split = str.split
 lower = str.lower
 letters = string.ascii_letters
 while not is_last:
     ll = {'count':"more"}
-    while 1:
-        l = f.readline()
-        if l == "": 
-            is_last = 1
-            break
-        if l[0] == "#" or l[0] == '\012':
-            continue
-        if not l[0] in letters:
-            break
-        fields = split(l.rstrip('\r\n'), "=", 1)
-        if len(fields) != 2:
-            sys.stderr.write('Error in configuration, I expect keyword=value line\n')
-            sys.stderr.write('But I got instead:\n')
-            sys.stderr.write(repr(l))
-            sys.stderr.write('\n')
-            sys.exit(1)
-        keyword, value = fields
-        keyword = lower(keyword)
-        if keyword in  ('colors', 'colour', 'color'):
-            keyword = 'colours'
-        if not keyword in ["regexp", "colours", "count", "command", "skip", "replace", "concat"]:
-            raise ValueError("Invalid keyword")
-        ll[keyword] = value
+
+    with open(conffile, "r", encoding='UTF-8') as f:
+        while 1:
+            l = f.readline()
+            if l == "":
+                is_last = 1
+                break
+            if l[0] == "#" or l[0] == '\012':
+                continue
+            if not l[0] in letters:
+                break
+            fields = split(l.rstrip('\r\n'), "=", 1)
+            if len(fields) != 2:
+                sys.stderr.write('Error in configuration, I expect keyword=value line\n')
+                sys.stderr.write('But I got instead:\n')
+                sys.stderr.write(repr(l))
+                sys.stderr.write('\n')
+                sys.exit(1)
+            keyword, value = fields
+            keyword = lower(keyword)
+            if keyword in  ('colors', 'colour', 'color'):
+                keyword = 'colours'
+            if not keyword in ["regexp", "colours", "count", "command", "skip", "replace", "concat"]:
+                raise ValueError("Invalid keyword")
+            ll[keyword] = value
 
     # Split string into one string per regex group
     # e.g. split "brown bold, red" into "brown bold" and
