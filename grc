@@ -95,17 +95,17 @@ if cfile == "":
     for conffile in conffilenames:
         # test if conffile exists, it can be also a pipe
         if os.path.exists(conffile) and not os.path.isdir(conffile):
-            f = open(conffile, "r")
-            while 1:
-                l = f.readline()
-                if l == "":
-                    break
-                if l[0] == "#" or l[0] == '\012':
-                    continue
-                regexp = l.strip()
-                if re.search(regexp, ' '.join(args)):
-                    cfile = f.readline().strip()
-                    break
+            with open(conffile, "r", encoding='UTF-8') as f:
+                while 1:
+                    l = f.readline()
+                    if l == "":
+                        break
+                    if l[0] == "#" or l[0] == '\012':
+                        continue
+                    regexp = l.strip()
+                    if re.search(regexp, ' '.join(args)):
+                        cfile = f.readline().strip()
+                        break
 
 
 signal.signal(signal.SIGINT, catch_signal)
