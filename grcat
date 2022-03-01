@@ -91,6 +91,10 @@ colours = {
             'on_bright_white'   :    "\033[47;107m",
             }
 
+# add in xterm-256 colors
+for c in range(0, 256):
+    colours[f'xterm_{c}']    = f"\033[38;5;{c}m" # foreground
+    colours[f'on_xterm_{c}'] = f"\033[48;5;{c}m" # background
 
 # ignore ctrl C - this is not ideal for standalone grcat, but
 # enables propagating SIGINT to the other subprocess in grc
