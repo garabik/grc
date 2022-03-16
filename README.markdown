@@ -152,6 +152,10 @@ Additional colours can be: `dark, italic, rapidblink, strikethrough`.
 These are supported only on some terminals, so if you want to write
 portable configuration files, avoid uing them (idea by James Rowe).
 
+xterm-256 colors are supported by using `xterm_<n>` or `on_xterm_<n>`. For example,
+to color light blue on a dark-grey background you can go
+`colours=xterm_81 on_xterm_237`
+
 there can be more attributes per line (separated by space), e.g.
 
     # this is probably a pathname
