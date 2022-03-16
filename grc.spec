@@ -1,20 +1,12 @@
-# Note that this is NOT a relocatable package
-%define ver      1.0.8
-%define rel      1
-%define prefix   /usr
-%define confdir  /etc
-
 Summary:   Generic Colouriser
 Name:      grc
-Version:   %ver
-Release:   %rel
-License: GPL
+Version:   1.13
+Release:   1
+License:   GPL
 Group:     Development/Tools
-Source:    grc-%{PACKAGE_VERSION}.tar.gz
-URL:       http://melkor.dnp.fmph.uniba.sk/~garabik/grc.html
-BuildRoot: %{_tmppath}/grc-%{PACKAGE_VERSION}-root
-Packager:  Valerij Klein <vklein@console-colors.de>
-BuildArchitectures: noarch
+URL:       http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
+Source0:   https://github.com/garabik/grc/archive/v%{version}/%{name}-%{version}.tar.gz
+BuildArch: noarch
 
 %description
 Generic Colouriser is yet another colouriser for beautifying your logfiles
@@ -25,33 +17,28 @@ Authors:
     Radovan Garabik <garabik@melkor.dnp.fmph.uniba.sk>
 
 %prep
-%setup
+%autosetup -p1
+
+# Keep original timestamps
+sed -e 's/cp -fv /cp -fvp /' -i install.sh
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
-install -d -m 755 $RPM_BUILD_ROOT%{prefix}/bin
-install -m 755 grc $RPM_BUILD_ROOT%{prefix}/bin
-install -m 755 grcat $RPM_BUILD_ROOT%{prefix}/bin
-install -d -m 755 $RPM_BUILD_ROOT%{prefix}/share/grc
-install -m 644 colorfiles/conf.* $RPM_BUILD_ROOT%{prefix}/share/grc
-install -d -m 755 $RPM_BUILD_ROOT%{confdir}
-install -m 644 grc.conf $RPM_BUILD_ROOT%{confdir}
-install -d -m 755 $RPM_BUILD_ROOT%{_mandir}/man1
-install -m 644 *.1 $RPM_BUILD_ROOT%{_mandir}/man1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+./install.sh "${RPM_BUILD_ROOT}%{_prefix}" "${RPM_BUILD_ROOT}"
 
 %files
-%defattr(-, root, root)
-
-%doc CHANGES CREDITS README TODO Regexp.txt
-%{prefix}/bin/*
-%{prefix}/share/grc/*
-%doc %{_mandir}/man1/*
-%config(noreplace) /etc/grc.conf
+%doc CHANGES CREDITS README* TODO Regexp.txt
+%license debian/copyright
+%{_bindir}/%{name}*
+%{_datadir}/%{name}/*
+%{_mandir}/man1/%{name}*
+%config(noreplace) %{_sysconfdir}/grc.conf
+%config(noreplace) %{_sysconfdir}/grc.zsh
+%config(noreplace) %{_sysconfdir}/grc.fish
+%config(noreplace) %{_sysconfdir}/profile.d/grc.sh
 
 %changelog
+* Mon Feb 07 2022 Petr Menšík <pemensik@redhat.com> - 1.13-1
+- Update spec file for Fedora guidelines
+
 * Fri Sep 01 2006 Valerij Klein <vklein@console-colors.de> 1.0.7-1
 - Minor changes in SPEC

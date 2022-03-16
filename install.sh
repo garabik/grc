@@ -13,22 +13,22 @@ CONFDIR=$ETCPREFIX/etc
 PROFILEDIR=$CONFDIR/profile.d
 
 mkdir -p $BINDIR || true
-cp -fv grc grcat $BINDIR
+cp -fvp grc grcat $BINDIR
 mkdir -p $LIBDIR || true
-cp -fv colourfiles/conf.* $LIBDIR
+cp -fvp colourfiles/conf.* $LIBDIR
 mkdir -p $MANDIR/man1
-cp -fv grc.1 $MANDIR/man1
-cp -fv grcat.1 $MANDIR/man1
+cp -fvp grc.1 $MANDIR/man1
+cp -fvp grcat.1 $MANDIR/man1
 mkdir -p $CONFDIR
-cp -fv grc.conf $CONFDIR
-cp -fv grc.zsh $CONFDIR
-cp -fv grc.fish $CONFDIR
+cp -fvp grc.conf $CONFDIR
+cp -fvp grc.zsh $CONFDIR
+cp -fvp grc.fish $CONFDIR
 mkdir -p $PROFILEDIR
-cp -fv grc.sh $PROFILEDIR
+cp -fvp grc.sh $PROFILEDIR
 
 # probably we should not install it into site-functions in a debian package...
 if [ "$PREFIX" = "/usr/local" ]; then
   mkdir -p $PREFIX/zsh/site-functions
-  cp -fv _grc $PREFIX/zsh/site-functions
+  cp -fvp _grc $PREFIX/zsh/site-functions
 fi
 
