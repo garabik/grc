@@ -1,0 +1,48 @@
+# this configuration file is suitable for displaying structured json logs
+# Reference: http://kassiopeia.juls.savba.sk/~garabik/software/grc/README.txt
+
+# attribute name
+regexp=(?<=[\{,])\".*?\"(?=\:)(?!,)
+colours=bold white
+count=more
+======
+# attribute value (string)
+regexp=(?<=\:\").*?[^\\](?=\")
+colours=green
+count=more
+======
+# attribute value (number)
+regexp=(?<=\:)[-+]?[0-9]*\.?[0-9]+
+colours=bold magenta
+count=more
+======
+# attribute value (date)
+regexp=\"\d{4}-[01]\d-[0-3]\d.+?\"
+colours=cyan
+count=more
+======
+# special attribute (error)
+regexp=(?<=[\{,]\")err.*?\"\:\".*?[^\\](?=\")
+colours=bold red
+count=more
+=====
+# special attribute (error level)
+regexp=(?<=[\{,]\"level"\:)(\"(err.*?|fatal|ftl)\")
+colours=bold on_red
+count=once
+=====
+# special attribute (warning level)
+regexp=(?<=[\{,]\"level"\:)(\"(warn.*?|wrn)\")
+colours=on_yellow black
+count=once
+=====
+# useful delimiters
+regexp=([\[\]\{\}\(\)])
+colours=dark white
+count=more
+=====
+# useful delimiters
+regexp=(?<=\"),(?=\")
+colours=dark white
+count=more
+
