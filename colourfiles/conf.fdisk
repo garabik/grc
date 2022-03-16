@@ -33,3 +33,11 @@ colours=yellow
 # Size 'G'
 regexp=\s\d+[.,]?\d*\s?Gi?B?
 colours=red
+-
+# Size 'T'
+regexp=\s\d+[.,]?\d*\s?Ti?B?
+colours=bold red
+-
+# Model (Keep it after Sizes)
+regexp=model: (.+)$
+colours=unchanged, bold blue

@@ -16,7 +16,7 @@ colours=default, on_red white
 =====
 # still logged in
 regexp=still logged in
-colours=on_cyan bold white
+colours=on_magenta white
 =====
 # still running
 regexp=still running
@@ -27,15 +27,19 @@ regexp=\((\d+\+)?(\d+):(\d+)\)
 colours=default,bright_red,yellow,green
 =====
 # pts
-regexp=\s(pts[\S]+)
-colours=default,green
+regexp=\bpts([/\d]+)
+colours=green,bold green
 =====
 # tty
-regexp=\s(tty\d)
-colours=default,blue
+regexp=\btty(\w+)
+colours=blue,bold blue
+=====
+# shutdown
+regexp=^shutdown\s+~
+colours=bold red
 =====
 # reboot
-regexp=^reboot\s+system boot
+regexp=^reboot\s+(~|system boot)
 colours=red
 =====
 # Third column IP

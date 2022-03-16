@@ -1,11 +1,15 @@
 # Green Words
-regexp=[Ee]nabled?|[Oo]k|[Rr]unning|[Tt]rue
-colour=green
+regexp=\b(?:[Ee]nabled?|[Aa]ctive|[Oo]k|[Rr]unning|[Tt]rue|[Yy]es)\b
+colour=bold green
 -
 # Red Words
-regexp=[Dd]isabled?|[Ee]rrors?|[Ss]topped|[Ff]alse
-colour=red
+regexp=\b(?:[Dd]isabled?|[Ii]nactive|[Ee]rrors?|[Ss]topped|[Ff]alse|[Nn]o)\b
+colour=bold red
 -
 # Yellow Words
-regexp=[Ww]arning
-colour=yellow
+regexp=\b(?:[Ww]arning|[Pp]ending|[Ww]aiting)\b
+colour=bold yellow
+-
+# Misc IP
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(:\d+)?
+colour=bold magenta, bright_blue
