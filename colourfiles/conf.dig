@@ -6,6 +6,10 @@ colours=bright_magenta
 regexp=^(\S+).*?(\d+)\t(\w+)\t(\w+)\t
 colours=unchanged,magenta,red,yellow,cyan
 -
+#query line
+regexp=^;(\S+).*?\t(\w+)\t(\w+)
+colours=yellow,magenta,yellow,cyan
+-
 #ip4 address
 regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
 colours=green
@@ -21,3 +25,15 @@ colours=yellow
 #Title
 regexp=; <<>> DiG.* <<>> (\S+)
 colours=default,bold magenta
+-
+#delv validated
+regexp=^; [\w\s,]*(fully validated)
+colours=yellow,green
+-
+#dig status ok
+regexp=^;; ->>HEADER<<- opcode: (\w+)[;,] status: (NOERROR)
+colours=yellow,unchanged,green
+-
+#dig status fail
+regexp=^;; ->>HEADER<<- opcode: (\w+)[;,] status: (SERVFAIL|NXDOMAIN|FORMERR|REFUSED)
+colours=yellow,unchanged,red
