@@ -6,11 +6,11 @@
 
 [ -f /etc/default/grc ] && . /etc/default/grc
 
-[ x$GRC_ALIASES = xtrue ] || return 0
-
-GRC="$(which grc)"
-if tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
-    alias colourify="$GRC -es"
+set_grc_aliases () {
+    local grc="$(which grc)"
+    [ x$GRC_ALIASES = xtrue ] && tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$grc" ] ||
+            return 0
+    alias colourify="$grc -es"
     alias blkid='colourify blkid'
     alias configure='colourify ./configure'
     alias df='colourify df'
@@ -54,5 +54,6 @@ if tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
     alias getsebool='colourify getsebool'
     alias ifconfig='colourify ifconfig'
     alias sockstat='colourify sockstat'
-fi
+}
 
+set_grc_aliases
