@@ -13,7 +13,11 @@ set_grc_aliases () {
     alias colourify="$grc -es"
     local cmds=(
         as
+        ant
         blkid
+        cc
+        curl
+        cvs
         df
         diff
         dig
@@ -21,6 +25,7 @@ set_grc_aliases () {
         docker-compose
         docker-machine
         du
+        dnf
         # env
         fdisk
         findmnt
@@ -28,32 +33,60 @@ set_grc_aliases () {
         g++
         gas
         gcc
+        getfacl
         getsebool
+        gmake
         gpg
         head
         id
         ifconfig
+        iostat
         ip
         iptables
+        iwconfig
         journalctl
         kubectl
+        last
         ld
         # ls
+        lsattr
         lsblk
+        lsmod
         lsof
         lspci
         make
         mount
         mtr
+        mvn
         netstat
+        nmap
+        ntpdate
+        php
         ping
+        ping6
+        proftpd
         ps
+        sar
         semanage
+        sensors
+        setfacl
+        showmount
         sockstat
         ss
+        stat
+        sysctl
+        systemctl
+        tcpdump
         tail
         traceroute
         traceroute6
+        tune2fs
+        ulimit
+        uptime
+        vmstat
+        wdiff
+        who
+        whois
     )
 
     for name in ${cmds[@]}; do
