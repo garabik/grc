@@ -4,55 +4,96 @@
 # GRC_ALIASES=true
 # in /etc/default/grc or you export GRC_ALIASES=true prior to sourcing this
 
-[ -f /etc/default/grc ] && . /etc/default/grc
+set_grc_aliases () {
+    local grc="$(which grc)"
+    [ -z "$GRC_ALIASES" ] && [ -f /etc/default/grc ] && . /etc/default/grc
+    [ "$GRC_ALIASES" = "true" ] && tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$grc" ] ||
+            return 0
 
-[ x$GRC_ALIASES = xtrue ] || return 0
+    alias colourify="$grc -es"
+    local cmds=(
+        as
+        ant
+        blkid
+        cc
+        curl
+        cvs
+        df
+        diff
+        dig
+        docker
+        docker-compose
+        docker-machine
+        du
+        dnf
+        # env
+        fdisk
+        findmnt
+        free
+        g++
+        gas
+        gcc
+        getfacl
+        getsebool
+        gmake
+        gpg
+        head
+        id
+        ifconfig
+        iostat
+        ip
+        iptables
+        iwconfig
+        journalctl
+        kubectl
+        last
+        ld
+        # ls
+        lsattr
+        lsblk
+        lsmod
+        lsof
+        lspci
+        make
+        mount
+        mtr
+        mvn
+        netstat
+        nmap
+        ntpdate
+        php
+        ping
+        ping6
+        proftpd
+        ps
+        sar
+        semanage
+        sensors
+        setfacl
+        showmount
+        sockstat
+        ss
+        stat
+        sysctl
+        systemctl
+        tcpdump
+        tail
+        traceroute
+        traceroute6
+        tune2fs
+        ulimit
+        uptime
+        vmstat
+        wdiff
+        who
+        whois
+    )
 
-GRC="$(which grc)"
-if tty -s && [ -n "$TERM" ] && [ "$TERM" != dumb ] && [ -n "$GRC" ]; then
-    alias colourify="$GRC -es"
-    alias blkid='colourify blkid'
+    for name in ${cmds[@]}; do
+        alias $name="colourify $name"
+    done
+
     alias configure='colourify ./configure'
-    alias df='colourify df'
-    alias diff='colourify diff'
-    alias docker='colourify docker'
-    alias docker-compose='colourify docker-compose'
-    alias docker-machine='colourify docker-machine'
-    alias du='colourify du'
-#    alias env='colourify env'
-    alias free='colourify free'
-    alias fdisk='colourify fdisk'
-    alias findmnt='colourify findmnt'
-    alias make='colourify make'
-    alias gcc='colourify gcc'
-    alias g++='colourify g++'
-    alias gpg='colourify gpg'
-    alias id='colourify id'
-    alias ip='colourify ip'
-    alias iptables='colourify iptables'
-    alias as='colourify as'
-    alias gas='colourify gas'
-    alias journalctl='colourify journalctl'
-    alias kubectl='colourify kubectl'
-    alias ld='colourify ld'
-    #alias ls='colourify ls'
-    alias lsof='colourify lsof'
-    alias lsblk='colourify lsblk'
-    alias lspci='colourify lspci'
-    alias netstat='colourify netstat'
-    alias ping='colourify ping'
-    alias ss='colourify ss'
-    alias traceroute='colourify traceroute'
-    alias traceroute6='colourify traceroute6'
-    alias head='colourify head'
-    alias tail='colourify tail'
-    alias dig='colourify dig'
-    alias mount='colourify mount'
-    alias ps='colourify ps'
-    alias mtr='colourify mtr'
-    alias semanage='colourify semanage'
-    alias getsebool='colourify getsebool'
-    alias ifconfig='colourify ifconfig'
-    alias sockstat='colourify sockstat'
-fi
+}
 
+set_grc_aliases
