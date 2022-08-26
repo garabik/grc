@@ -9,6 +9,7 @@ fi
 cmds=(
   as
   ant
+  base64
   blkid
   cc
   configure
