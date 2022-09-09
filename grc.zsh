@@ -43,6 +43,7 @@ cmds=(
   last
   ldap
   lolcat
+  logo-ls
   ld
   ls
   lsattr
