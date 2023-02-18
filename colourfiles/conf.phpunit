@@ -21,8 +21,8 @@ regexp=(ERRORS|FAILURES)!
 colours=bright_red
 ======
 # Failure stats
-regexp=^(?:Tests: )(\d+)(?:, )(?:Assertions: )(\d+)(?:, )(?:Errors: |Failures: )(\d+)(?:\.)$
-colours=default, bright_green, bright_yellow, bright_red
+regexp=(?:Tests: (\d+)|Assertions: (\d+)|Errors: (\d+)|Failures: (\d+)|Incomplete: (\d+))
+colours=default, bright_green, bright_yellow, bright_red, bright_red, bright_cyan
 ======
 # Success
 regexp=(OK) \((\d+) tests?, (\d+) assertions?\)
