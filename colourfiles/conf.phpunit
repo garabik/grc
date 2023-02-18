@@ -5,10 +5,6 @@ colours=dark, dark, dark
 regexp=^Time: (\d\d:\d\d\.\d\d\d), Memory: (\d+\.\d\d MB)
 colours=dark, dark, dark
 ======
-# Test and its name
-regexp=^(?:^\d+\))(?: )((?:\w+\\)*)(\w+)(?:::)(\w+)
-colours=default, bright_black, dark, yellow
-======
 regexp=^(\w+(?:Error|Exception): ).*$
 colours=default, bright_red
 ======
@@ -39,3 +35,7 @@ colours=default, dark, bold, bold
 # Loading bar
 regexp=(?:.*)(\d+)(?:\s+)(\/)(?:\s+)(\d+)(?:\s+)(\()(\d+%)(\))
 colours=dark, bold, bold, bold, bold, bold, bold
+======
+# Test and its name
+regexp=^(?:^\d+\))(?: )((?:\w+\\)*)(\w+)(?:::)(\w+)
+colours=default, bright_black, dark, yellow
