@@ -186,7 +186,7 @@ You can start using grc automatically with supported commands. The following ass
 To set aliases for supported commands, append to your `~/.bashrc`:
 
     GRC_ALIASES=true
-    [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
+    [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/profile.d/grc.sh
 
 If the file `/etc/default/grc` exists, it is sourced first, therefore you can place a line saying `GRC_ALIASES=true` there.
 
