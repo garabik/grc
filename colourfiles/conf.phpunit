@@ -1,0 +1,41 @@
+regexp=^(PHPUnit )(\d+\.\d+\.\d+)(?:.*$)
+colours=dark, dark, dark
+======
+# Memory and time
+regexp=^Time: (\d\d:\d\d\.\d\d\d), Memory: (\d+\.\d\d MB)
+colours=dark, dark, dark
+======
+regexp=^(\w+(?:Error|Exception): ).*$
+colours=default, bright_red
+======
+# Error stack
+regexp=^((?:\w+:\/\/)?\/(?:[^\/]+\/)*)([^:]+)(?::)(\d+)$
+colours=bright_black, bright_black, dark, dark
+======
+# Number of errors
+regexp=^(?:^There (?:was|were) )(\d+)(?: (?:errors?|failures?):)$
+colours=default, bright_red
+======
+# Errors
+regexp=(ERRORS|FAILURES)!
+colours=bright_red
+======
+# Failure stats
+regexp=(?:Tests: (\d+)|Assertions: (\d+)|Errors: (\d+)|Failures: (\d+)|Incomplete: (\d+))
+colours=default, bright_green, bright_yellow, bright_red, bright_red, bright_cyan
+======
+# Success
+regexp=(OK) \((\d+) tests?, (\d+) assertions?\)
+colours=dark, bright_green, bold, bold
+======
+# Classes in general
+regexp=(?:[\s:"'])((?:[^\\\s]+\\)+)([^\s:"']+)(?:(?:::)([^\s"']+))?(?:[:\s"'])
+colours=default, dark, bold, bold
+======
+# Loading bar
+regexp=(?:.*)(\d+)(?:\s+)(\/)(?:\s+)(\d+)(?:\s+)(\()(\d+%)(\))
+colours=dark, bold, bold, bold, bold, bold, bold
+======
+# Test and its name
+regexp=^(?:^\d+\))(?: )((?:\w+\\)*)(\w+)(?:::)(\w+)
+colours=default, bright_black, dark, yellow
