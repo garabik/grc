@@ -19,7 +19,7 @@ for executable in $grc_plugin_execs
             if isatty 1
                 grc $executable $argv
             else
-                eval command $executable $argv
+                eval command $executable "$argv"
             end
         end
     end
