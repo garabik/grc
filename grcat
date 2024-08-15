@@ -101,11 +101,8 @@ for c in range(0, 256):
 signal.signal(signal.SIGINT, signal.SIG_IGN)
 
 def add2list(clist, m, patterncolour):
-    for group in range(0, len(m.groups()) +1):
-        if group < len(patterncolour):
-            clist.append((m.start(group), m.end(group), patterncolour[group]))
-        else:
-            clist.append((m.start(group), m.end(group), patterncolour[0]))
+    for group in range(len(m.groups())):
+        clist.append((m.start(group+1), m.end(group+1), patterncolour[group]))
 
 def get_colour(x):
     if x in colours:
