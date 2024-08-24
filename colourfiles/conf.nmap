@@ -6,13 +6,17 @@ colours=default,bold green, bold magenta
 regexp=Host is (up)
 colours=default, bold green
 -
+# Latency
+regexp=\((\S+)\s(latency)
+colours=default,bold yellow,yellow
+-
 # Failed to resolve
 regexp=Failed\sto\sresolve\s\"(\S+)\"
 colours=red,bold red
 -
 # Closed ports
-regexp=Not shown: (\d+)\s(closed|filtered)\sports
-colours=default,bright_red,red
+regexp=Not\sshown\:\s(\d+)\s(\S+)\s\S+\sports\s\((\S+)\)
+colours=default,bright_red,red,bold red
 -
 # Titles
 regexp=^PORT.*$|^HOP.*
@@ -33,3 +37,8 @@ colours=default,green,magenta
 # Network Distance:
 regexp=Network Distance:\s(\d+)
 colours=default,bold green
+-
+# Rule for all IPs
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=bold magenta
+-
