@@ -1,25 +1,29 @@
 # Scan Title
-regexp=Nmap scan report for (\S+)\s\(([^\)]+)\)
+regexp=Nmap scan report for (\S+)(?:\s\(([^\)]+)\))?
 colours=default,bold green, bold magenta
 -
 # up
 regexp=Host is (up)
 colours=default, bold green
 -
+# Latency
+regexp=\((\S+)\s(latency)
+colours=default,bold yellow,yellow
+-
 # Failed to resolve
 regexp=Failed\sto\sresolve\s\"(\S+)\"
 colours=red,bold red
 -
 # Closed ports
-regexp=Not shown: (\d+)\s(closed|filtered)\sports
-colours=default,bright_red,red
+regexp=Not\sshown\:\s(\d+)\s(\S+)\s\S+\sports\s\((\S+)\)
+colours=default,bright_red,red,bold red
 -
 # Titles
 regexp=^PORT.*$|^HOP.*
 colours=bold
 -
 # Ports
-regexp=^(\d+)\/(\w+)\s+(\w+)\s+(\S+)
+regexp=^(\d+)\/(\w+)\s+([\w|]+)\s+(\S+)
 colours=default,bold green,magenta,cyan,bold yellow
 -
 # Ports Details
