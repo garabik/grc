@@ -22,5 +22,6 @@ for executable in $grc_plugin_execs
                 eval command $executable $argv
             end
         end
+        funcsave $executable
     end
 end
