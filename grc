@@ -33,7 +33,7 @@ def catch_signal(signum, frame):
 
 try:
     optlist, args = getopt.getopt(sys.argv[1:], "sec:", ["stdout", "stderr", "config=", "colour=", "pty"] )
-except:
+except Exception:
     help()
 
 if not args:
